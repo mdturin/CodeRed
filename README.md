@@ -51,5 +51,21 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Minimum Smallest String Rotation, Greedy Approch](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Smallest%20String%20Rotation_Greedy.cpp)
   
 ## Data Structure
+  - [Bitset](https://github.com/turin1602101/CodeRed/blob/master/Bitset.cpp)
+  - [Disjoint Sets (DSU)](https://github.com/turin1602101/CodeRed/blob/master/Disjoint%20Sets%20(DSU).cpp)
+  - [Tries](https://github.com/turin1602101/CodeRed/blob/master/Tries.cpp)
+  - [Policy Base Data Structure (PBDS)](https://github.com/turin1602101/CodeRed/blob/master/Policy%20Base%20Data%20Structure%20(PBDS).cpp)
+  - [Square Root Decomposition](https://github.com/turin1602101/CodeRed/blob/master/Square%20root%20Decomposition.cpp)
+  - [Segment Tree](https://github.com/turin1602101/CodeRed/blob/master/Segment%20Tree.cpp)
+  - [Segment Tree Lazy](https://github.com/turin1602101/CodeRed/blob/master/Segment%20Tree%20Lazy.cpp)
+  - [Iterative Segment Tree](https://github.com/turin1602101/CodeRed/blob/master/Iterative%20Segment%20Tree.cpp)
+  - [Bit Range Query Point Update](https://github.com/turin1602101/CodeRed/blob/master/Bit%20Range%20Query%20Point%20Update.cpp)
+  - [Bit Range Upate Point Query](https://github.com/turin1602101/CodeRed/blob/master/Bit%20Range%20Upate%20Point%20Query.cpp)
+  - [Bit Range Query Range Update](https://github.com/turin1602101/CodeRed/blob/master/Bit%20Range%20Query%20Range%20Update.cpp)
+  - [Sparse Table](https://github.com/turin1602101/CodeRed/blob/master/Sparse%20Table.cpp)
+  - [Sparse Table 2D](https://github.com/turin1602101/CodeRed/blob/master/Sparse%20Table%202D.cpp)
+  - [MO'S Algorithm](https://github.com/turin1602101/CodeRed/blob/master/MOS%20Algo.cpp)
+  - [Persistence Segment Tree](https://github.com/turin1602101/CodeRed/blob/master/Persistence%20Segment%20Tree.cpp)
+
 ## Dynamic Programming
 ## Miscellaneous
