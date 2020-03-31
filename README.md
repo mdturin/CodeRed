@@ -53,6 +53,7 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Manacher's Algorithm](https://github.com/turin1602101/CodeRed/blob/master/Manachers%20Algo.cpp)
   - [Minimum Smallest String Rotation, Booth Algorithm](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Smallest%20String%20Rotation_Booth%20Algorithm.cpp)
   - [Minimum Smallest String Rotation, Greedy Approch](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Smallest%20String%20Rotation_Greedy.cpp)
+  - [Lexicographically Largest Palindromic Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Lexicographically%20Largest%20Palindromic%20Subsequence.cpp)
   
 ## Data Structure
   - [Bitset](https://github.com/turin1602101/CodeRed/blob/master/Bitset.cpp)
