@@ -99,4 +99,9 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Fast Matrix Exponential](https://github.com/turin1602101/CodeRed/blob/master/Fast%20Matrix%20Exponential.cpp)  
   - [Meet In The Middle](https://github.com/turin1602101/CodeRed/blob/master/Meet%20In%20The%20Middle.cpp)  
   
- ##
+ ## Reader _ Debug _ Precode
+  - [Fast Reader](https://github.com/turin1602101/CodeRed/blob/master/fast%20reader.cpp)
+  - [Debug Tool Header](https://github.com/turin1602101/CodeRed/blob/master/dbg.hpp)
+  - [Precode](https://github.com/turin1602101/CodeRed/blob/master/precode.cpp)
+  
+
