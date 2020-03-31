@@ -72,4 +72,20 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Persistence Segment Tree](https://github.com/turin1602101/CodeRed/blob/master/Persistence%20Segment%20Tree.cpp)
 
 ## Dynamic Programming
+  - [Edit Distance](https://github.com/turin1602101/CodeRed/blob/master/Edit%20Distance.cpp)
+  - [Egg Droping Puzzle](https://github.com/turin1602101/CodeRed/blob/master/Egg%20Droping%20Puzzle.cpp)
+  - [Knapsack](https://github.com/turin1602101/CodeRed/blob/master/Knapsack.cpp)
+  - [Largest Independent Set](https://github.com/turin1602101/CodeRed/blob/master/Largest%20Independent%20Set.cpp)
+  - [Longest Biotonic Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Longest%20Biotonic%20Subsequence.cpp)
+  - [Longest Common Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Longest%20Common%20Subsequence.cpp)
+  - [Longest Increasing Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Longest%20Increasing%20Subsequence.cpp)
+  - [Longest Palindromic Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Longest%20Palindromic%20Subsequence.cpp)
+  - [Matrix Chain Multiplication](https://github.com/turin1602101/CodeRed/blob/master/Matrix%20Chain%20Multiplication.cpp)
+  - [Maximum Product Increasing Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Maximum%20Product%20Increasing%20Subsequence.cpp)
+  - [Maximum Subarray](https://github.com/turin1602101/CodeRed/blob/master/Maximum%20Subarray.cpp)
+  - [Maximum Sum Increasing Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Maximum%20Sum%20Increasing%20Subsequence.cpp)
+  - [Subset Sum](https://github.com/turin1602101/CodeRed/blob/master/Subset%20Sum.cpp)
+  - [Total Palindromic Subsequence Count](https://github.com/turin1602101/CodeRed/blob/master/Total%20Palindromic%20Subsequence%20Count.cpp)
+  - [Travel Salesman Problem(TSP)](https://github.com/turin1602101/CodeRed/blob/master/Travel%20Salesman%20Problem(TSP).cpp)
+
 ## Miscellaneous
