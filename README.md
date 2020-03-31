@@ -23,6 +23,7 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Divisors](https://github.com/turin1602101/CodeRed/blob/master/Divisors.cpp)
   - [Euler Totient](https://github.com/turin1602101/CodeRed/blob/master/Euler%20Totient%20(PHI).cpp)
   - [Binomial Coefficient(NCR)](https://github.com/turin1602101/CodeRed/blob/master/NCR.cpp)
+  - [Linear Diophantine Equation](https://github.com/turin1602101/CodeRed/blob/master/Linear%20Diophantine%20Equation.cpp)
   - [Chinese Reminder Theorem(CRT)](https://github.com/turin1602101/CodeRed/blob/master/Chinese%20Reminder%20Theorem.cpp)
   - [Goldbach's Conjecture](https://github.com/turin1602101/CodeRed/blob/master/Chinese%20Reminder%20Theorem.cpp)
 
