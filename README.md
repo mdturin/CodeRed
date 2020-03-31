@@ -1,6 +1,13 @@
 # CodeRed
 All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
 
+## Sorting & Searching
+  - [Quick Sort](https://github.com/turin1602101/CodeRed/blob/master/Quick%20Sort.cpp)
+  - [Merge Sort](https://github.com/turin1602101/CodeRed/blob/master/Merge%20Sort.cpp)
+  - [Counting Sort](https://github.com/turin1602101/CodeRed/blob/master/Counting%20Sort.cpp)
+  - [Binary Search](https://github.com/turin1602101/CodeRed/blob/master/Binary%20Search.cpp)
+  - [Ternary Search](https://github.com/turin1602101/CodeRed/blob/master/Ternary%20Search.cpp)
+
 ## Number Theory
   - [GCD](https://github.com/turin1602101/CodeRed/blob/master/GCD.cpp)
   - [LCM](https://github.com/turin1602101/CodeRed/blob/master/LCM.cpp)
