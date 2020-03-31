@@ -89,3 +89,14 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Travel Salesman Problem(TSP)](https://github.com/turin1602101/CodeRed/blob/master/Travel%20Salesman%20Problem(TSP).cpp)
 
 ## Miscellaneous
+  - [BigInt](https://github.com/turin1602101/CodeRed/blob/master/BigInt.cpp)
+  - [BigInt2](https://github.com/turin1602101/CodeRed/blob/master/BigInt2.cpp)  
+  - [Bits](https://github.com/turin1602101/CodeRed/blob/master/Bits.cpp)  
+  - [Cycle Finding](https://github.com/turin1602101/CodeRed/blob/master/Cycle%20Finding.cpp)  
+  - [Factorials](https://github.com/turin1602101/CodeRed/blob/master/Factorials.cpp)  
+  - [Josephus](https://github.com/turin1602101/CodeRed/blob/master/Josephus.cpp)  
+  - [Matrix Exponential](https://github.com/turin1602101/CodeRed/blob/master/Matrix%20Exponential.cpp)  
+  - [Fast Matrix Exponential](https://github.com/turin1602101/CodeRed/blob/master/Fast%20Matrix%20Exponential.cpp)  
+  - [Meet In The Middle](https://github.com/turin1602101/CodeRed/blob/master/Meet%20In%20The%20Middle.cpp)  
+  
+ ##
