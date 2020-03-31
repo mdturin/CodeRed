@@ -33,7 +33,16 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Bellman Ford](https://github.com/turin1602101/CodeRed/blob/master/Bellman%20Ford.cpp)
   - [Floyd Warshall](https://github.com/turin1602101/CodeRed/blob/master/Floyd%20Warshall.cpp)
 
+## String
+  - [KMP](https://github.com/turin1602101/CodeRed/blob/master/KMP.cpp)
+  - [Z Algorithm](https://github.com/turin1602101/CodeRed/blob/master/Z%20Algorithm.cpp)
+  - [Rabin Karp](https://github.com/turin1602101/CodeRed/blob/master/Rabin%20Karp.cpp)
+  - [Suffix Automata](https://github.com/turin1602101/CodeRed/blob/master/Suffix%20Automata.cpp)
+  - [Aho Corasick](https://github.com/turin1602101/CodeRed/blob/master/Aho%20Corasick.cpp)
+  - [Manacher's Algorithm](https://github.com/turin1602101/CodeRed/blob/master/Manachers%20Algo.cpp)
+  - [Minimum Smallest String Rotation, Booth Algorithm](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Smallest%20String%20Rotation_Booth%20Algorithm.cpp)
+  - [Minimum Smallest String Rotation, Greedy Approch](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Smallest%20String%20Rotation_Greedy.cpp)
+  
 ## Data Structure
 ## Dynamic Programming
-## String
 ## Miscellaneous
