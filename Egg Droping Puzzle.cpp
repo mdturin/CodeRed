@@ -7,7 +7,7 @@ const int INF = 1e9+9;
 const int mod = 1e9+7;
 const int mx  = 1005;
 
-///1. Complexity : O(n * e)
+///1. Complexity : O(n * n * e)
 int dp[mx][mx];
 int EggDropRec(int n, int e){
     if(n <= 1) return n;
@@ -23,10 +23,10 @@ int EggDropRec(int n, int e){
     return dp[n][e] = ans;
 }
 
-///2. Complexity : O(n * e)
+///2. Complexity : O(n * n * e)
 int EggDropIte(int n, int e){
     for(int i=0; i<=e; i++)
-        dp[0][e] = 0, dp[1][e] = 1;
+        dp[0][i] = 0, dp[1][i] = 1;
     for(int i=0; i<=n; i++)
         dp[i][1] = i;
     for(int i=2; i<=n; i++)
