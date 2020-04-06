@@ -32,6 +32,7 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [BFS Grid](https://github.com/turin1602101/CodeRed/blob/master/BFS%20Grid.cpp)
   - [DFS](https://github.com/turin1602101/CodeRed/blob/master/DFS.cpp)
   - [Connected Component(CC)](https://github.com/turin1602101/CodeRed/blob/master/Connected%20Component.cpp)
+  - [Euler Tour](https://github.com/turin1602101/CodeRed/blob/master/Euler%20Tour.cpp)
   - [Flood Fill](https://github.com/turin1602101/CodeRed/blob/master/Flood%20Fill.cpp)
   - [Topological Sort](https://github.com/turin1602101/CodeRed/blob/master/Topological%20Sort.cpp)
   - [Cycle Finding Graph](https://github.com/turin1602101/CodeRed/blob/master/Cycle%20Finding%20Graph.cpp)
@@ -43,7 +44,11 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Bellman Ford](https://github.com/turin1602101/CodeRed/blob/master/Bellman%20Ford.cpp)
   - [Floyd Warshall](https://github.com/turin1602101/CodeRed/blob/master/Floyd%20Warshall.cpp)
   - [Minimum Spanning Tree(MST)](https://github.com/turin1602101/CodeRed/blob/master/Minimum%20Spanning%20Tree%20(MST).cpp)
-  
+  - [Longest Common Ancestor by SQRT Decomposition (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20with%20SQRT%20Decompostion(LCA).cpp)
+  - [Longest Common Ancestor by Segment Tree (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20with%20Segment%20Tree%20(LCA).cpp)
+  - [Longest Common Ancestor by Binary Lifting (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20with%20Binary%20Lifting%20(LCA).cpp)
+  - [Longest Common Ancestor For Range Query (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20for%20Range%20Query.cpp)
+  - [Longest Common Ancestor by Tarjan Off-line (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20Tarjan%20Off-line%20(LCA).cpp)
 
 ## String
   - [KMP](https://github.com/turin1602101/CodeRed/blob/master/KMP.cpp)
