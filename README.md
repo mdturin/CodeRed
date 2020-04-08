@@ -49,8 +49,8 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Longest Common Ancestor by Binary Lifting (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20with%20Binary%20Lifting%20(LCA).cpp)
   - [Longest Common Ancestor For Range Query (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20for%20Range%20Query.cpp)
   - [Longest Common Ancestor by Tarjan Off-line (LCA)](https://github.com/turin1602101/CodeRed/blob/master/Lowest%20Common%20Ancestor%20Tarjan%20Off-line%20(LCA).cpp)
-  - [Heavy Light Decomposition](https://github.com/turin1602101/CodeRed/blob/master/Heavy%20Light%20Decomposition.cpp)
-  - [Heavy Light Decomposition from Anudeep's Blog](https://github.com/turin1602101/CodeRed/blob/master/Heavy%20Light%20Decomposition%20(Anudeep).cpp)
+  - [Heavy Light Decomposition (HLD)](https://github.com/turin1602101/CodeRed/blob/master/Heavy%20Light%20Decomposition.cpp)
+  - [Heavy Light Decomposition from Anudeep's Blog (HLD)](https://github.com/turin1602101/CodeRed/blob/master/Heavy%20Light%20Decomposition%20(Anudeep).cpp)
 
 ## String
   - [KMP](https://github.com/turin1602101/CodeRed/blob/master/KMP.cpp)
