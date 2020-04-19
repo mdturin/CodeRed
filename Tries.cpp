@@ -64,19 +64,13 @@ int main(){
 
     s = "Turin";    insert(s);
     s = "Turbo";    insert(s);
-    s = "TunirMa";  insert(s);
-    s = "Medha";    insert(s);
     s = "Mujahid";  insert(s);
 
     s = "Turin"; cout << s << ' ' << search(s) << '\n';
-    s = "Medha"; cout << s << ' ' << search(s) << '\n'; 
-
     s = "Turin"; remove(root, s, 0);
 
     s = "Turin";    cout << s << ' ' << search(s) << '\n';
     s = "Turbo";    cout << s << ' ' << search(s) << '\n';
-    s = "TunirMa";  cout << s << ' ' << search(s) << '\n';
-    s = "Medha";    cout << s << ' ' << search(s) << '\n';
     s = "Mujahid";  cout << s << ' ' << search(s) << '\n';
 
     clearAll(root);
