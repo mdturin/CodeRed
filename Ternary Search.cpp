@@ -24,7 +24,7 @@ int ternary(){
 int ternary(){
     int lw=0, hh=n-1, ans=lw;
     while(lw <= hh){
-        int mid1 = lw + (hh-lw)/3;
+        int mid1 = lw + (hh-lw)/2;
         int mid2 = min(mid1+1, hh);
         if(can(mid1) >= can(mid2))
             ans=mid1, lw=mid1+1;
