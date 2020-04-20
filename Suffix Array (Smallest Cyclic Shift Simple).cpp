@@ -13,6 +13,7 @@ int c[mx], cn[mx], cnt[mx];
 void build(){
     register int i, j, k;
     s += "$"; n = s.size();
+    memset(cnt, 0, mx << 2);
 
     for(i=0; i<n; i++) cnt[ s[i] ]++;
     for(i=1; i<256; i++) cnt[i] += cnt[i-1];
