@@ -63,13 +63,49 @@ void countHelper(int n){
     }
 }
 
-vector<int> terminals;
-void findTerminals(){
-    int p = last;
-    while(p > 0) {
-        terminals.push_back(p);
-        p = st[p].link;
+vector<int> sa,lcp; int n;
+void dfs(int u, int m){
+    if(m == 0){
+        sa.push_back(st[u].fpos-n);
+        return;
     }
+    for(auto p : st[u].next)
+        dfs(p.second, m-1);
+}
+
+void buildLCP(string &s){
+    int n = s.size(); 
+    vector<int> pn(n+5,0);
+    lcp = vector<int>(n+5,0);
+
+    register int i, j = 0;
+    for(int i=0; i<n; i++) pn[sa[i]] = i;
+    for(int i=0; i<n; i++){
+        if(pn[i]==n-1){j=0; continue;}
+        int k = sa[pn[i] + 1];
+        while(i+j<n && j+k<n && s[i+j]==s[j+k]) j++;
+        lcp[ pn[i] ] = j; if( j ) j--;
+    }
+}
+
+#define all(x) x.begin(),x.end()
+void buildSuffixArray(string s){
+    build(s); s += "$"; n = s.size(); 
+    
+    sa_extend('#');
+    for(rint i=0; i<s.size(); i++)
+        sa_extend(s[i]);
+    
+    dfs(0, n);
+    s.pop_back();
+    sa.erase(find(all(sa), n));
+    buildLCP(s);
+
+    for(int i=1; i<n; i++)
+        cout << i << " "
+             << sa[i] << " "
+             << lcp[i] << " "
+             << s.substr(sa[i]) << "\n";
 }
 
 int dss[mx<<1]; /// distinct substring
@@ -137,7 +173,7 @@ int smallestCyclicShift(string &s){
     int u = 0;
     for(int i=0; i<len; i++)
         u = st[u].next.begin()->se;
-    return st[u].fpos - len + 1; /// 0-index
+    return st[u].fpos - len; /// 0-index
 }
 
 int firstOccur(string s, string p){
@@ -178,12 +214,9 @@ int main(int argc, const char** argv) {
     ios_base::sync_with_stdio(0);
     cin.tie( nullptr );
 
-    string s = "ababa"; build(s);
-    
-    findTerminals();
-    for(int u : terminals)
-        cout << u << " ";
-    cout << "\n";
+    string s = "abcdef"; 
+
+    build(s);
 
     cout << dssFun(0) << "\n"; /// with empty string
     cout << totFun(0) << "\n";
@@ -202,12 +235,14 @@ int main(int argc, const char** argv) {
         for(auto c : kthSub)
             cout << c;
         cout << "\n\n";
-    } 
+    }
 
     cout << smallestCyclicShift(s) << "\n\n";
     cout << firstOccur("worldhelloworldhello", "hello") << "\n\n";
     cout << numOfOccur("worldhelloworldhelloworl", "world") << "\n\n";
     cout << lcs("abracadabra", "dabrasdfabra") << "\n\n";
 
+    /** Adding Suffix Array **/ 
+    buildSuffixArray("abcdeabcdabc");
     return 0;
 }
