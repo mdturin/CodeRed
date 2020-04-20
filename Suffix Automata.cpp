@@ -63,6 +63,15 @@ void countHelper(int n){
     }
 }
 
+vector<int> terminals;
+void findTerminals(){
+    int p = last;
+    while(p > 0) {
+        terminals.push_back(p);
+        p = st[p].link;
+    }
+}
+
 int dss[mx<<1]; /// distinct substring
 int dssFun(int u){
     if(dss[u]) return dss[u];
@@ -170,6 +179,11 @@ int main(int argc, const char** argv) {
     cin.tie( nullptr );
 
     string s = "ababa"; build(s);
+    
+    findTerminals();
+    for(int u : terminals)
+        cout << u << " ";
+    cout << "\n";
 
     cout << dssFun(0) << "\n"; /// with empty string
     cout << totFun(0) << "\n";
@@ -188,7 +202,7 @@ int main(int argc, const char** argv) {
         for(auto c : kthSub)
             cout << c;
         cout << "\n\n";
-    }
+    } 
 
     cout << smallestCyclicShift(s) << "\n\n";
     cout << firstOccur("worldhelloworldhello", "hello") << "\n\n";
