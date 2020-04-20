@@ -1,23 +1,21 @@
 #include "bits/stdc++.h"
 using namespace std;
+
+const int mx = 1e5+5;
 using vi = vector<int>;
 using pii = pair<int,int>;
 
-const int mx = 1e5+5;
-
-string s;
+string s; int n;
 int sa[mx],lcp[mx],pn[mx];
 int c[mx], cn[mx], cnt[mx];
 
 // constructing suffix array by sort cyclic shifts
-void build(){s += "$";
-
+void build(){
     register int i, j, k;
-    int n = s.size(), m = 256; // maximum charecter
+    s += "$"; n = s.size();
 
-    memset(cnt, 0, max(n,m) << 2);
     for(i=0; i<n; i++) cnt[ s[i] ]++;
-    for(i=1; i<m; i++) cnt[i] += cnt[i-1];
+    for(i=1; i<256; i++) cnt[i] += cnt[i-1];
     for(i=0; i<n; i++) sa[--cnt[s[i]]] = i;
 
     c[sa[0]] = 0; int cls = 1;
@@ -46,14 +44,11 @@ void build(){s += "$";
 }
 
 void buildLCP(){
-    int n = s.size(); 
-    memset(lcp, 0, n<<2);
-
+    memset(lcp, 0, mx<<2);
     register int i, j = 0;
     for(int i=0; i<n; i++) pn[sa[i]] = i;
     for(int i=0; i<n; i++){
         if(pn[i]==n-1){j=0; continue;}
-
         int k = sa[pn[i] + 1];
         while(i+j<n && j+k<n && s[i+j]==s[j+k]) j++;
         lcp[ pn[i] ] = j; if( j ) j--;
