@@ -116,5 +116,6 @@ All Competetive Programming Algorithms &amp; Data Structrue with Best Complexity
   - [Fast Reader](https://github.com/turin1602101/CodeRed/blob/master/fast%20reader.cpp)
   - [Debug Tool Header](https://github.com/turin1602101/CodeRed/blob/master/dbg.hpp)
   - [Precode](https://github.com/turin1602101/CodeRed/blob/master/precode.cpp)
+  - [Template](https://github.com/turin1602101/CodeRed/blob/master/template.cpp)
   
 
