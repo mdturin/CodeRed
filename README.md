@@ -1,5 +1,5 @@
 # CodeRed
-Competetive Programming Algorithms &amp; Data Structrue
+Competetive Programming Algorithms &amp; Data Structure
 
 ## Sorting & Searching
   - [Quick Sort](https://github.com/turin1602101/CodeRed/blob/master/Quick%20Sort.cpp)
