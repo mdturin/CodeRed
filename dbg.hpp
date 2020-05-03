@@ -16,7 +16,7 @@ TEMP2 OS(ostream &os, const map<T,U> mp);
 TEMP1 OS(ostream &os, priority_queue<T> q);
 
 TEMP2 OS(ostream &os, const pair<T,U> p){
-    os << "[ " << p.first << ", " << p.second << " ]"; return os;}
+    os << "[ " << p.first << ", " << p.second << " ]\n"; return os;}
 TEMP1 OS(ostream &os, const vector<T> v){
     bool ok = false;
     os << "[ ";
@@ -25,7 +25,7 @@ TEMP1 OS(ostream &os, const vector<T> v){
         os << u;
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 TEMP2 OS(ostream &os, const map<T,U> mp){
@@ -40,7 +40,7 @@ TEMP2 OS(ostream &os, const map<T,U> mp){
         os << ")";
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 TEMP1 OS(ostream &os, const set<T> st){
@@ -51,7 +51,7 @@ TEMP1 OS(ostream &os, const set<T> st){
         os << it;
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 TEMP1 OS(ostream &os, queue<T> q){
@@ -62,7 +62,7 @@ TEMP1 OS(ostream &os, queue<T> q){
         os << q.front(); q.pop();
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 TEMP1 OS(ostream &os, priority_queue<T> q){
@@ -73,7 +73,7 @@ TEMP1 OS(ostream &os, priority_queue<T> q){
         os << q.top(); q.pop();
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 TEMP1 OS(ostream &os, stack<T> stk){
@@ -85,13 +85,17 @@ TEMP1 OS(ostream &os, stack<T> stk){
         stk.pop();
         ok = true;
     }
-    os << " ]";
+    os << " ]\n";
     return os;
 }
 
-void debug(){cerr<<NL;}
-TEMP2A void debug(T head, U... tails){
-    cerr << head;
-    cerr << "\n";
-    debug(tails...);
+void debug2(){cerr<<" end\n";}
+TEMP2A void debug2(T head, U... tails){
+    cerr << " " << head;
+    debug2(tails...);
 }
+TEMP2A void debug(T head, U... tails){
+    cerr << "start debug -> " << head;
+    debug2(tails...);
+}
+
