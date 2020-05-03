@@ -11,6 +11,7 @@ using namespace std;
 #define tplate template<typename T>
 #define uplate template<typename T, typename U>
 
+#pragma GCC target("avx2")
 #pragma GCC optimization("O3")
 #pragma GCC optimization("unroll-loops")
 
