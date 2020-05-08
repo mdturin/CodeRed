@@ -113,9 +113,11 @@ Competetive Programming Algorithms &amp; Data Structure
   - [Meet In The Middle](https://github.com/turin1602101/CodeRed/blob/master/Meet%20In%20The%20Middle.cpp)  
   
  ## Reader _ Debug _ Precode
-  - [Fast Reader](https://github.com/turin1602101/CodeRed/blob/master/fast%20reader.cpp)
+  - [Fast Reader Simple](https://github.com/turin1602101/CodeRed/blob/master/fast%20reader.cpp)
+  - [Fast Buffer Reader](https://github.com/turin1602101/CodeRed/blob/master/Fast%20Read%20Write.cpp)
   - [Debug Tool Header](https://github.com/turin1602101/CodeRed/blob/master/dbg.hpp)
   - [Precode](https://github.com/turin1602101/CodeRed/blob/master/precode.cpp)
   - [Template](https://github.com/turin1602101/CodeRed/blob/master/template.cpp)
+  - [Input Benchmark (Buffer Reader)](https://github.com/turin1602101/CodeRed/blob/master/Input%20Benchmark.cpp)
   
 
