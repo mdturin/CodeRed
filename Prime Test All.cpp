@@ -23,8 +23,8 @@ T power(T val, T p, T mod) {
     T result = 1;
     while (p > 0) {
         if (p & 0x1)
-            result = (result*val)%mod;
-        val = (val*val)%mod;
+            result = multiply(result,val,mod);
+        val = multiply(val, val, mod);
         p >>= 1;
     }
     return result;
