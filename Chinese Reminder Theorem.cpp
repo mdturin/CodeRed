@@ -33,7 +33,18 @@ ll inv(ll a, ll m){
     return (x+m)%m;
 }
 
-/**
+ll CRT(){
+    ll prod = 1LL, x = 0, pp;
+    for(ll i=0; i<n; i++) prod *= num[i];
+    for(ll i=0; i<n; i++){
+        pp = prod / num[i];
+        x += (rem[i] * inv(pp, num[i]) * pp);
+    }
+    return (x%prod);
+} 
+
+/** // Alternate way 
+
 long long t, a[mx], n[mx], ans, lc;
 inline long long normalize(long long x, long long mod) { x %= mod; if (x < 0) x += mod; return x; }
 
@@ -65,17 +76,7 @@ void MAIN(int &cs){
     read(t); in(a+1,t); in(n+1,t);
     CRT();
 }
-*/
-
-ll CRT(){
-    ll prod = 1LL, x = 0, pp;
-    for(ll i=0; i<n; i++) prod *= num[i];
-    for(ll i=0; i<n; i++){
-        pp = prod / num[i];
-        x += (rem[i] * inv(pp, num[i]) * pp);
-    }
-    return (x%prod);
-}   
+*/  
 
 int main(int argc, const char** argv) {
     cout << CRT() << "\n";
