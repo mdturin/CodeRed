@@ -16,7 +16,7 @@ struct chash {
         x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
         return x ^ (x >> 31);
     }
-    int operator()(ull x) const { return hash_f(x)^RANDOM; }
+    ull operator()(ull x) const { return hash_f(x)^RANDOM; }
 };
 
 struct HASH{
