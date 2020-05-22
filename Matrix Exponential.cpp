@@ -24,13 +24,13 @@ matrix matrixMultiply(matrix &a, matrix &b){
     for(int j=0; j<MS; j++)
     for(int k=0; k<MS; k++){
         res.mat[i][j] += a.mat[i][k] * b.mat[k][j];
-        if(res.mat[i][j] > mod)
+        if(res.mat[i][j] >= mod)
             res.mat[i][j] %= mod;
     }
     return move(res);
 }
 
-matrix matrixPower(matrix m, int p){
+matrix matrixPower(matrix m, long long p){
     matrix res = init();
     while(p > 0){
         if(p & 1)
