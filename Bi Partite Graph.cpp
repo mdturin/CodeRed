@@ -23,7 +23,10 @@ bool biPartiteGraph(int s){
                 vis[v] = 3 - vis[u]; /// if 1 then assing 2, or vice versa
                 q.push(v);
             }
-            else {isBipart = false; break;}
+            else if(vis[v] == vis[u]){
+                isBipart = 0;
+                break;
+            }
         }
     }
     return isBipart;
