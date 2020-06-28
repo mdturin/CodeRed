@@ -7,7 +7,7 @@ T power(T v, T p, T m) {
     while (p > 0) {
         if (p & 0x1)
             r = (r*1LL*v)%m;
-        v = (v*v)%m; p >>= 1;
+        v = (v*1LL*v)%m; p >>= 1;
     }
     return r;
 }
