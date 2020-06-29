@@ -45,7 +45,7 @@ int main(){
     root.mat[1][0] = 1;
 
     while(1){
-        int n; cin >> n;
+        long long n; cin >> n;
         if(n < 2) cout << n << '\n';
         else{
             matrix res = matrixPower(root, n-1);
