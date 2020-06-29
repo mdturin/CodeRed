@@ -23,9 +23,8 @@ matrix matrixMultiply(matrix &a, matrix &b){
     for(int i=0; i<MS; i++)
     for(int j=0; j<MS; j++)
     for(int k=0; k<MS; k++){
-        res.mat[i][j] += a.mat[i][k] * b.mat[k][j];
-        if(res.mat[i][j] >= mod)
-            res.mat[i][j] %= mod;
+        res.mat[i][j] += (a.mat[i][k] * 1LL * b.mat[k][j])%mod;
+        if(res.mat[i][j] >= mod) res.mat[i][j] %= mod;
     }
     return move(res);
 }
