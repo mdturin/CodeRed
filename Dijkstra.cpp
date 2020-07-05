@@ -22,7 +22,7 @@ int dijk(int s, int d){
 
     while(pq.size()){
         pii p = pq.top(); pq.pop();
-        int u = p.se, uw = p.ff;
+        int u = p.se, uw = -p.ff;
         if(uw > dist[u]) continue;
         for(int i=0; i<adj[u].size(); i++){
             int v = adj[u][i].ff, ww = adj[u][i].se;
