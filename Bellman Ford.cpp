@@ -7,7 +7,7 @@ const int INF = 1e9+9;
 int n, m;
 vector<int> cap[MX];
 vector<int> adj[MX];
-vector<int> dist[MX];
+vector<int> dist(MX);
 
 void bellManFord(int s){
     fill(begin(dist), end(dist), INF);
