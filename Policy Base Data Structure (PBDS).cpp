@@ -5,8 +5,8 @@
 using namespace std;
 using namespace __gnu_pbds;
 
-#define AT find_by_order  
-#define POS order_of_key  
+#define AT find_by_order /// return index pointer
+#define POS order_of_key /// return value of index
 
 template<typename TYPE, typename CMP>
 using oset = tree<TYPE, null_type, 
