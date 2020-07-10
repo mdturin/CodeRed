@@ -40,6 +40,10 @@ int main(){
 //    to separate pattarn and text */
 //
 //    auto ans = zAlgo(modifyText);
+    
+//    /** For a string str[0..n-1], Z array is of same length as string. 
+//    An element Z[i] of Z array stores length of the longest substring 
+//    starting from str[i] which is also a prefix of str[0..n-1]. */
 //
 //    /** zAlgo function return the 'Z Array'
 //    where for each index i, it store the longest
