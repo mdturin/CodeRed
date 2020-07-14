@@ -37,6 +37,42 @@ bool isCycle(){
     return false;
 }
 
+/** directed path finding */
+vector<int> ans;
+bool cycle = false;
+
+void dfs(int u, int p) {
+    if(cycle) return;
+    vis[u] = 1; par[u] = p;
+    for(int v : g[u]){
+        if(!vis[v]) dfs(v,u);
+        else if(vis[v] == 1){
+            if(cycle) return;
+            ans.push_back(v);
+            while(v != u){
+                ans.push_back(u);
+                u = par[u];
+            }ans.push_back(v);
+            reverse(ans.begin(),ans.end());
+            cycle=true; return;
+        }
+    }vis[u] = 2;
+}
+
+void path_finding_directed(){
+    for(int i=1; i<=n; i++)
+        if(!vis[i] && !cycle)
+            dfs(i, 0);
+
+    if(!cycle)
+        cout << "IMPOSSIBLE\n";
+    else {
+        cout << ans.size() << "\n";
+        for(int u : ans)
+            cout << u << " ";
+    }
+}
+
 int main(int argc, const char** argv) {
     return 0;
 }
