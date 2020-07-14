@@ -8,6 +8,9 @@ vector<int> ts;
 vector<int> adj[mx];
 vector<int> vis,par;
 
+
+/** if there is no cycle topo is possilbe */
+
 void dfs(int u){
     vis[u] = 1;
     for(auto &v:adj[u])
