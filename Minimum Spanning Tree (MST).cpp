@@ -25,7 +25,7 @@ public:
         p.assign(n, -1);
         setSize.assign(n, 1);
     }
-    int findSet(int i){return p[i]==i?i:p[i] = findSet(p[i]);}
+    int findSet(int i){return (p[i]==-1)?i:p[i] = findSet(p[i]);}
     bool isSameSet(int i, int j){return findSet(i) == findSet(j);}
     void unionSet(int i, int j){
         if(!isSameSet(i, j)){
