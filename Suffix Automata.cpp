@@ -47,7 +47,7 @@ void build(string &s){
         sa_extend(s[i]);
 }
 
-void countHelper(int n){
+void countHelper(int n){ /// string size
     for(rint i=sz-1; i>0; i--)
         vec[ st[i].len ].push_back(i);
     for(rint i=n; i>0; i--){
