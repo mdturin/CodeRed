@@ -5,8 +5,9 @@
 using namespace std;
 using namespace __gnu_pbds;
 
-#define AT find_by_order /// return index pointer
-#define POS order_of_key /// return value of index
+#define AT 		find_by_order 				/// return index pointer
+#define POS 		order_of_key 				/// return value of index
+#define ERS(s,x)    	(s).erase((s).AT((s).POS(x)))      	/// erase x from set s
 
 template<typename TYPE, typename CMP>
 using oset = tree<TYPE, null_type, 
