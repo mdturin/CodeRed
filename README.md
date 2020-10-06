@@ -113,6 +113,7 @@ Competetive Programming Algorithms &amp; Data Structure
   - [Matrix Exponential](https://github.com/turin1602101/CodeRed/blob/master/Matrix%20Exponential.cpp)  
   - [Fast Matrix Exponential](https://github.com/turin1602101/CodeRed/blob/master/Fast%20Matrix%20Exponential.cpp)  
   - [Meet In The Middle](https://github.com/turin1602101/CodeRed/blob/master/Meet%20In%20The%20Middle.cpp)  
+  - [Largest Histogram Area](https://github.com/turin1602101/CodeRed/blob/master/Largest%20Histogram%20Area.cpp)
   
  ## Reader _ Debug _ Precode
   - [Fast Reader Simple](https://github.com/turin1602101/CodeRed/blob/master/fast%20reader.cpp)
