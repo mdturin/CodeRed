@@ -67,6 +67,7 @@ Competetive Programming Algorithms &amp; Data Structure
   - [Lexicographically Largest Palindromic Subsequence](https://github.com/turin1602101/CodeRed/blob/master/Lexicographically%20Largest%20Palindromic%20Subsequence.cpp)
   - [String Hashing](https://github.com/turin1602101/CodeRed/blob/master/String%20Hasing.cpp)
   - [String Double Hashing](https://github.com/turin1602101/CodeRed/blob/master/String%20Double%20Hasing.cpp)
+  - [Hashing Comaparator](https://github.com/mdturin/CodeRed/blob/master/Hashing%20Comparator)
   
 ## Data Structure
   - [Bitset](https://github.com/turin1602101/CodeRed/blob/master/Bitset.cpp)
