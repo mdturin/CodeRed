@@ -32,7 +32,7 @@ int LCA(int v, int u){
 int main(){
     /// input graph
 
-    dfs(1, 0);           /// precalculation for lca
+	dfs(1, 0);           /// precalculation for lca
     int lca = LCA(1, 2); /// getting lca from 1 to 2
 
     return 0;
