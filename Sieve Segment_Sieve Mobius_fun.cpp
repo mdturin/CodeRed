@@ -32,11 +32,8 @@ vector<int> prime;
 void LinearSieve(){
     register long long i, j;
     for(i=2, j=0; i<mx; i++, j=0){
-        if(!mark[i]){
-            mark[i] = i;
-            prime.pb(i);
-        }
-        while(j<sz(prime) && prime[j]<=mark[i] && i*prime[j]<mx)
+        if(!mark[i]){mark[i] = i;prime.pb(i);}
+        while(j<(prime.size()) && prime[j]<=mark[i] && i*prime[j]<mx)
             mark[i * prime[j]] = prime[j], j++;
     }
 }
