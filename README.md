@@ -82,7 +82,7 @@ Competetive Programming Algorithms & Data Structure
 - [Factorization Pollard Rho](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Factorization%20Pollard%20Rho.cpp)
 - [Factorization](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Factorization.cpp)
 - [GCD](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/GCD.cpp)
-- [Goldbach’s Conjecture](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Goldbach’s%20Conjecture.cpp)
+- [Goldbachs Conjecture](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Goldbachs%20Conjecture.cpp)
 - [Inverse](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Inverse.cpp)
 - [LCM](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/LCM.cpp)
 - [Linear Diophantine Equation](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Linear%20Diophantine%20Equation.cpp)
