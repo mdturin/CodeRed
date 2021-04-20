@@ -1,50 +1,39 @@
 /** Bismillah, ar-Rahman, ar-Rahim **
 *** Giving up is the only sure way to fail ***
-
     Md. Mujahedul Azad (Turin)
     FB : FB/Md.turin01
     GH : GITHUB/turin1602101
     Hajee Mohammad Danesh Science & Technology University( H S T U ) */
 
 #include<bits/stdc++.h>
+#include<ext/pb_ds/tree_policy.hpp>
+#include<ext/pb_ds/assoc_container.hpp>
 using namespace std;
-#define tplate template<typename T>
-#define uplate template<typename T, typename U>
-
-#pragma GCC target("avx2")
-#pragma GCC optimization("O3")
-#pragma GCC optimization("unroll-loops")
-
-#ifndef ONLINE_JUDGE
-    #include "dbg.hpp"
-#endif // ONLINE_JUDGE
-
-//#include<ext/rope>
-//#include<ext/pb_ds/tree_policy.hpp>
-//#include<ext/pb_ds/assoc_container.hpp>
-//using namespace __gnu_cxx;
-//using namespace __gnu_pbds;
-//
-//#define AT find_by_order // return iterator of index
-//#define POS order_of_key // return position of value
-//tplate struct pbds_cmp{
-//bool operator()(const T &a, const T &b)const{
-//    return a < b;}};
-//
-//uplate using oset = tree<T,null_type,U,rb_tree_tag,
-//                        tree_order_statistics_node_update>;
-
-using ll = long long;
-using ld = long double;
+using namespace __gnu_pbds;
+using ll  = long long;
 using vl  = vector<ll>;
 using vi  = vector<int>;
 using ii  = pair<int,int>;
-using iii = pair<int,ii>;
 using tpl = tuple<int,int,int>;
 
-#define sq(x) ((x)*(x))
-#define cb(x) ((x)*sq(x))
-#define abs(x) ((x)<0?-(x):(x))
+#define IL inline
+#ifndef ONLINE_JUDGE
+    #include "dbg.hpp"
+#endif // ONLINE_JUDGE
+#define TP template<class T>
+#define UP template<class T, class U>
+#define HP template<class H, class...T>
+
+#pragma GCC target("avx,avx2")
+#pragma GCC optimization("O3")
+#pragma GCC optimization("unroll-loops")
+
+/******* PBDS *********/
+#define AT find_by_order // return iterator of index
+#define POS order_of_key // return position of value
+#define ERS(st,x) (st).erase((st).AT((st).POS((x)))) // Erase x value
+TP struct pbds_cmp{bool operator()(const T &a, const T &b)const{return a < b;}};
+UP using oset = tree<T, null_type, U, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define gp ' '
 #define nl '\n'
@@ -56,99 +45,94 @@ using tpl = tuple<int,int,int>;
 #define pb push_back
 #define mp make_pair
 #define mt make_tuple
-#define G(a) get<(a)>
+#define LB lower_bound
+#define UB upper_bound
 #define eb emplace_back
+#define SQ(x) ((x)*1LL*(x))
+#define CB(x) ((x)*SQ((x)))
 #define amax(a,b) a=max(a,b)
 #define amin(a,b) a=min(a,b)
 #define FLUSH fflush(stdout)
-#define all(x) x.begin(),x.end()
-#define Clr(x,sz) memset(x,0,sz)
-#define Set(x,sz) memset(x,-1,sz)
-#define LB(a,v) lower_bound(all(a),v)
-#define UB(a,v) upper_bound(all(a),v)
+#define G(t, a) get<(a)>((t))
+#define all(x) (x).begin(),(x).end()
+#define Clr(x) memset((x),  0, sizeof((x)))
+#define Set(x) memset((x), -1, sizeof((x)))
 #define fileIO(name)\
         freopen(name".in", "r", stdin);\
         freopen(name".out", "w", stdout)
+#define For(i,a,b)  for(int i=a;  i<b; i++)
+#define Forn(i,b,a) for(int i=b; i>=a; i--)
 
-#define Finished ld e_time=runtime
-#define Starting ld s_time=runtime
-#define runtime (double(clock())/CLOCKS_PER_SEC)
-#define getTime cout<<(e_time-s_time)*1e3<<" ms\n"
-#define precision(x) cout<<fixed<<setprecision(x)
+TP IL void read(T &val){
+    val=0; bool neg=0; char ch=gc;
+    while(ch<'0' || ch>'9'){if(ch=='-') neg=1; ch=gc;}
+    while(ch>='0' && ch<='9'){val=(val*10)+(ch-'0'); ch=gc;}
+    if(neg) val=0-val;
+}
+IL bool read(char&); IL bool read(char*);
+IL void write(char); IL void write(char*);
+TP IL bool read(T&); HP IL bool read(H&,T&...);
+IL void write(const char*); HP IL void write(H,T...); TP IL void write(T);
 
-#define For(i,a,b)  for(int i=a; i<b; i++)
-#define Forn(i,a,b) for(int i=b-1; i>=a; i--)
+TP void in(T *a, size_t n){For(i,0,n) read(a[i]);}
+TP void in(vector<T> &a, size_t n){For(i,0,n) read(a[i]);}
+void out(vi  &a, size_t n){For(i,0,n){if(i)pc(gp);write(a[i]);}puts("");}
+void out(int *a, size_t n){For(i,0,n){if(i)pc(gp);write(a[i]);}puts("");}
+void out( ll *a, size_t n){For(i,0,n){if(i)pc(gp);write(a[i]);}puts("");}
+void out( vl &a, size_t n){For(i,0,n){if(i)pc(gp);write(a[i]);}puts("");}
 
 const int INF = 0x3f3f3f3f;
 const ll INFL = 0x7f7f7f7f7f7f7f;
-const int MAX = INT_MAX, MIN = INT_MIN;
 const double EPS = 1e-9, PI = acos(-1);
-const int MOD = 1000000007, FMOD = 998244353;
+const int MOD = 1e9+7, MODF = 998244353;
 
-tplate void read(T &val){val=0;bool neg=0;char ch=gc;
-    while(ch<'0' || ch>'9'){if(ch=='-')neg=1; ch=gc;}
-    while(ch>='0' && ch<='9'){val=(val*10)+(ch-'0');ch=gc;}
-    if(neg)val=0-val;
+/** Necessary Function **/
+TP IL T power(T v, T p, T m=MOD) {
+    v %= m; T r = 1; while (p > 0) {
+        if (p & 0x1) r = (r*1LL*v)%m;
+        v = (v*1LL*v)%m; p >>= 1;
+    }return r;
 }
-tplate inline T gcd(T a, T b){return (b?gcd(b,a%b):a);}
-tplate inline T lcm(T a, T b){return (a/gcd(a,b)*b);}
-tplate inline T add(T a, T b, T c=MOD){return (a%c + b%c)%c;}
-tplate inline T sub(T a, T b, T c=MOD){T r=(a-b)%c; return (r<0)?r+c:r;}
-tplate inline T mul(T a, T b, T c=MOD){return ((1LL*a*b)%c);}
-inline ll mulLL(ll a, ll b, ll m=MOD){
-    if(b<0){b%=m; b+=m;}
-    ll res=0; a%=m; b%=m;
-    while(b>0){if(b & 0x1) res=add(res,a,m);
-        b>>=1; a<<=1; if(a>=m) a-=m;}
-    return res;
-}
-tplate T power(T a, T p, T m=MOD){
-    if(a<0){a%=m; a+=m;} T res = 1;
-    while(p>0){if(p & 0x1) res=mul<T>(res,a,m);
-        p>>=1; a=mul<T>(a,a,m);}
-    return res;
-}
-tplate T inverse(T x, T m=MOD){return power<T>(x,m-2,m);}
+IL void No(){write("NO\n"); exit(0);}
+IL void Yes(){write("YES\n"); exit(0);}
+TP IL T gcd(T a, T b){return (b?gcd(b,a%b):a);}
+TP IL T lcm(T a, T b){return (a / gcd(a,b) * b);}
+TP IL T inv(T x, int m=MOD){return power<T>(x, m-2, m);}
+TP IL T lowestSetBit(T x){return (x & (-x));}
+TP IL void setBit(T &x, int p){x |= (1LL<<p);}
+TP IL T highestSetBit(T x){return (x & (x-1));}
+TP IL bool isSet(T x, int p){return x & (1<<p);}
+TP IL void toggleBit(T &x, int p){x ^= (1LL<<p);}
+TP IL void unsetBit(T &x, int p){x &= (~(1LL<<p));}
+TP IL bool isPowerOfTwo(ll x){return x && (!(x & (x-1)));}
+IL int numberOfSetBit(ll x){return __builtin_popcountll(x);}
 
-tplate void in(T *a, size_t n){For(i,0,n) read(a[i]);}
-tplate void in(vector<T> &a, size_t n){For(i,0,n) read(a[i]);}
-void outI(vi  &a, size_t n){For(i,0,n){if(i)pc(gp);printf("%d",a[i]);} puts("");}
-void outI(int *a, size_t n){For(i,0,n){if(i)pc(gp);printf("%d",a[i]);} puts("");}
-void outL(ll *a, size_t n){For(i,0,n){if(i)pc(gp);printf("%lld",a[i]);}puts("");}
-void outL(vl &a, size_t n){For(i,0,n){if(i)pc(gp);printf("%lld",a[i]);}puts("");}
+/// First 4 Directions are U, D, L, R
+const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
+const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
 
-/// first 4 directions for u, d, l, r
-const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1};  /** king moves */
-const int dy[] = {0, 0, -1, 1, 1, 1, -1, -1};
-const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}; /** knight moves */
-const int ky[] = {1, 2, 2, 1, -1, -2, -2, -1};
+const int mx = 2e6+10;
+const int sqmx = sqrt(mx)+2, lgmx = __lg(mx)+2;
 
-const int mx = 1e6+10;
-const int sqmx = sqrt(mx)+2;
-const int lgmx = __lg(mx)+2;
-
-int n, a[mx];
-
-void MAIN(int cs=1){
-//    printf("Case %d: ", cs);
+char buf[mx]; int n, a[mx];
+inline void solve(int cs){
+//    write("Case ", cs, ": ");
 
 }
 
 int main(){
-
-    precision(10);
-    srand(time( nullptr ));
-
-//    cin.tie( nullptr );
-//    ios_base::sync_with_stdio(0);
-
-    int tc = 1;
-    read(tc);
-    For(i,1,tc+1)
-        MAIN(i);
-
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr); cout.tie(nullptr);
+    cout << fixed << setprecision(20);
+    int tc = 1; srand(time(nullptr));
+//    read(tc);
+    for(int cs=1; cs<=tc; cs++)
+        solve(cs);
     return 0;
 }
 
 /// Fib : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 54
 /// Cat : 1, 1, 2, 5, 14, 42, 132, 429, 1430
+
+char os[100]; IL void write(char c){pc(c);} IL void write(char *s){pf("%s",s);} IL void write(const char *s){pf("%s",s);} HP IL void write(H h, T ...t){write(h);write(t...);} TP IL void write(T x) {if(x==0) {pc('0');return;}int i=0;bool neg=(x<0);if(neg)pc('-'),x=-x;while(x>0) {os[i++]=(x%10)+'0';x/=10;}i--;while(i>=0) pc(os[i--]);}
+IL bool read(char &c) {c=gc;return c!=EOF;} IL bool read(char *s){return scanf("%s",s);} HP IL bool read(H& h, T&... t) {return read(h)&&read(t...);} TP IL bool read(T &val) {val=0;bool neg=0;char ch=gc;while(ch <'0' || ch >'9') {if(ch=='-') neg=1;else if(ch==EOF)return 0;ch=gc;}while(ch>='0' && ch<='9') {val=(val*10)+(ch-'0');ch=gc;}if(neg)val=-val;return 1;}
