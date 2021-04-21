@@ -63,12 +63,6 @@ UP using oset = tree<T, null_type, U, rb_tree_tag, tree_order_statistics_node_up
 #define For(i,a,b)  for(int i=a;  i<b; i++)
 #define Forn(i,b,a) for(int i=b; i>=a; i--)
 
-TP IL void read(T &val){
-    val=0; bool neg=0; char ch=gc;
-    while(ch<'0' || ch>'9'){if(ch=='-') neg=1; ch=gc;}
-    while(ch>='0' && ch<='9'){val=(val*10)+(ch-'0'); ch=gc;}
-    if(neg) val=0-val;
-}
 IL bool read(char&); IL bool read(char*);
 IL void write(char); IL void write(char*);
 TP IL bool read(T&); HP IL bool read(H&,T&...);
