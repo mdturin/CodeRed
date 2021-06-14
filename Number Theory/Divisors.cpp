@@ -109,13 +109,13 @@ inline bool isPrime(ll x){return MillerRabin(x);}
 ll numberOfDivisors2(ll x){
     ll ans = 1LL;
     for(auto p:prime){
-        if(p*p*p>x) break;
+        if(1LL*p*p*p>x) break;
         ll cnt = 1LL;
         while(x%p == 0)
             x /= p, cnt++;
         ans *= cnt;
     }
-    ll y = sqrt(x);
+    ll y = sqrtll(x);
     if(isPrime(x)) ans <<= 1;
     else if(isPrime(y) && (y*y)==x) ans *= 3;
     else if(x != 1) ans <<= 2;
