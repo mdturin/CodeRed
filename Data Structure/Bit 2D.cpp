@@ -15,12 +15,14 @@ private:
             sum += ft[x_][y_];
         return sum;
     }
-    
+
 public:
     T query(int x1, int y1, int x2, int y2){
         ++x1; ++y1; ++x2; ++y2;
         return Q(x2, y2) - Q(x1-1, y2) - Q(x2, y1-1) + Q(x1-1, y1-1);
     }
+
+    T query(int x, int y){return query(x, y, x, y);}
 
     void update(int x, int y, T value){
         for(int x_ = x; x_ <= n; x_ += LSB(x_))
