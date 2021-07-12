@@ -10,10 +10,10 @@ Point Upate
 
 template<typename T> class bit{
 private:
-    size_t n;
-    vector<T> b;
-    int lsb(int x){return (x & -x);}
-    T sum(int i){T res = 0;
+    size_t n; vector<T> b;
+    inline int lsb(int x){return (x & -x);}
+    T sum(int i){
+        T res = 0;
         for(; i; res+=b[i], i-=lsb(i));
         return res;
     }
@@ -34,11 +34,18 @@ public:
 };
 
 int main(){
-    vector<int> v = {0, 1, 2, 3, 4, 5};
+    
+    int n; cin >> n;
+    vector<int> v(n+1);
+    for(int i=1; i<=n; i++)
+        cin >> v[i];
+
     bit<int> b(v);
     cout << b.sum(1, 5) << '\n';
     cout << b.sum(5, 5) << '\n';
+
     b.add(4, 4);
     cout << b.sum(3, 5) << '\n';
+
     return 0;
 }

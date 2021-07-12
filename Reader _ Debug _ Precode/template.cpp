@@ -8,6 +8,7 @@
 #include<bits/stdc++.h>
 #include<ext/pb_ds/tree_policy.hpp>
 #include<ext/pb_ds/assoc_container.hpp>
+
 using namespace std;
 using namespace __gnu_pbds;
 using ll  = long long;
@@ -43,7 +44,6 @@ UP using oset = tree<T, null_type, U, rb_tree_tag, tree_order_statistics_node_up
 #define pc putchar
 #define gc getchar()
 #define pb push_back
-#define mp make_pair
 #define mt make_tuple
 #define LB lower_bound
 #define UB upper_bound
@@ -94,21 +94,23 @@ TP IL T lcm(T a, T b){return (a / gcd(a,b) * b);}
 TP IL T inv(T x, int m=MOD){return power<T>(x, m-2, m);}
 TP IL T lowestSetBit(T x){return (x & (-x));}
 TP IL void setBit(T &x, int p){x |= (1LL<<p);}
-TP IL T highestSetBit(T x){return (x & (x-1));}
+TP IL T highestSetBit(T x){return (1LL<<(__lg(x)));}
 TP IL bool isSet(T x, int p){return x & (1<<p);}
 TP IL void toggleBit(T &x, int p){x ^= (1LL<<p);}
 TP IL void unsetBit(T &x, int p){x &= (~(1LL<<p));}
-TP IL bool isPowerOfTwo(ll x){return x && (!(x & (x-1)));}
+IL bool isPowerOfTwo(ll x){return x && (!(x & (x-1)));}
 IL int numberOfSetBit(ll x){return __builtin_popcountll(x);}
 
 /// First 4 Directions are U, D, L, R
 const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
 const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
 
-const int mx = 2e6+10;
+const int mx = 2e6+5;
 const int sqmx = sqrt(mx)+2, lgmx = __lg(mx)+2;
 
-char buf[mx]; int n, a[mx];
+char buf[mx];
+int n, a[mx];
+
 inline void solve(int cs){
 //    write("Case ", cs, ": ");
 
@@ -119,7 +121,9 @@ int main(){
     cin.tie(nullptr); cout.tie(nullptr);
     cout << fixed << setprecision(20);
     int tc = 1; srand(time(nullptr));
+
 //    read(tc);
+
     for(int cs=1; cs<=tc; cs++)
         solve(cs);
     return 0;
