@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Python
+*.py
+
+# Gitignore
+*.gitignore
