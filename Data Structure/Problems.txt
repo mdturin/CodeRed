@@ -1,0 +1,48 @@
+## Binary Indexed Tree - (BIT)
+
+    http://www.spoj.com/problems/ADABEHIVE/                 //[2D]
+    http://www.spoj.com/problems/ADACABAA/                  //[2D][Sparse]
+    https://codeforces.com/contest/1191/problem/F           //[NICE][SORTING]Or similar DS
+    https://codeforces.com/gym/102001/problem/H             //[NICE][GREEDY]
+    https://toph.co/p/easy-prime                            //[EASY][SIEVE]
+    https://toph.co/p/mario-and-princess-peach              //[NICE][DP][SEGMENT TREE][MAX]
+    http://codeforces.com/gym/101628/problem/B              //[NICE][SPARSE][STL]
+    http://codeforces.com/gym/100112                        //[NICE][INVERSION][OBSERVATION]
+    http://codeforces.com/gym/101982                        //[VERY NICE][INVERSION][OBSERVATION]
+    http://codeforces.com/gym/101908/problem/C              //[MATH][INVERSION]
+    http://codeforces.com/gym/101889                        //[NICE] normalize
+    DevSkills-422: Double Pairs                             //[NICE] normalize
+    7591 — Distribution Center                              //[NICE][SORTING]
+    http://codeforces.com/contest/903/problem/D             //[NICE][BIG]
+    http://codeforces.com/contest/102/problem/D             //[NICE][+DP][NORMALIZE]
+    http://codeforces.com/gym/101047/problem/J              //[2D]
+    http://www.spoj.com/problems/MATSUM/                    //[2D]
+    https://www.hackerearth.com/practice/data-structures/advanced-data-structures/fenwick-binary-indexed-trees/practice-problems/algorithm/counting-in-byteland/ [3D]
+    https://devskill.com/CodingProblems/ViewProblem/300
+    http://codeforces.com/contest/707/problem/E             //[2D]
+    http://codeforces.com/contest/749/problem/E
+    http://codeforces.com/problemset/gymProblem/101055/D    //[2D]
+    11240 - UVA
+    http://codeforces.com/contest/459/problem/D             //[NICE][SWEEPING]
+    http://codeforces.com/contest/61/problem/E              //[NICE][CLASSICAL][2*FW][NORMALIZE]
+    http://codeforces.com/contest/669/problem/E             //fenwicks — sparse
+    http://codeforces.com/contest/777/problem/E             //MAXIMUM
+    http://www.spoj.com/problems/TULIPNUM/                  //inc — 1 nor+num|sum(A[B],A[E])
+    http://codeforces.com/contest/799/problem/C             //MAX FW (but possibly easier?)
+    http://codeforces.com/contest/831/problem/E             //MAP to get ORDER — FW == LIST
+    http://www.spoj.com/problems/SAS001/                    //Nice — number of inversions + 2P
+    http://www.spoj.com/problems/TPGA/                      //NICE — Lesser*(N-i-1)!
+    http://www.spoj.com/problems/SGIFT/                     //BS works too
+    http://www.spoj.com/problems/SUMSUM/                    //Bit-by-Bit cnt 0/1
+    http://www.spoj.com/problems/AKVQLD03/                  //Classical fenwick — easy
+    http://www.spoj.com/problems/ZIGZAG2/                   //Very nice — FW + BS + DP
+    http://codeforces.com/contest/849/problem/E             //2D Fenwick / ST+TP [NICE]
+    http://www.spoj.com/problems/CRAYON/                    //VERY NICE [2*FW — begin + end]
+    http://www.spoj.com/problems/NITT8/                     //Norm. + Store indices in MAX-Fenwick [REVERSE] [VERY NICE]
+    http://www.spoj.com/problems/DCEPC705/                  //NICE! Sort + Fenwick
+    http://www.spoj.com/problems/DCEPC206/                  //NICE & EASY
+    http://www.spoj.com/problems/KOPC12G/                   //N Fenwick trees
+    http://www.spoj.com/problems/TRIPINV/                   //2xFenwick (triples counting)
+    http://codeforces.com/contest/597/problem/C             //[VERY NICE] 11*Fenwick
+    http://codeforces.com/contest/12/problem/D              //NICE [triplet-comparing][sort]
+    https://www.spoj.com/problems/NARHIL                    //Sugested by ak07_

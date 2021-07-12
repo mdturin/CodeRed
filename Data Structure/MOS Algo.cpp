@@ -12,8 +12,7 @@ struct node{
     node(int _l, int _r, int _p):
         l(_l), r(_r), p(_p){}
     bool operator < (const node &ot){
-        if(l/blk != ot.l/blk)
-            return l < ot.l;
+        if(l/blk != ot.l/blk) return l < ot.l;
         return (bool)((r<ot.r) ^ ((l/blk)&1));
     }
 }qq[qmx];
