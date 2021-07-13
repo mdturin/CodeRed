@@ -3,7 +3,7 @@ using namespace std;
 
 int n, BLK, a[100], b[10];
 void build(){
-    BLK = (int)sqrt(n+.0)+1; // make it const
+    BLK = (int)sqrt(n) + 1;
     for (int i=0; i<n; ++i)
         b[i / BLK] += a[i];
 }
@@ -22,6 +22,4 @@ int query(int l, int r){
     return sum;
 }
 
-int main(int argc, const char** argv) {
-    return 0;
-}
+int main(){return 0;}

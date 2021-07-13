@@ -42,7 +42,9 @@ int main(){
     cin >> n;
     for(int i=0; i<n; i++)
         cin >> a[i];
+        
     build(1, 0, n-1);
+
     int u, v; cin >> q;
     while(q--){
         cin >> u >> v; u--; v--;

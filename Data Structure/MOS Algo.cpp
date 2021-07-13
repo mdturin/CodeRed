@@ -34,9 +34,10 @@ int main(){
 
     cin >> q;
     for(int l,r,i=0; i<q; i++){
-        cin >> l >> r;
-        qq[i] = node(l-1, r-1, i);
+        cin >> l >> r; --l; --r;
+        qq[i] = node(l, r, i);
     }
+
     sort(qq, qq+q);
 
     int cl=0, cr=0;

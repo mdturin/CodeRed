@@ -5,7 +5,7 @@ const int mod = 1e9 + 7;
 const int mx  = 1e5+5;
 
 #define left(p)  (p<<1)
-#define right(p) (p<<1)+1
+#define right(p) (p<<1|1)
 #define mid(l,r) (l+(r-l)/2)
 
 int n, q, a[mx];
@@ -27,8 +27,7 @@ void updateLazy(int p, int l, int r){
 	if(l != r){
 		lazy[left(p)] += lazy[p];
 		lazy[right(p)] += lazy[p];
-	}
-	lazy[p] = 0;
+	}lazy[p] = 0;
 }
 
 void update(int p, int l, int r, int i, int j, int v){
@@ -61,7 +60,8 @@ int main(){
     build(1, 0, n-1);
     cin >> q;
     while(q--){
-        int u, v, w; cin >> u >> v >> w; u--; v--;
+        int u, v, w; 
+		cin >> u >> v >> w; u--; v--;
         update(1, 0, n-1, u, v, w);
     }
     cin >> q;

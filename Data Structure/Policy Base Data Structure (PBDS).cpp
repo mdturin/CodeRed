@@ -5,23 +5,19 @@
 using namespace std;
 using namespace __gnu_pbds;
 
-#define AT 		find_by_order 				/// return index pointer
-#define POS 		order_of_key 				/// return value of index
-#define ERS(s,x)    	(s).erase((s).AT((s).POS(x)))      	/// erase x from set s
+#define AT          find_by_order 				        /// return index pointer
+#define POS         order_of_key 				        /// return value of index
+#define ERS(s,x)    (s).erase((s).AT((s).POS(x)))      	/// erase x from set s
 
 template<typename TYPE, typename CMP>
-using oset = tree<TYPE, null_type, 
-             CMP, rb_tree_tag, 
+using oset = tree<TYPE, null_type, CMP, rb_tree_tag, 
              tree_order_statistics_node_update>;
 
-template<typename TYPE>
-struct cmp{
-    bool operator()(const TYPE &a, const TYPE &b)
-        const{
-            return a.c > b.c;
-            /// change according to your 
-            /// data type and compare function
-        }  
+template<typename TYPE> struct cmp{
+    bool operator()(const TYPE &a, const TYPE &b)const{
+        return a.c > b.c;
+        /// change according to your data type and compare function
+    }  
 };
 
 void example0(){

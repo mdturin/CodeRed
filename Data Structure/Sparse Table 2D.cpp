@@ -10,7 +10,11 @@ ll n, m;
 ll a[mx][mx];
 
 ll st[mx][mx][K][K];
-ll fun(ll u, ll v){return u+v;}
+
+inline ll fun(ll u, ll v){
+    return u+v;
+}
+
 void build(){
     for(int ki=0; (1<<ki)<=n; ki++)
     for(int kj=0; (1<<kj)<=m; kj++)
