@@ -136,3 +136,63 @@
     http://www.spoj.com/problems/PERMPATT/                  //NICE [minimum][+IDEA]
     http://codeforces.com/contest/869/problem/E             //NICE — 2D [random][XOR]
     http://codeforces.com/contest/19/problem/D              //NICE [+BS][+SET] {bs not necessary}
+
+
+## Segment Tree (Persistent)
+    http://codeforces.com/contest/893/problem/F             //[VERY NICE][EULER TOUR]
+    http://codeforces.com/contest/813/problem/E             //Easy but hard data structure
+    https://codeforces.com/contest/893/problem/F            //Suggested by phibrain
+
+
+## Union Find Disjoint Set (UFDS)
+    http://www.spoj.com/problems/ADABRANC/
+    https://www.spoj.com/problems/CONSEC/                   //[NICE][OFFLINE]
+    https://codeforces.com/gym/102006/problem/C             //[NICE][BRUTE-FORCE]
+    http://codeforces.com/gym/101962/problem/J              //[VERY NICE][TREE-FAT][SPARSE]
+    http://codeforces.com/contest/915/problem/F             //[VERY NICE][SORTING]
+    http://codeforces.com/contest/141/problem/E             //[NICE][SPANNIG TREE]
+    7903 — Pandaria                                         //[VERY NICE][DSU][SORTING][MERGE][DFS]
+    http://codeforces.com/contest/110/problem/E             //[NICE][COMBINATORICS][TREE]
+    http://codeforces.com/contest/90/problem/E              //[NICE][DSU-LIKE-LINKS][SIMULATION]
+    http://codeforces.com/contest/87/problem/D              //[VERY NICE][SORTING][COMPRES][DFS]
+    http://codeforces.com/contest/884/problem/E             //[VERY NICE][MEMORY SPARSE]
+    http://codeforces.com/contest/60/problem/D              //[NICE][Pythagorean Triples][Gen over max!]
+    UVA 10947
+    UVA 12363
+    LA 3833
+    http://codeforces.com/problemset/problem/742/D          //+DP
+    UVA 10178
+    http://codeforces.com/contest/723/problem/F
+    13153 UVA 
+    13169 UVA 
+    11987 UVA 
+    11474 UVA
+    http://www.spoj.com/problems/BTCODE_G/
+    http://codeforces.com/problemset/problem/691/D
+    Gym 101174K [2016-2017 ACM-ICPC Southwestern European Regional Programming Contest (SWERC 2016)]
+    UVA 10583
+    LightOJ 1003
+    http://codeforces.com/problemset/problem/731/C
+    UVA 793
+    UVA 11966
+    https://www.codechef.com/problems/COZIC
+    3939 [LA]
+    UVA 11503
+    http://codeforces.com/problemset/problem/755/C
+    UVA 1395
+    http://codeforces.com/contest/687/problem/D
+    http://codeforces.com/contest/680/problem/E             //+precalculation/brute force
+    http://codeforces.com/contest/766/problem/D
+    http://www.spoj.com/problems/LEXSTR/                    //Nice na stringu
+    http://codeforces.com/contest/805/problem/C             //NICE (dijkstra like :P)
+    http://www.spoj.com/problems/IITKWPCI/                  //VERY NICE
+    http://www.spoj.com/problems/FRNDCIRC                   //Classical DSU (NICE for practice)
+    http://www.spoj.com/problems/FOXLINGS/                  //Easy — just renumbering
+    http://www.spoj.com/problems/NITTROAD/                  //Process from back
+    http://www.spoj.com/problems/SHAHBG/                    //DSU not needes (simulated by array)
+    http://codeforces.com/contest/598/problem/D             //Can be solved with DFS too
+    http://codeforces.com/contest/9/problem/E               //Making one big cycle
+    http://codeforces.com/contest/25/problem/D              //Could be done linear too
+    http://codeforces.com/contest/28/problem/B              //NICE [imho bad statement]
+    http://codeforces.com/contest/876/problem/D             //DSU adjacent + visited
+    http://codeforces.com/contest/875/problem/F             //NICE — Maximum cactus-forest [kruskal-like]
