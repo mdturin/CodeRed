@@ -1,5 +1,4 @@
 ## Binary Indexed Tree - (BIT)
-
     http://www.spoj.com/problems/ADABEHIVE/                 //[2D]
     http://www.spoj.com/problems/ADACABAA/                  //[2D][Sparse]
     https://codeforces.com/contest/1191/problem/F           //[NICE][SORTING]Or similar DS
@@ -46,3 +45,94 @@
     http://codeforces.com/contest/597/problem/C             //[VERY NICE] 11*Fenwick
     http://codeforces.com/contest/12/problem/D              //NICE [triplet-comparing][sort]
     https://www.spoj.com/problems/NARHIL                    //Sugested by ak07_
+
+
+## MOS algorithm problems
+    http://www.spoj.com/problems/ADAUNIQ/                   //[Updates]
+    http://www.spoj.com/problems/ADANUM/
+    http://www.spoj.com/problems/ADAPEAR/
+    http://www.spoj.com/problems/ADAPHONE/
+    https://www.spoj.com/problems/MOZHSLS/                  //[VERY NICE]
+    http://www.spoj.com/problems/ADAFTBLL/                  //[Tree][Updates]
+    http://codeforces.com/gym/101879/problem/H              //[NICE][CLASSICAL][FREQUENCIES][FENWICK][BS]
+    http://www.spoj.com/problems/FREQUENT/
+    http://codeforces.com/contest/86/problem/D              //[NICE][CLASSICAL]
+    http://codeforces.com/contest/877/problem/F             //[NICE][NORMALIZE]
+    http://codeforces.com/problemset/problem/687/D
+    http://codeforces.com/problemset/problem/617/E
+    http://www.spoj.com/problems/DCEPCA09/
+    http://www.spoj.com/problems/COT2/
+    https://www.codechef.com/problems/DISTNUM3              //Tree + Update
+    https://toph.ws/p/distinct-dishting                     //Not sure if still working??
+    https://www.codechef.com/problems/CHEFNUMK
+    https://www.hackerearth.com/problem/algorithm/harry-gets-into-infy-1/description/
+    http://www.spoj.com/problems/COT/                       //ON TREE [but very tight TLE]
+    http://www.spoj.com/problems/GOT/                       //ON TREE
+    http://www.spoj.com/problems/CPAIR2/                    //MO + Fenwick [VERY NICE]
+    http://www.spoj.com/problems/HRSIAM/                    //With updates
+    http://www.spoj.com/problems/KDOMINO/                   //NICE — Frequencies
+
+
+## Segment Tree
+    http://www.spoj.com/problems/ADABERRY/                  //[+TREAP]
+    https://codeforces.com/contest/1180/problem/E           //[VERY NICE]
+    https://codeforces.com/contest/1187/problem/D           //[VERY NICE][GREEDY][STACK]
+    https://toph.co/p/maintain-the-queue                    //[NICE][QUEUE]
+    http://codeforces.com/gym/101992/problem/L              //[VERY NICE]
+    http://codeforces.com/gym/101982 F                      //[SWEEP][NORMALIZE][NICE][XOR]
+    http://codeforces.com/gym/101962/problem/I              //[BS]
+    http://codeforces.com/gym/101801 G                      //Two ST [SEQUENCE]
+    http://codeforces.com/gym/101879/problem/G              //Merge / Special
+    http://codeforces.com/gym/101741/problem/J              //[NICE][COMBINATORICS]
+    http://codeforces.com/contest/914/problem/D             //[NICE][GCD][LOG]
+    http://codeforces.com/contest/915/problem/E             //[VERY NICE][UNLIMITED]
+    http://codeforces.com/contest/145/problem/E             //[NICE]//Bit swap + subsequence
+    http://www.spoj.com/problems/ADAGF/
+    http://www.spoj.com/problems/ADATREE/
+    http://codeforces.com/contest/911/problem/G             //Segment tree over queries
+    http://codeforces.com/contest/895/problem/E             //[PRECISION]
+    http://codeforces.com/contest/52/problem/C              //Easy [MIN]+[INCREASE]
+    http://codeforces.com/contest/56/problem/E              //[NICE][NORMALIZE][MAX]
+    http://codeforces.com/contest/877/problem/E             //[VERY NICE][EULER TOUR TREE]
+    https://devskill.com/CodingProblems/ViewProblem/283
+    https://devskill.com/CodingProblems/ViewProblem/315
+    http://codeforces.com/problemset/problem/756/C
+    http://codeforces.com/contest/739/problem/C 
+    http://codeforces.com/contest/718/problem/C 
+    http://codeforces.com/contest/750/problem/E 
+    http://codeforces.com/contest/759/problem/C 
+    11165 UVA
+    http://codeforces.com/contest/763/problem/E             //VERY NICE — [non-trivial]
+    http://www.spoj.com/problems/BGSHOOT/                   //normalize — then easy
+    http://www.spoj.com/problems/KGSS/ 
+    http://codeforces.com/contest/765/problem/F             //VERY NICE — CASCADE
+    http://www.spoj.com/problems/GSS1/                      //Idea — then easy
+    http://www.spoj.com/problems/KQUERYO/                   //Seg-tree of vectors
+    http://codeforces.com/contest/633/problem/G             //EulerTree+Seg+Bitset
+    http://www.spoj.com/problems/NAJ0001/                   //10^8 int — memory (and worked)
+    http://www.spoj.com/problems/PRMQUER/                   //2 segment trees + sieve
+    http://www.spoj.com/problems/EC_DIVS/                   //dunno if intended
+    http://www.spoj.com/problems/DCEPC11I/                  //NICE — 1,2,3,4,5,.. inc
+    http://www.spoj.com/problems/QUE2/                      //kth number
+    http://codeforces.com/contest/785/problem/E             //Seg+Treap [and faster]
+    http://codeforces.com/contest/786/problem/B             //+Dijkstra
+    13183 UVA                                               //Merge-Sort-Tree [dunno]
+    http://codeforces.com/contest/121/problem/E             //Dunno — done by vectorisation
+    http://codeforces.com/contest/803/problem/G             //VERY NICE!! — ST 10^9 + ST/RMQ 10^5
+    http://codeforces.com/contest/794/problem/F             //Digit by digit! (N*log(N)*100 )
+    http://codeforces.com/contest/811/problem/E             //VERY NICE — DSU (easier Timofey + animals)
+    http://codeforces.com/contest/817/problem/F             //10^18 + MEX ~~ NICE yet problematic
+    http://codeforces.com/contest/816/problem/B             //Or offline trick makes it easier
+    http://codeforces.com/contest/834/problem/D             //+Dynamic Programming | NICE
+    http://www.spoj.com/problems/SBO/                       //preLast→ last (-1), last→ now (+1) — VERY NICE
+    http://www.spoj.com/problems/GOODE/                     //NICE: Inversion + L-Mex
+    http://www.spoj.com/problems/CNTPRIME/                  //ST+Sieve (short range)
+    http://www.spoj.com/problems/SEGSQRSS/                  //NICE {weak data} ~~ SQRT works too
+    http://www.spoj.com/problems/MON2012/                   //NICE [Online][10^9 Range]
+    http://www.spoj.com/problems/PARSUMS/                   //But other approaches work too
+    http://www.spoj.com/problems/THRBL/                     //Simple SA — maximum on range <= A[a]
+    http://www.spoj.com/problems/HORRIBLE/                  //Totally classical
+    http://www.spoj.com/problems/MULTQ3/                    //NICE (interesting operation)
+    http://www.spoj.com/problems/PERMPATT/                  //NICE [minimum][+IDEA]
+    http://codeforces.com/contest/869/problem/E             //NICE — 2D [random][XOR]
+    http://codeforces.com/contest/19/problem/D              //NICE [+BS][+SET] {bs not necessary}
