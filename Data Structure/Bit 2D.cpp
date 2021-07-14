@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-template<typename T> 
+template<typename T>
 class FenwickTree2D{
-private: 
+private:
     int n, m; vector<vector<T>> ft;
 
     inline int LSB(int x){return x & (-x);}
@@ -25,6 +25,7 @@ public:
     T query(int x, int y){return query(x, y, x, y);}
 
     void update(int x, int y, T value){
+        ++x; ++y;
         for(int x_ = x; x_ <= n; x_ += LSB(x_))
         for(int y_ = y; y_ <= m; y_ += LSB(y_))
             ft[x_][y_] += value;
@@ -34,6 +35,7 @@ public:
         ft.assign(_n+5, vector<T>(_m+5, 0));
     }
 };
+
 
 int main(){
     int n, m, x, q;
