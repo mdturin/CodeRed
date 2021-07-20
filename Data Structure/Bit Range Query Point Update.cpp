@@ -21,7 +21,7 @@ public:
         b.resize(n+5, 0);}
 
     T sum(int l, int r){
-	    if(l > r) return 0;
+        if(l > r) return 0;
         return sum(r+1) - sum(l);
     }
 
