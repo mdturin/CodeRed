@@ -21,7 +21,9 @@ public:
         b.resize(n+5, 0);}
 
     T sum(int l, int r){
-        return sum(r+1) - sum(l);}
+	    if(l > r) return 0;
+        return sum(r+1) - sum(l);
+    }
 
     void add(int i, T v){
         for(++i; i<=n; i+=lsb(i))
