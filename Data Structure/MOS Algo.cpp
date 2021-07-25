@@ -30,6 +30,9 @@ struct node{
     }
     bool operator < (const node &ot){
         return ord < ot.ord;
+        // if(l/blk != ot.l/blk)
+        //     return l < ot.l;
+        // return r < ot.r;
     }
 }qq[mx];
 
@@ -38,9 +41,22 @@ void add(int x){
     cnt[ a[x] ]++;
 }
 
-void remove(int x){
+void del(int x){
     cnt[ a[x] ]--;
     if(!cnt[ a[x] ]) ans--;
+}
+
+void compute(){
+    sort(qq, qq+q); ans = 0;
+    int cl=qq[0].l, cr=qq[0].l-1;
+    for(int l,r,i=0; i<q; i++){
+        l = qq[i].l, r = qq[i].r;
+        while(cl < l) del(cl++);
+        while(cl > l) add(--cl);
+        while(cr < r) add(++cr);
+        while(cr > r) del(cr--);
+        res[ qq[i].p ] = ans;
+    }
 }
 
 int main(){
@@ -54,17 +70,7 @@ int main(){
         qq[i] = node(l, r, i);
     }
 
-    sort(qq, qq+q);
-
-    int cl=0, cr=0;
-    for(int l,r,i=0; i<q; i++){
-        l = qq[i].l, r = qq[i].r;
-        while(cl < l) remove(cl++);
-        while(cl > l)    add(--cl);
-        while(cr<= r)    add(cr++);
-        while(cr>r+1) remove(--cr);
-        res[qq[i].p] = ans;
-    }
+    compute();
 
     for(int i=0; i<q; i++)
         cout << res[i] << '\n';
