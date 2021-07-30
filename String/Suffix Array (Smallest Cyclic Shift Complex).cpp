@@ -10,8 +10,8 @@ const int lgn= __lg(mx)+5;
 string s; int n;
 int par[lgn][mx];
 int sa[mx], lcp[mx];
-
 int tpar[mx], tsa[mx], cnt[mx];
+
 void build(){
 
     s+="$"; n=s.size();
@@ -73,6 +73,26 @@ int LCP(int i, int j){
         if(par[k][i] == par[k][j])
             ans+=v, i+=v, j+=v;
     return ans;
+}
+
+int lower_bound(int idx, int len){
+    int lw = 1, hh = s.size() - 1, ans = 0;
+    while(lw <= hh){
+        int mid = (lw + hh) / 2;
+        if(compare(sa[mid], idx, len) >= 0)
+            ans = mid, hh = mid - 1;
+        else lw = mid + 1;
+    }return ans;
+}
+
+int upper_bound(int idx, int len){
+    int lw = 1, hh = s.size() - 1, ans = 0;
+    while(lw <= hh){
+        int mid = (lw + hh) / 2;
+        if(compare(sa[mid], idx, len) <= 0)
+            ans = mid + 1, lw = mid + 1;
+        else hh = mid - 1;
+    }return ans;
 }
 
 int main(int argc, const char** argv) {
