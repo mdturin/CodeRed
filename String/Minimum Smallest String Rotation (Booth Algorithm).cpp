@@ -9,9 +9,7 @@ const int mod = 1e9+7;
 const double eps = 1e-8;
 const int INF = 0x3f3f3f3f;
 
-/// minimum smallest string rotation
-
-/// booth algorithm
+// minimum smallest string rotation (booth algorithm)
 int boothAlgo(string &s){
     s += s; int k = 0;
     vector<int> f(s.size(), -1);
@@ -22,14 +20,11 @@ int boothAlgo(string &s){
             if(sj < s[k+i+1])
                 k = j - i - 1;
             i = f[i];
-        }
-        if(sj != s[k+i+1]){
+        }if(sj != s[k+i+1]){
             if(sj < s[k]) k = j;
             f[j - k] = -1;
-        }
-        else f[j - k] = i + 1;
-    }
-    return k;
+        }else f[j - k] = i + 1;
+    }return k;
 }
 
 int main(){
