@@ -1,10 +1,3 @@
-/** Bismillah, ar-Rahman, ar-Rahim **
-*** Giving up is the only sure way to fail ***
-    Md. Mujahedul Azad (Turin)
-    FB : FB/Md.turin01
-    GH : GITHUB/turin1602101
-    Hajee Mohammad Danesh Science & Technology University( H S T U ) */
-
 #include<bits/stdc++.h>
 #include<ext/pb_ds/tree_policy.hpp>
 #include<ext/pb_ds/assoc_container.hpp>
@@ -18,9 +11,6 @@ using ii  = pair<int,int>;
 using tpl = tuple<int,int,int>;
 
 #define IL inline
-#ifndef ONLINE_JUDGE
-    #include "dbg.hpp"
-#endif // ONLINE_JUDGE
 #define TP template<class T>
 #define UP template<class T, class U>
 #define HP template<class H, class...T>
