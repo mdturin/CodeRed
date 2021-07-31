@@ -11,6 +11,8 @@ struct state{
     int len,link,fpos;
     map<char, int>next;
 } st[mx << 1];
+
+vector<int> vec[mx<<1];
 int sz, last, cnt[mx<<1];
 
 inline void sa_extend(char c){
@@ -43,12 +45,45 @@ inline void build(string &s){
         sa_extend(s[i]);
 }
 
+void countHelper(int n){ /// string size
+    for(int i=sz-1; i>0; i--)
+        vec[st[i].len].push_back(i);
+    for(int i=n; i>0; i--){
+        for(int p : vec[i]){
+            if(st[p].link == -1) continue;
+            cnt[st[p].link] += cnt[p];
+            st[st[p].link].fpos = max(
+                st[p].fpos,
+                st[st[p].link].fpos
+            );
+        }vec[i].clear();
+    }
+}
+
+int First_Occurence(string &pat){
+    int u = 0;
+    for(int i=0; i<pat.size(); i++){
+        if(!st[u].next[pat[i]])
+            return -1;
+        u = st[u].next[pat[i]];
+    }return st[u].fpos - pat.size() + 1;
+}
+
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie( nullptr );
 
-    string s = "abcdef";
+    string s = "abcdeabcdef";
+
     build(s);
+    countHelper(s.size());
+
+    int q; cin >> q; while(q--){
+        string pat; cin >> pat;
+        cout << First_Occurence(pat) << "\n";
+    }
 
     return 0;
 }
+
+

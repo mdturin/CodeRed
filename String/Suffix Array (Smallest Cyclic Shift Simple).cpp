@@ -39,20 +39,18 @@ void build(){
             pii cur = {c[sa[i]],   c[(sa[i]   + k)%n]};
             pii pre = {c[sa[i-1]], c[(sa[i-1] + k)%n]};
             if(cur != pre) cls++; 
-        }
-        for(int i=0; i<n; i++) c[i] = cn[i];
+        }for(int i=0; i<n; i++) c[i] = cn[i];
     }
 }
 
 void buildLCP(){
     memset(lcp, 0, mx<<2);
-    register int i, j = 0;
     for(int i=0; i<n; i++) pn[sa[i]] = i;
-    for(int i=0; i<n; i++){
+    for(int i=0, j=0; i<n; i++){
         if(pn[i]==n-1){j=0; continue;}
         int k = sa[pn[i] + 1];
         while(i+j<n && j+k<n && s[i+j]==s[j+k]) j++;
-        lcp[ pn[i] ] = j; if( j ) j--;
+        lcp[ pn[i]+1 ] = j; if( j ) j--;
     }
 }
 

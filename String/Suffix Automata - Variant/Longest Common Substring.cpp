@@ -43,12 +43,28 @@ inline void build(string &s){
         sa_extend(s[i]);
 }
 
+string Longest_Common_Substring(string &pat){
+    int u, l, ans, pos;
+    u = l = ans = pos = 0;
+    for(int i=0; i<pat.size(); i++){
+        while(u && !st[u].next.count(pat[i]))
+            u = st[u].link, l = st[u].len;
+        if(st[u].next.count(pat[i]))
+            u = st[u].next[pat[i]], l++;
+        if(l > ans) ans = l, pos = i;
+    }return pat.substr(pos-ans+1, ans);
+}
+
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie( nullptr );
 
-    string s = "abcdef";
+    string s = "hello_helloworld";
+    string p = "gelloword";
+
     build(s);
+    cout << Longest_Common_Substring(p) << "\n";
 
     return 0;
 }
+

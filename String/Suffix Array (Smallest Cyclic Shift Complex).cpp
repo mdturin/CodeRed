@@ -40,20 +40,18 @@ void build(){
             x = {par[k][sa[i]],   par[k][(sa[i]   + (1<<k))%n]};
             y = {par[k][sa[i-1]], par[k][(sa[i-1] + (1<<k))%n]};
             if(x != y) cls++;
-        }
-        for(i=0; i<n; i++) par[k+1][i] = tpar[i];
+        }for(i=0; i<n; i++) par[k+1][i] = tpar[i];
     }
 }
 
 void buildLCP(){
     memset(lcp, 0, mx<<2);
-    register int i, j = 0;
     for(int i=0; i<n; i++) tpar[sa[i]] = i;
-    for(int i=0; i<n; i++){
+    for(int i=0, j=0; i<n; i++){
         if(tpar[i]==n-1){j=0; continue;}
         int k = sa[tpar[i] + 1];
         while(i+j<n && j+k<n && s[i+j]==s[j+k]) j++;
-        lcp[ tpar[i] ] = j; if( j ) j--;
+        lcp[ tpar[i]+1 ] = j; if( j ) j--;
     }
 }
 

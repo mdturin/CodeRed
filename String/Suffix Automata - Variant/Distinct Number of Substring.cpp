@@ -11,6 +11,8 @@ struct state{
     int len,link,fpos;
     map<char, int>next;
 } st[mx << 1];
+
+int dss[mx<<1];
 int sz, last, cnt[mx<<1];
 
 inline void sa_extend(char c){
@@ -43,12 +45,24 @@ inline void build(string &s){
         sa_extend(s[i]);
 }
 
+/** Function returns the number of distinct
+    substring with empty string */
+
+int Distinct_Number_Of_Substring(int u){
+    if(dss[u]) return dss[u];
+    dss[u] = 1;
+    for(auto p : st[u].next)
+        dss[u] += Distinct_Number_Of_Substring(p.second);
+    return dss[u];
+}
+
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie( nullptr );
 
-    string s = "abcdef";
-    build(s);
+    string s = "abcdef"; build(s);
+    cout << Distinct_Number_Of_Substring(0) << "\n";
 
     return 0;
 }
+
