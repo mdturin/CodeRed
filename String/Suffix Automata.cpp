@@ -1,11 +1,11 @@
 #include "bits/stdc++.h"
 using namespace std;
-#define rint register int
+using ii = pair<int,int>;
 
 #define ff first
 #define se second
-const int mx = 1e5+5;
-using ii = pair<int,int>;
+
+const int mx = 1e5 + 5;
 
 struct state {
     int len,link,fpos;
@@ -39,18 +39,18 @@ void sa_extend(char c) {
 
 vector<int> vec[mx];
 void build(string &s){
-    for(rint i=0; i<sz; i++) 
+    for(int i=0; i<sz; i++) 
         cnt[i]=0, st[i].next.clear();
 
     st[0] = {0,-1}; sz = 1; last = 0;
-    for(rint i=0; i<s.size(); i++) 
+    for(int i=0; i<s.size(); i++) 
         sa_extend(s[i]);
 }
 
 void countHelper(int n){ /// string size
-    for(rint i=sz-1; i>0; i--)
+    for(int i=sz-1; i>0; i--)
         vec[ st[i].len ].push_back(i);
-    for(rint i=n; i>0; i--){
+    for(int i=n; i>0; i--){
         for(int p : vec[i]){
             if(st[p].link == -1) continue;
             cnt[st[p].link] += cnt[p];
@@ -93,7 +93,7 @@ void buildSuffixArray(string s){
     build(s); s += "$"; n = s.size(); 
     
     sa_extend('#');
-    for(rint i=0; i<s.size(); i++)
+    for(int i=0; i<s.size(); i++)
         sa_extend(s[i]);
     
     dfs(0, n);
@@ -139,8 +139,7 @@ int kthSubString(int u, int k){
             kthSubString(p.se, k-1);
             return 1;
         }
-    }
-    return 0;
+    }return 0;
 }
 
 int kthSubString2(int k){
@@ -157,8 +156,7 @@ int kthSubString2(int k){
         }
         kthSub.push_back(i);
         k--; u = st[u].next[i];
-    }
-    return 1;
+    }return 1;
 }
 
 int smallestCyclicShift(string &s){
@@ -178,9 +176,11 @@ int smallestCyclicShift(string &s){
 
 int firstOccur(string s, string p){
     build(s); int u = 0;
-    for(int i=0; i<p.size(); i++)
+    for(int i=0; i<p.size(); i++){
+        if(!st[u].next[p[i]])
+            return -1;
         u = st[u].next[p[i]];
-    return st[u].fpos - p.size() + 1;
+    }return st[u].fpos - p.size() + 1;
 }
 
 int numOfOccur(string s, string p){
@@ -188,9 +188,11 @@ int numOfOccur(string s, string p){
     countHelper(s.size());
 
     int u = 0;
-    for(int i=0; i<p.size(); i++)
+    for(int i=0; i<p.size(); i++){
+        if(!st[u].next[p[i]])
+            return 0;
         u = st[u].next[p[i]];
-    return cnt[u];
+    }return cnt[u];
 }
 
 string lcs(string s, string p){
