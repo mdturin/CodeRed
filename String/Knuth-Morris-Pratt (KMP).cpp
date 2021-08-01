@@ -1,6 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/**
+    PI Table return array which indicates lengths of
+    longest proper prefix which is also suffix
+    For the pattern “AABAACAABAA”, 
+    return : [0, 1, 0, 1, 2, 0, 1, 2, 3, 4, 5]
+*/
+
 vector<int> get_pi_tabel(string &pat){
     int n = pat.size();
     vector<int> pi(n, 0);
