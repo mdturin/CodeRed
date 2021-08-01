@@ -130,10 +130,24 @@ vector<PLL> hashList(string s) {
     return ans;
 }
 
+vector<PLL> hashListRec(string s) {
+    int n = s.size();
+    vector<PLL> ans(n+1);
+    ans[0] = mp(0, 0);
+
+    for (int i=1; i<=n; i++)
+        ans[i] = (ans[i-1] * base + s[n-i])%M;
+    return ans;
+}
+
 ///Calculates hash of substring s[l..r] (1 indexed)
-PLL substringHash(const vector<PLL> &hashlist, int l, int r) {
+PLL substringHash(vector<PLL> &hashlist, int l, int r) {
     int len = (r-l+1);
     return ((hashlist[r] - hashlist[l-1]*pb[len])%M+M)%M;
+}
+
+PLL substringHashRec(vector<PLL> &hashlist, int n, int l, int r) {
+    return substringHash(hashlist, n-r+1, n-l+1);
 }
 
 
@@ -141,14 +155,13 @@ PLL substringHash(const vector<PLL> &hashlist, int l, int r) {
 ///You are given two strings A and B. You have to find
 ///the number of times B occurs as a substring of A.
 char buffer[N];
-int main()
-{
+int main(){
+
     hashPre();
     int t;
     scanf("%d", &t);
 
-    for (int cs=1; cs<=t; ++cs)
-    {
+    for (int cs=1; cs<=t; ++cs){
         string a, b;
         scanf("%s", buffer); a = buffer;
         scanf("%s", buffer); b = buffer;
@@ -162,4 +175,6 @@ int main()
             if (substringHash(ha, i, i+nb-1) == hb)  ans++;
         printf("Case %d: %d\n", cs, ans);
     }
+
+    return 0;
 }
