@@ -9,21 +9,20 @@ using ii = pair<int,int>;
 const int mx = 1e6 + 5;
 
 struct state{
-    int len, link, fpos;
-    map<char, int> next;    /// Child, TLE? Use Static
-    long long dist_substr;  /// Distinct Substring
+    int len, link, fpos; ll tot;
+    map<char, int> next;
 } st[mx << 1];
 
+long long res = 0;
 int sz, last, cnt[mx<<1];
-long long tot_dist_substr;  /// # of total distinct substring
 
 inline void sa_extend(char c){
     int cur = sz++, p = last; cnt[cur] = 1;
     st[cur] = {st[p].len+1, -1, st[p].len+1};
     for(; ~p && !st[p].next.count(c); p=st[p].link){
         st[p].next[c] = cur;
-        tot_dist_substr += st[p].dist_substr;
-        st[cur].dist_substr += st[p].dist_substr;
+        st[cur].tot += st[p].tot;
+        res += st[p].tot;
     }
     if(p == -1) st[cur].link = 0;
     else{
@@ -34,34 +33,35 @@ inline void sa_extend(char c){
             int cln = sz++;
             cnt[cln] = 0;
             st[cln] = st[q];
-            st[cln].dist_substr = 0;
             st[cln].len = st[p].len+1;
+            st[cln].tot = 0;
             for(; ~p && st[p].next[c]==q; p=st[p].link){
                 st[p].next[c] = cln;
-                st[q].dist_substr -= st[p].dist_substr;
-                st[cln].dist_substr += st[p].dist_substr;
+                st[q].tot -= st[p].tot;
+                st[cln].tot += st[p].tot;
             }st[q].link = st[cur].link = cln;
         }
     }last = cur;
-}
-
-inline void build(string &s){
-    for(int i=0; i<sz; i++)
-        cnt[i]=0, st[i].next.clear();
-    sz = 1; last = tot_dist_substr = 0;
-    st[0] = {0,-1}; st[0].dist_substr = 1;
-    for(int i=0; i<s.size(); i++){
-        sa_extend(s[i]);
-//        cout << tot_dist_substr << "\n";
-    }
 }
 
 int main(){
     ios_base::sync_with_stdio(0);
     cin.tie( nullptr );
 
-    string s = "abcdef";
-    build(s);
+    string s; while(cin >> s){
+
+        for(int i=0; i<sz; i++)
+            cnt[i]=0, st[i].next.clear();
+
+        sz = 1; last = 0; res = 0;
+        st[0] = {0,-1}; st[0].tot = 1;
+
+        for(char &c : s){
+            sa_extend(c);
+            cout << res << "\n";
+        }
+    }
 
     return 0;
 }
+

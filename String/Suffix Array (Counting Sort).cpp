@@ -53,6 +53,9 @@ void build(){
 
 int main(int argc, const char** argv) {
 
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     s = "gagagacacaca"; build();
 
     for(int i=0; i<n; i++)
