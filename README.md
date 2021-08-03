@@ -16,7 +16,7 @@ Competetive Programming Algorithms & Data Structure
 - [Segment Tree](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree.cpp)
 - [Sparse Table 2D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table%202D.cpp)
 - [Sparse Table](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table.cpp)
-- [Square Root Decomposition](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Square%20Root%20Decomposition.cpp)
+- [Square Root Decomposition (SQRT)](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Square%20Root%20Decomposition%20(SQRT).cpp)
 - [Union Find Disjoint Sets (UFDS)](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Union%20Find%20Disjoint%20Sets%20(UFDS).cpp)
 
 ## Dynamic Programming
@@ -123,6 +123,7 @@ Competetive Programming Algorithms & Data Structure
 - [Suffix Array (Counting Sort)](https://github.com/mdturin/CodeRed/blob/master/String/Suffix%20Array%20(Counting%20Sort).cpp)
 - [Suffix Array (Smallest Cyclic Shift Complex)](https://github.com/mdturin/CodeRed/blob/master/String/Suffix%20Array%20(Smallest%20Cyclic%20Shift%20Complex).cpp)
 - [Suffix Array (Smallest Cyclic Shift Simple)](https://github.com/mdturin/CodeRed/blob/master/String/Suffix%20Array%20(Smallest%20Cyclic%20Shift%20Simple).cpp)
+- [Suffix Automata (Class)](https://github.com/mdturin/CodeRed/blob/master/String/Suffix%20Automata%20(Class).cpp)
 - [Suffix Automata](https://github.com/mdturin/CodeRed/blob/master/String/Suffix%20Automata.cpp)
 - [Trie (Dynamic)](https://github.com/mdturin/CodeRed/blob/master/String/Trie%20(Dynamic).cpp)
 - [Trie (Static)](https://github.com/mdturin/CodeRed/blob/master/String/Trie%20(Static).cpp)
