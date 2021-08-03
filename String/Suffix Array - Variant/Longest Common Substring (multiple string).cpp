@@ -1,19 +1,18 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-const int mx = 1e6+5;
+const int mx = 1e6+20;
 using vi = vector<int>;
 using pii = pair<int,int>;
 
 int n, pos[mx];
 string s, ss[101];
 int c[mx], cn[mx], cnt[mx];
-int sa[mx], lcp[mx], pn[mx];
+int sa[mx], lcp[mx], pn[mx], lg[mx];
 
 void build(){
-    register int i, j, k;
+    int i, j, k;
     s += "$"; n = s.size();
-    memset(cnt, 0, mx << 2);
 
     for(i=0; i<n; i++) cnt[ s[i] ]++;
     for(i=1; i<128; i++) cnt[i] += cnt[i-1];
@@ -44,7 +43,6 @@ void build(){
 }
 
 void buildLCP(){
-    memset(lcp, 0, mx<<2);
     for(int i=0; i<n; i++) pn[sa[i]] = i;
     for(int i=0, j=0; i<n; i++){
         if(pn[i]==n-1){j=0; continue;}
@@ -54,43 +52,57 @@ void buildLCP(){
     }
 }
 
+int st[mx][25];
+void buildSparse(){
+    for(int i=0; i<n; i++) st[i][0] = lcp[i];
+    for(int j=1; j<21; j++)
+    for(int i=0; i+(1<<j)<=n; i++)
+        st[i][j] = min(st[i][j-1], st[i+(1<<(j-1))][j-1]);
+}
+
+int query(int l, int r){
+    if(l>r) return 0;
+    int j = lg[r-l+1];
+    return min(st[l][j], st[r-(1<<j)+1][j]);
+}
+
 int main(int argc, const char** argv) {
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int m, tc; bool flag = false;
-    cin >> tc; while(tc--){
-        cin >> m;
-        s.clear(); s = "";
-        for(int i=0,j=0; i<m; i++){
-            cin >> ss[i];
-            s += ss[i] + "$";
-            while(j < s.size())
-                pos[j++] = i;
-        }s.pop_back();
+    for(int i=1; i<mx; i++) lg[i] = __lg(i);
 
-        build();
-        buildLCP();
+    int m = 0, j = 0;
+    while(cin >> ss[m]){
+        s += ss[m] + "$";
+        while(j < s.size())
+            pos[j++] = m; m++;
+    }s.pop_back();
 
-        vi vis(m, 0);
-        int ans = 0, unq = 0;
-
-        for(int lw=m, hh=m; hh<n; lw++){
-            while(unq < m){
-                int idx = pos[sa[hh]];
-                if(vis[idx]++ == 0) unq++;
-                hh++;
-            }
-            int cur = 1e9, p = lw+1;
-            for(int i=lw+1; i<hh; ++i)
-                if(lcp[i] < cur)
-                    cur = lcp[i], p = i;
-            if(cur > ans) ans = cur;
-            int idx = pos[sa[lw]];
-            if(--vis[idx] == 0) unq--;
-        }cout << ans << "\n";
+    if(m == 1){
+        cout << s.size() << "\n";
+        return 0;
     }
+
+    build();
+    buildLCP();
+    buildSparse();
+
+    vi vis(m, 0);
+    int ans = 0, unq = 0;
+
+    for(int lw=m, hh=m; hh<n; lw++){
+        while(hh<n && unq<m){
+            int idx = pos[sa[hh]];
+            if(vis[idx]++ == 0) unq++;
+            hh++;
+        }if(unq != m) break;
+        int cur = query(lw+1, hh-1);
+        if(cur > ans) ans = cur;
+        int idx = pos[sa[lw]];
+        if(--vis[idx] == 0) unq--;
+    }cout << ans << "\n";
 
     return 0;
 }
