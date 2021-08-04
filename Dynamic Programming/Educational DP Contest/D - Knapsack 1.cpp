@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-const int mx = 100+5;
+const int mx = 105;
 const int W  = 1e5+5;
 
 long long dp[W];

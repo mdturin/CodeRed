@@ -16,11 +16,21 @@ int main(){
     for(int i=1; i<=n; ++i)
         cin >> w[i] >> v[i];
 
+    fill(dp, dp+W, (int)(1e9));
+    int val = accumulate(v, v+n+1, 0);
+
+    dp[0] = 0;
     for(int i=1; i<=n; ++i)
-        for(int j=wei; j>=w[i]; --j)
-            dp[j] = max(dp[j], dp[j-w[i]]+v[i]);
-    cout << *max_element(dp, dp+wei+1) << "\n";
+        for(int j=val; j>=v[i]; --j)
+            dp[j] = min(dp[j], dp[j-v[i]]+w[i]);
+
+    int ans = 0;
+    for(int i=0; i<=val; ++i)
+        if(dp[i] <= wei)
+            ans = i;
+    cout << ans << "\n";
 
     return 0;
 }
+
 
