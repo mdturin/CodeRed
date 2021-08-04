@@ -13,7 +13,7 @@ struct state{
     map<char, int>next;
 } st[mx << 1];
 
-int dss[mx<<1];
+long long dss[mx<<1];
 int sz, last, cnt[mx<<1];
 
 inline void sa_extend(char c){
@@ -46,7 +46,7 @@ inline void build(string &s){
         sa_extend(s[i]);
 }
 
-int Distinct_Number_Of_Substring(int u){
+long long Distinct_Number_Of_Substring(int u){
     if(dss[u]) return dss[u];
     dss[u] = 1;
     for(auto p : st[u].next)
