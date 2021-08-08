@@ -6,12 +6,13 @@ int n, a[mx];
 int pre[mx], tail[mx];
 
 int get_pos(int x, int len){
-    int lw = -1, hh = len - 1;
-    while(hh - lw > 1){
-        int m = lw + (hh - lw) / 2;
-        if(a[tail[m]] >= x) hh = m;
-        else lw = m;
-    }return hh;
+    int lw = 0, hh = len - 1, ans = 0;
+    while(lw <= hh){
+        int m = (lw + hh) / 2;
+        if(a[tail[m]] >= x)
+            ans = m, hh = m - 1;
+        else lw = m + 1;
+    }return ans;
 }
 
 inline int solve(){
@@ -20,7 +21,7 @@ inline int solve(){
 
     int len = 1;
     for(int i=1; i<n; i++){
-        if(a[i] < a[tail[0]]) tail[0] = i;
+        if(a[i] <= a[tail[0]]) tail[0] = i;
         else if(a[i] > a[tail[len-1]]){
             pre[i] = tail[len-1];
             tail[len++] = i;
@@ -36,7 +37,7 @@ vector<int> LIS(){
     vector<int> res(len);
     for(int i=tail[len-1]; i>=0; i=pre[i])
         res[j] = a[i], j--;
-    return res;
+    return move(res);
 }
 
 int main(){
