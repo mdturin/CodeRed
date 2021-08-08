@@ -19,6 +19,7 @@ int main(){
     for(int i=1; i<=n; ++i)
         for(int j=wei; j>=w[i]; --j)
             dp[j] = max(dp[j], dp[j-w[i]]+v[i]);
+
     cout << *max_element(dp, dp+wei+1) << "\n";
 
     return 0;

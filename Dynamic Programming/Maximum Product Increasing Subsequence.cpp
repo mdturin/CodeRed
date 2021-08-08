@@ -1,10 +1,3 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-using ll = long long;
-const int mod = 1e9 + 7;
-const int mx  = 2e5+5;
-
 /**
     Maximum Product Increasing Subsequence
     Given an array of numbers, find the maximum
@@ -12,27 +5,30 @@ const int mx  = 2e5+5;
     increasing subsequence of that array.
 */
 
-ll a[] = {3, 100, 4, 5, 150, 6};
-ll n = sizeof(a)/sizeof(ll);
-
-/**
-    Iterative Method :
-        complexity : O(n*n)
-        space : O(n)
-*/
+#include<bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const int mx  = 2e5+5;
 
 ll dp[mx];
-ll maxProIncSubIte(){
-    for(int i=0; i<n; i++) dp[i] = a[i];
-    for(int i=1; i<n; i++)
-    for(int j=0; j<i; j++)
-        if(a[i] > a[j])
-            dp[i] = max(dp[i], dp[j]*a[i]);
-    return *max_element(dp, dp+n);
-}
+int n, a[mx];
 
 int main(){
-    cout << maxProIncSubIte() << "\n";
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin >> n;
+    for(int i=1; i<=n; i++) cin >> a[i];
+    for(int i=1; i<=n; i++){
+        dp[i] = a[i];
+        for(int j=1; j<i; j++)
+            if(a[i] > a[j])
+                dp[i] = max(dp[i], (ll)dp[j]*a[i]);
+    }
+
+    cout << *max_element(dp, dp+n+1) << "\n";
+
     return 0;
 }
 

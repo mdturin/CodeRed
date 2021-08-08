@@ -1,40 +1,36 @@
  #include<bits/stdc++.h>
 using namespace std;
+const int mx  = 1005;
 
-#define mem(a,v) memset(a,v,sizeof a) 
-#define pb push_back 
-
-using vi = vector<int>;
-
-const int mod = 1e9 + 7;
-const int mx  = 1000;
-
-vi adj[mx];
 int dp[mx];
-int LIS(int u){
-    if(dp[u] != -1) return dp[u];
+vector<int> g[mx];
+
+int solve(int u){
+    int &ans = dp[u];
+    if(~ans) return ans; ans=0;
 
     int ans1 = 0, ans2 = 1;
-    for(int i=0; i<adj[u].size(); i++){
-        ans1 += LIS(adj[u][i]);
-        int v = adj[u][i];
-        for(int j=0; j<adj[v].size(); j++)
-            ans2 += LIS(adj[v][j]);
-    }
-    return dp[u] = max(ans1, ans2);
+    for(int v : g[u]){
+        ans1 += solve(v);
+        for(int w : g[v])
+            ans2 += solve(w);
+    }return ans = max(ans1, ans2);
 }
 
 int main(){
-    mem(dp, -1);
-    adj[20].pb(8);
-    adj[8].pb(4);
-    adj[8].pb(12);
-    adj[12].pb(10);
-    adj[12].pb(14);
-    adj[20].pb(22);
-    adj[22].pb(25);
 
-    cout << LIS(20) << "\n";
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    cin >> n >> m;
+    while(m--){
+        int u, v; cin >> u >> v;
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+
+    memset(dp, -1, sizeof dp);
+    cout << solve(1) << "\n";
 
     return 0;
 }
