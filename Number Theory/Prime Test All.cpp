@@ -131,41 +131,6 @@ bool MillerRabin(ll n){
     return true;
 }
 
-// // Miller Rabin
-// ll prime[7]={2, 325, 9375, 28178, 450775, 9780504, 1795265022};
-
-// // or use power with multiply if __int128
-// // isn't available 
-// ll bigmod(__int128 a, __int128 p, ll m) {
-//     __int128 x = a % mod, r = 1;
-//     while (p > 0){
-//         if (p & 0x1) r=(r*x)%m;
-//         x=(x*x)%m; p>>=1;
-//     }return res;
-// }
-
-// bool check( ll a, ll d, ll s, ll n ) {
-//     __int128 r = bigmod(a, d, n);
-//     if (r==1 || r== n-1) return 0;
-//     for (int i = 0; i < s - 1; i++ ) {
-//         r = r * r % n;
-//         if (r == 1) return 1;
-//         if (r == n-1) return 0;
-//     }return 1;
-// }
-
-// bool is_prime(ll n){
-//     if (n<=1) return 0;
-//     ll p = n - 1, s = 0;
-//     while (!(p & 1)){p/=2; s++;}
-//     ll d = p; p = n - 1, i;
-//     for (i=0; i<7 && prime[i]<n; i++)
-//         if(check(prime[i], d, s, n)) 
-//             return 0;
-//     return 1;
-// }
-
-
 int main(int argc, const char** argv) {
     return 0;
 }
