@@ -12,7 +12,6 @@ using pii = pair<int,int>;
 #define pb push_back
 #define sz(x) int(x.size())
 
-/// Complexity O( sqrt(n) )
 vector<ll> allDivisors(ll x){
     ll lim = sqrt(x);
     vector< ll > ans;
@@ -29,5 +28,9 @@ vector<ll> allDivisors(ll x){
 
 
 int main(int argc, const char** argv) {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     return 0;
 }
