@@ -5,12 +5,6 @@ using ll = long long;
 const int mx = 1e6 + 5;
 const int md = 1e9 + 7;
 
-/**
-    Goldbach’s Conjecture
-        Every even integer greater than 2 can be
-        expressed as the sum of two primes
-*/
-
 int mark[mx];
 vector<int> prime;
 
@@ -26,27 +20,25 @@ void LinearSieve(){
     }
 }
 
-pair<int, int> get_goldbach(int x){
-    assert(x>2 && x<mx);
-    if(x & 1) return make_pair(-1, -1);
-	for(int p : prime){
-        if(p >= x) break;
-		int y = x - p;
-		if(y <= 1) continue;
-        if(is_prime(y))
-            return make_pair(p, y);
-	}return make_pair(-1, -1);
+int get_phi(int n){
+    int res = n;
+    for(int p : prime){
+        if(1LL * p * p > n) break;
+        if(n % p) continue;
+        res -= (res/p);
+        while(n%p == 0) n /= p;
+    }
+    if(n>1) res -= (res/n);
+    return res;
 }
 
-int main(int argc, const char** argv){
+int main(int argc, const char** argv) {
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
     LinearSieve();
-
-    pair<int,int> p = get_goldbach(20);
-    cout << p.first << " " << p.second << "\n";
+    cout << get_phi(1e8) << "\n";
 
     return 0;
 }
