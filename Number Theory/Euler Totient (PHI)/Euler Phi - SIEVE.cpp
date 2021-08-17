@@ -8,12 +8,10 @@ const int md = 1e9 + 7;
 int phi[mx];
 void phi_sieve(){
     for(int i=1; i<mx; i++) phi[i] = i;
-    for(int i=2; i<mx; i++){
-        if(phi[i] != i) continue;
-        phi[i] = i-1;
-        for(int j=i<<1; j<mx; j+=i)
-            phi[j] = (phi[j]/i) * (i-1);
-    }
+    for(int i=2; i<mx; i++)
+    if(phi[i] == i)
+        for(int j=i; j<mx; j+=i)
+            phi[j] -= phi[j]/i;
 }
 
 int main(int argc, const char** argv) {
