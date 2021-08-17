@@ -1,7 +1,7 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
+
 const int mx = 1e5+5;
 const int mod = 1e9+7;
 
@@ -29,10 +29,14 @@ ll factorial2(ll n, int m){
 		res = (res * ((n/m)&1 ? m-1 : 1))%m;
 		for(int i=2; i<=(n%m); i++)
 			res = (res * i) % m;
-	}	
+	}
 	return res;
 }
 
 int main(int argc, const char** argv) {
+
+	ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     return 0;
 }
