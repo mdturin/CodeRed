@@ -1,34 +1,36 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
-
 using ll = long long;
-const ll mod = 1e9+7;
-const int mx = 1e5+5;
+
+const int mx = 1e6 + 5;
+const int md = 1e9 + 7;
 
 template <typename T>
-T power(T val, T p, T mod) {
-    val %= mod;
-    T result = 1;
-    while (p > 0) {
-        if (p & 0x1)
-            result = (result*val)%mod;
-        val = (val*val)%mod;
-        p >>= 1;
-    }
-    return result;
+T power(T v, T p, T m=md) {
+    v %= m; T r = 1;
+    while (p > 0){
+        if (p & 1)
+            r = (1LL * r * v) % m;
+        v = (1LL * v * v) % m; p >>= 1;
+    }return r;
 }
 
-// simple way :)
-ll inverse(ll x){return power(x, mod-2, mod);}
+ll inverse(ll x){
+    return power<ll>(x, md-2);}
 
-// you can find all inverse in O(n)
 int inv[mx];
-void moduleMod(){
-    inv[1] = 1%mod;
+void get_inverse(){ // inverse - [1, mx)
+    inv[0] = inv[1] = 1;
     for(int i=2; i<mx; i++)
-        inv[i] = (mod - (mod/i) * inv[mod%i]%mod)%mod;
+        inv[i] = (md - (md/i) * inv[md%i]%md)%md;
 }
 
-int main(int argc, const char** argv) {
+int main(int argc, const char** argv){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    get_inverse();
+
     return 0;
 }
