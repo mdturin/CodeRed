@@ -50,14 +50,19 @@ bool is_prime(ull n){
 ll f(ll x, ll c, ll mod){
     return (mod_multiply(x, x, mod) + c) % mod;}
 
-ll pollard_rho(ll n, ll x0=3, ll c=1){
-    ll x = x0, y = x0, g = 1;
-    while(g == 1){
-        x = f(x, c, n);
-        y = f(y, c, n);
-        y = f(y, c, n);
-        g = gcd<ll>(abs(x-y), n);
-    }return g;
+ll pollard_rho(ll n){
+    ll s=0, t=0, c=rand()%(n-1)+1, val=1;
+    for(int goal = 1;; goal <<= 1, s = t){
+        for(int step = 1; step<=goal; ++step){
+            t = f(t, c, n);
+            val = mod_multiply(val, abs(t-s), n);
+            if(step % 127 == 0){
+                ll d = gcd<ll>(val, n);
+                if(d > 1) return d;
+            }
+        }ll d = gcd<ll>(val, n);
+        if(d > 1) return d;
+    }return 1;
 }
 
 vector<ll> get_factorize(ll n){
@@ -69,10 +74,13 @@ vector<ll> get_factorize(ll n){
     while(q.size()){
         ll x = q.front(); q.pop();
         if(x == 1) continue;
-        ll d = pollard_rho(x);
-        if(is_prime(d)){
-            f.push_back(d); q.push(x/d);}
-        else q.push(d), q.push(x/d);
+        if(is_prime(x)){
+            f.push_back(x);
+            continue;
+        }
+        ll d = x; while(d == x)
+            d = pollard_rho(x);
+        q.push(d); q.push(x/d);
     }sort(f.begin(), f.end());
     return move(f);
 }
