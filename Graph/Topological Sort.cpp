@@ -1,33 +1,32 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+using ii = pair<int, int>;
 
-const int mx = 1e3+5;
+#define ff first
+#define se second
 
-int n;
-vector<int> ts;
-vector<int> adj[mx];
-vector<int> vis,par;
+const int mx = 1e6 + 5;
+const int inf = 0x3f3f3f3f;
 
+vector<int> g[mx], ts;
+int n, vis[mx], par[mx];
 
 /** if there is no cycle topo is possilbe */
 
 void dfs(int u){
     vis[u] = 1;
-    for(auto &v:adj[u])
+    for(int &v : g[u])
         if(!vis[v])
             par[v] = u, dfs(v);
     ts.push_back(u);
 }
 
-void topologicalSort(){
+void topo_sort(){
     ts.clear();
-    vis.assign(n, 0);
-
+    memset(vis, 0, sizeof vis);
     for(int i=0; i<n; i++)
-        if(!vis[i])
-            dfs(i);
-
-    reverse(begin(ts),end(ts));
+        if(!vis[i]) dfs(i);
+    reverse(ts.begin(), ts.end());
 }
 
 int main(int argc, const char** argv) {

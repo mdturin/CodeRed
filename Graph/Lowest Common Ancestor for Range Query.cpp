@@ -1,19 +1,22 @@
-/*
-    Example of SPOJ : DISQUERY
-*/
+// Example of SPOJ : DISQUERY
 
 #include <bits/stdc++.h>
 using namespace std;
-
-#define pb push_back
-const int mx = 1e5+5;
 using vi = vector<int>;
-using pii = pair<int,int>;
+using ii = pair<int, int>;
 
-int n, m, lgn;
-vector< int > height;
-vector< pii > adj[mx];
-vector< vi > par, Max, Min;
+#define ff first
+#define se second
+#define pb push_back
+
+const int mx = 1e6 + 5;
+const int lgn = __lg(mx)+1;
+
+vector<ii> g[mx];
+int par[mx][lgn];
+int Max[mx][lgn];
+int Min[mx][lgn];
+int n, m, height[mx];
 
 int ansMax, ansMin;
 void query(int u, int v){
@@ -25,11 +28,10 @@ void query(int u, int v){
         ansMax = max(ansMax, Max[u][i]);
         ansMin = min(ansMin, Min[u][i]);
         u = par[u][i];
-    }
+    }if(u == v) return;
 
-    if(u == v) return;
     for(int i=lgn-1; i>=0; i--)
-    if(par[u][i] != -1 && par[u][i]!=par[v][i]){
+    if(~par[u][i] && par[u][i]!=par[v][i]){
         ansMax = max({ansMax, Max[u][i], Max[v][i]});
         ansMin = min({ansMin, Min[u][i], Min[v][i]});
         u = par[u][i]; v = par[v][i];
@@ -40,21 +42,17 @@ void query(int u, int v){
 }
 
 void dfs(int u, int p, int h, int d){
-    par[u][0] = p; height[u] = h;
     Max[u][0] = Min[u][0] = d;
-    for(pii &v : adj[u])
-        if(v.first != p)
-            dfs(v.first, u, h+1, v.second);
+    par[u][0] = p; height[u] = h;
+    for(ii &v : g[u]) if(v.ff != p)
+        dfs(v.ff, u, h+1, v.se);
 }
 
 void init(){
-    lgn = log2(n) + 1; 
-    height = vector<int>(n);
-    par = vector< vi >(n, vi(lgn, -1));
-    Max = vector< vi >(n, vi(lgn, INT_MIN));
-    Min = vector< vi >(n, vi(lgn, INT_MAX));
-
-    dfs(0, -1, 0, 0);
+    for(int i=0; i<n; ++i){
+        fill(Max[i], Max[i]+lgn, INT_MIN);
+        fill(Min[i], Min[i]+lgn, INT_MAX);
+    }dfs(0, -1, 0, 0);
 
     for(int j=1; j<lgn; j++)
     for(int i=0; i<n; i++)
@@ -73,11 +71,11 @@ int main(int argc, const char** argv) {
 
     int u, v, w;
 
-    while(cin >> n){ m = n-1;
-        while(m--){
+    while(cin >> n){
+        for(int i=1; i<n; ++i){
             cin >> u >> v >> w; u--; v--;
-            adj[u].push_back(pii(v, w));
-            adj[v].push_back(pii(u, w));
+            g[u].push_back(ii(v, w));
+            g[v].push_back(ii(u, w));
         }
 
         init();
@@ -89,7 +87,7 @@ int main(int argc, const char** argv) {
             cout << ansMin << ' ' << ansMax << '\n';
         }
 
-        for(int i=0; i<n; i++) adj[i].clear();
+        for(int i=0; i<n; i++) g[i].clear();
     }
 
     return 0;

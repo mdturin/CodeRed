@@ -1,34 +1,33 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+using ii = pair<int, int>;
 
-const int mx = 1e5+5;
-const int INF = 1e9+9;
-using pii = pair<int,int>;
+#define ff first
+#define se second
 
-vector<pii> adj[mx];
-vector<int> dist, par, vis;
+const int mx = 1e6 + 5;
+const int inf = 0x3f3f3f3f;
 
-// Complexity Avg O(E), Worst O(VE);
+vector<ii> g[mx];
+int dist[mx], par[mx], vis[mx];
+
 void spfa(int s){
-    fill(begin(vis), end(vis), 0);
-    fill(begin(par), end(par), -1);
-    fill(begin(dist), end(dist), INF);
+    fill(dist, dist+mx, inf);
+    memset(vis, 0, sizeof vis);
+    memset(par, -1, sizeof par);
 
     dist[s] = 0; vis[s] = 1;
     queue<int> q; q.push(s);
 
-    while(q.size()){
-        int u = q.front(); q.pop(); vis[u] = 0;
-        for(pii &vp : adj[u]){
-            int v = vp.first;
-            int w = vp.second;
-            if(dist[v] > dist[u]+w){
+    int u, v, w; while(q.size()){
+        u = q.front(); q.pop(); vis[u] = 0;
+        for(ii &p : g[u]){
+            tie(v, w) = p;
+            if(dist[v] > dist[u] + w){
                 par[v] = u;
                 dist[v] = dist[u] + w;
                 if(!vis[v]){
-                    vis[v] = 1;
-                    q.push(v);
-                }
+                    vis[v] = 1; q.push(v);}
             }
         }
     }

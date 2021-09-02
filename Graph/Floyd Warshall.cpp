@@ -1,59 +1,58 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+using ii = pair<int, int>;
 
-const int mod = 1e9 + 7;
-const int mx  = 400;
-const int INF = 1e9+9;
+#define ff first
+#define se second
 
-int V, E;
-int u, v, w;
+const int mx = 405;
+const int inf = 0x3f3f3f3f;
+
+int n, m;
+int g[mx][mx];
 int par[mx][mx];
-int graph[mx][mx];
 
-void allClear(){
+void all_clear(){
     for(int i=0; i<mx; i++){
         for(int j=0; j<mx; j++){
-            par[i][j] = i;
-            graph[i][j] = INF;
-        }
-        graph[i][i] = 0;
+            g[i][j] = inf, par[i][j] = i;
+        }graph[i][i] = 0;
     }
 }
 
-void floydWarshall(){
-    for(int k=0; k<V; k++)
-    for(int i=0; i<V; i++)
-    for(int j=0; j<V; j++){
-        if(graph[i][j] > graph[i][k]+graph[k][j]){
+void floyd_warshall(){
+    for(int k=0; k<n; k++)
+    for(int i=0; i<n; i++)
+    for(int j=0; j<n; j++){
+        if(g[i][j] > g[i][k] + g[k][j]){
             par[i][j] = par[k][j];
-            graph[i][j] = graph[i][k] + graph[k][j];
+            g[i][j] = g[i][k] + g[k][j];
         }
     }
 }
 
-void printPath(int u, int v){
+void print_path(int u, int v){
     if(u == v) cout << u;
     else {
-        printPath(u, par[u][v]);
+        print_path(u, par[u][v]);
         cout << " " << v;
     }
 }
 
 int main(){
 
-    allClear();
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-    cin >> V >> E;
-    while(E--){
+    all_clear();
+
+    cin >> n >> m; while(m--){
         cin >> u >> v >> w;
         graph[u][v] = min(graph[u][v], w);
         graph[v][u] = min(graph[v][u], w);
-    }
+    }floyd_warshall();
 
-    floydWarshall();
-
-    int q; cin >> q;
-    while(q--){
+    int q; cin >> q; while(q--){
         cin >> u >> v;
         cout << "Distance : " << graph[u][v] << '\n';
         cout << "Path :"; printPath(u, v);

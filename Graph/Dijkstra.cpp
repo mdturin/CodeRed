@@ -1,50 +1,49 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+using ii = pair<int, int>;
 
-const int mx = 1e3+5;
-const int INF = 1e9+9;
-using pii = pair<int,int>;
+#define ff first
+#define se second
 
-#define ff first 
-#define se second 
+const int mx = 1e6 + 5;
+const int inf = 0x3f3f3f3f;
 
-int n, m;
-vector<int> par;
-vector<int> dist;
-vector<pii> adj[mx];
+vector<ii> g[mx];
+int n, m, par[mx], dist[mx];
 
-int dijk(int s, int d){
-    par = vector<int>(n, -1);
-    dist = vector<int>(n, INF);
+int dijkstra_algo(int s, int d){
+    fill(dist, dist+mx, inf);
+    memset(par, -1, sizeof par);
 
-    priority_queue<pii> pq;
+    priority_queue<ii> pq;
     pq.push({0, s}); dist[s] = 0;
 
-    while(pq.size()){
-        pii p = pq.top(); pq.pop();
-        int u = p.se, uw = -p.ff;
+    int u, v, uw, vw; while(pq.size()){
+        tie(u, uw) = pq.top(); pq.pop(); uw = -uw;
         if(uw > dist[u]) continue;
-        for(int i=0; i<adj[u].size(); i++){
-            int v = adj[u][i].ff, ww = adj[u][i].se;
-            if(dist[v]>dist[u]+ww){
+        for(auto &p : g[u]){
+            tie(v, vw) = p;
+            if(dist[v] > dist[u] + vw){
                 par[v] = u;
-                dist[v] = dist[u]+ww;
+                dist[v] = dist[u] + vw;
                 pq.push({-dist[v], v});
             }
         }
-    }
-
-    return dist[d];
+    }return dist[d];
 }
 
-void printPath(int s, int d){
+void print_path(int s, int d){
     if(s == d) cout << s;
     else{
-        printPath(s, par[d]);
+        print_path(s, par[d]);
         cout << ' ' << d;
     }
 }
 
 int main(int argc, const char** argv) {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     return 0;
 }

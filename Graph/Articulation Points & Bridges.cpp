@@ -1,60 +1,45 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
 
-const int mx = 1e5+5;
-using pii = pair<int,int>;
+const int mx = 1e6 + 5;
+using ii = pair<int,int>;
 
-int n, m, counter;
-int root, child;
+#define ff first
+#define se second
 
-vector<pii> bridges;
-vector<int> isPoint;
-vector<int> adj[mx];
-vector<int> low, vis, par;
+vector<int> g[mx];
+vector<ii> bridges;
+int n, m, counter, root, child;
+int low[mx], vis[mx], par[mx], point[mx];
 
-void bfs(int u){
-    low[u] = vis[u] = counter++;
-    for(int &v:adj[u]){
-        if(vis[v] && v!=par[u]) 
-            low[u]=min(low[u],vis[v]);
-        else if(!vis[v]){
-            par[v] = u;
-            if(u == root) 
-                child++;
-            
-            bfs(v);
-            if(low[v] >= vis[u]) isPoint[u]=1;
-            if(low[v] >  vis[u]) 
-                bridges.emplace_back(u,v);
+void dfs_apb(int u, int p){
+    low[u] = vis[u] = counter++; par[u] = p;
+    for(int &v : g[u]){
+        if(!vis[v]){
+            child += (u == root); dfs_apb(v, u);
+            if(low[v] >= vis[u]) point[u] = 1;
+            if(low[v] >  vis[u])
+                bridges.emplace_back(u, v);
             low[u] = min(low[u], low[v]);
-        }
+        }else if(v != par[u])
+            low[u] = min(low[u], vis[v]);
     }
 }
 
-void artucaltionPointsBridges(){
+void Artucaltion_Points_Bridges(){
     counter = 1; bridges.clear();
-    low = vector<int>(n, 0);
-    vis = vector<int>(n, 0);
-    par = vector<int>(n, -1);
-    isPoint = vector<int>(n, 0);
+    memset(low, 0, sizeof low);
+    memset(vis, 0, sizeof vis);
+    memset(point, 0, sizeof point);
 
     for(int i=0; i<n; i++){
         if(vis[i]) continue;
-        root = i; child = 0; bfs(i);
-        isPoint[i] = (child > 1);
-    }
-
-    for(int i=0; i<n; i++)
-        if(isPoint[i])
-            /// i is articulation point
-    
-    for(pii p:bridges){
-        /// edge between p.first and p.second
-        /// is articulation bridge
+        root = i; child = 0;
+        dfs_apb(i, -1);
+        point[i] = (child > 1);
     }
 }
 
 int main(int argc, const char** argv) {
-
     return 0;
 }

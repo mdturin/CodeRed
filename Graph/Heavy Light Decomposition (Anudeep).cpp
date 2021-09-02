@@ -1,4 +1,3 @@
-
 // Source : Anudeep's Blog
 // Link : https://blog.anudeep2011.com/heavy-light-decomposition/
 
@@ -14,9 +13,9 @@ const int INF = 1e9+9;
 using pii = pair<int,int>;
 using iii = pair<int,pii>;
 
-#define ff first 
+#define ff first
 #define se second
-#define pb push_back 
+#define pb push_back
 
 int n, cp, ptr;
 int st[mx*3 + 10];
@@ -109,7 +108,7 @@ void hld(int u, int p, int w){
         if(sc==-1 || subsz[sc]<subsz[v.ff])
             sc = v.ff, cost = v.se;
     if(sc != -1) hld(sc, u, cost);
-    
+
     for(pii &v : adj[u])
         if(sc != v.ff && v.ff != p)
             cp++, hld(v.ff, u, v.se);
@@ -123,15 +122,22 @@ void init(int root = 0){
 
     dfs(root, -1, 0);       // gathering info
     hld(root, -1, -1);      // making hld
-    build(1, 0, ptr-1);      // building segment tree
+    build(1, 0, ptr-1);     // building segment tree
 
     // Binary Lifting
     for(int j=1; j<lgn; j++)
     for(int i=0; i<n; i++){
         int p = par[i][j-1];
-        if( p != -1 )
-            par[i][j] = par[p][j-1];
+        if(~p) par[i][j] = par[p][j-1];
     }
 }
 
-int main(int argc, const char** argv) {init(); return 0;}
+int main(int argc, const char** argv){
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    init();
+
+    return 0;
+}

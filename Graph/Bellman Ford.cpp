@@ -1,51 +1,46 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
+using ii = pair<int,int>;
 
-const int MX = 1e5+5;
-const int INF = 1e9+9;
+#define ff first
+#define se second
 
-int n, m;
-vector<int> cap[MX];
-vector<int> adj[MX];
-vector<int> dist(MX);
+const int mx = 1e6 + 5;
+const int inf = 0x3f3f3f3f;
 
-void bellManFord(int s){
-    fill(begin(dist), end(dist), INF);
-    dist[s] = 0;
+vector<ii> g[mx];
+int n, m, dist[mx];
 
-    /// iterating (n-1) times, 
-    /// Complexity O(VE)
+void Bellman_Ford(int s){
+    fill(dist, dist+mx, inf); dist[s] = 0;
     for(int step=1; step<n; step++)
-    for(int u=0; u<n; u++)
-    for(int j=0; j<adj[u].size(); j++){
-        int v = adj[u][j], w = cap[u][j];
+    for(int u=0; u<n; u++) for(ii p : g[u]){
+        int v, w; tie(v, w) = p;
         if(dist[v] > dist[u] + w)
             dist[v] = dist[u] + w;
     }
 
-    for(int u=0; u<n; u++)
-    for(int j=0; j<adj[u].size(); j++){
-        int v = adj[u][j], w = cap[u][j];
-        if(dist[v] > dist[u] + w)
-            /// negative cycle found, dfs(u)
-            /// can found the whole cirle;
+    for(int u=0; u<n; u++) for(ii p : g[u]){
+        int v, w; tie(v, w) = p;
+        if(dist[v] > dist[u] + w){}
+            /// negative cycle found
             /// return true;
-    }
-    /// return false;
+    }/// return false;
 }
 
 int main(int argc, const char** argv) {
- 
-    int u, v, w;
-    cin >> n >> m;
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int u, v, w; cin >> n >> m;
     while(m--){
-        cin >> u >> v >> w; /// 0 index
-        adj[u].push_back(v);
-        cap[u].push_back(w);
+        cin >> u >> v >> w;
+        g[u].emplace_back(v, w);
     }
 
     int s; cin >> s;
-    bellManFord(s);
+    Bellman_Ford(s);
 
     return 0;
 }
