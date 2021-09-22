@@ -2,8 +2,8 @@
 Competetive Programming Algorithms & Data Structure
 
 ## Contest
-    - Hello
-      - World
+- Hello
+    - World
         - Turin
 
 ## Data Structure
