@@ -2,9 +2,6 @@
 Competetive Programming Algorithms & Data Structures
 
 ## Contest
-- Hello
-    - World
-        - Turin
 
 	- ICPC
 
