@@ -1,74 +1,70 @@
 #include<bits/stdc++.h>
 using namespace std;
+using ll = long long;
 
 const int mod = 1e9 + 7;
-const int mx  = 1e5+5;
+const int mx  = 1e6 + 5;
 
-#define left(p)  (p<<1)
-#define right(p) (p<<1|1)
-#define mid(l,r) (l+(r-l)/2)
+template<class T, class LT> struct SegTree{
 
-int n, q, a[mx];
-int tree[mx<<2];
-int lazy[mx<<2];
+    // Set null_val, push & merge function
 
-void build(int p, int l, int r){
-    lazy[p] = 0;
-    if(l == r) tree[p] = a[l];
-    else{
-    	build(left(p), l, mid(l,r));
-    	build(right(p), mid(l,r)+1, r);
-    	tree[p] = tree[left(p)] + tree[right(p)];
+    #define left   ((p)<<1)
+    #define right (((p)<<1)|1)
+
+    vector<T> t;
+    vector<LT> lazy;
+
+    static const T null_val = 0;                    // change this
+
+    inline void push(int p, int l, int r){          // change this
+        if (lazy[p] == 0) return;
+        t[p] = t[p] + lazy[p] * (r - l + 1);
+        if (l != r) {
+            lazy[left] = lazy[left] + lazy[p];
+            lazy[right] = lazy[right] + lazy[p];
+        }lazy[p] = 0;
     }
-}
 
-void updateLazy(int p, int l, int r){
-	tree[p] += (r-l+1) * lazy[p];
-	if(l != r){
-		lazy[left(p)] += lazy[p];
-		lazy[right(p)] += lazy[p];
-	}lazy[p] = 0;
-}
+    inline T merge(T a, T b){return a + b;}         // change this
 
-void update(int p, int l, int r, int i, int j, int v){
-	if(lazy[p]) updateLazy(p, l, r);
-	if(l>r || l>j || r<i) return;
-	if(l>=i && r<=j){
-		lazy[p] += v;
-		updateLazy(p, l, r);
-		return;
-	}
-	update(left(p), l, mid(l,r), i, j, v);
-	update(right(p), mid(l,r)+1, r, i, j, v);
-	tree[p] = tree[left(p)] + tree[right(p)];
-}
-
-int query(int p, int l, int r, int i, int j){
-	if(lazy[p]) updateLazy(p, l, r);
-	if(l>r || l>j || r<i) return 0;
-	if(l>=i && r<=j) return tree[p];
-	int u = query(left(p), l, mid(l,r), i, j);
-	int v = query(right(p), mid(l,r)+1, r, i, j);
-	tree[p] = tree[left(p)] + tree[right(p)];
-	return u + v;
-}
-
-int main(){
-	cin >> n;
-    for(int i=0; i<n; i++)
-        cin >> a[i];
-    build(1, 0, n-1);
-    cin >> q;
-    while(q--){
-        int u, v, w; 
-		cin >> u >> v >> w; u--; v--;
-        update(1, 0, n-1, u, v, w);
+    SegTree(int sz = 0) {
+        t.resize(sz<<2, 0);
+        lazy.resize(sz<<2, 0);
     }
-    cin >> q;
-    while(q--){
-        int u, v; cin >> u >> v; u--; v--;
-        cout << query(1, 0, n-1, u, v) << "\n";
+
+    void upd(int p, int l, int r, int i, int j, T v){
+        push(p, l, r);
+        if (l > r || l > j || r < i) return;
+        if (l >= i && r <= j) {
+            lazy[p] = v; //set lazy
+            push(p, l, r);
+            return;
+        }int m = (l + r) >> 1;
+        upd(left, l, m, i, j, v);
+        upd(right, m+1, r, i, j, v);
+        t[p] = merge(t[left], t[right]);
     }
+
+    T query(int p, int l, int r, int i, int j) {
+        push(p, l, r);
+        if (l > r || l > j || r < i) return null_val;
+        if (l >= i && r <= j) return t[p];
+        int m = (l + r) >> 1;
+        T u = query(left, l, m, i, j);
+        T v = query(right, m+1, r, i, j);
+        t[p] = merge(t[left], t[right]);
+        return merge(u, v);
+    }
+};
+
+int main() {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    SegTree<ll, ll> st(10);
+
     return 0;
 }
 

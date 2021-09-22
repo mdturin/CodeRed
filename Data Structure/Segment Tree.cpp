@@ -4,68 +4,35 @@ using namespace std;
 const int mod = 1e9 + 7;
 const int mx  = 2e5 + 5;
 
-// segment tree (1 - index)
-struct STree{
-private:
-    // change according to problem
-    struct node{
-        int x;
-        node(int _x=0):x(_x){}
-    };
+template<class T> struct SegTree{
 
-    int n; vector<int> a; vector<node> t;
+    // Set null_val and merge function
 
-    // merge of left and right node change according to problem
-    node merge(node l, node r){
-        node ans;
-        ans.x = l.x + r.x;
-        return ans;
+    #define left   ((p)<<1)
+    #define right (((p)<<1)|1)
+
+    vector<T> t;
+    static const T null_val = -1e9;         // change this
+    T merge(T u, T v){return max(u, v);}    // change this
+
+    SegTree(int sz=0){t.resize(sz<<2, 0);}
+
+    void upd(int p, int l, int r, int i, T x){
+        if (l > i || r < i) return;
+        if (l == r && l == i){t[p] = x; return;}
+        int m = (l + r) >> 1;
+        upd(left, l, m, i, x);
+        upd(right, m+1, r, i, x);
+        t[p] = merge(t[left], t[right]);
     }
 
-    void _b(int p, int l, int r){
-        if(l == r) t[p] = node(a[l]);
-        else{
-            int m = (l + r)/2, cl = p<<1, cr = cl|1;
-            _b(cl, l, m); _b(cr, m+1, r);
-            t[p] = merge(t[cl], t[cr]);
-        }
-    }
-
-    void _u(int p, int l, int r, int idx){
-        if(l == r){t[p] = node(a[l]); return;}
-        int m=(l+r)/2, cl=p<<1, cr=cl|1;
-        if(idx <= m) _u(cl, l, m, idx);
-        else _u(cr, m+1, r, idx);
-        t[p] = merge(t[cl], t[cr]);
-    }
-
-    node _q(int p, int l, int r, int i, int j){
-        if(l>r || l>j || r<i) return node();
-        if(l>=i && r<=j) return t[p];
-        int m=(l+r)/2, cl=p<<1, cr=cl|1;
-        return merge(_q(cl, l, m, i, j),
-                     _q(cr, m+1, r, i, j));
-    }
-
-public:
-    STree(int _n):n(_n){t.resize(n << 2);}
-
-    void build(int _a[]){
-        a = vector<int>(_a, _a+n+1);
-        _b(1, 1, n);
-    }
-
-    void build(vector<int> &_a){
-        a = _a; _b(1, 1, n);
-    }
-
-    void update(int idx, int val){
-        a[idx] = val;
-        _u(1, 1, n, idx);
-    }
-
-    int query(int i, int j){
-        return _q(1, 1, n, i, j).x;
+    T query(int p, int l, int r, int i, int j){
+        if (l>r || l>j || r<i) return null_val;
+        if (l>=i && r<=j) return t[p];
+        int m = (l + r) >> 1;
+        T u = query(left, l, m, i, j);
+        T v = query(right, m+1, r, i, j);
+        return merge(u, v);
     }
 };
 
@@ -74,25 +41,7 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int a[15], n = 10;
-    for(int i=1; i<=n; i++)
-        a[i] = i;
-
-    STree t(n); t.build(a);
-    for(int i=1; i<=n; i++){
-        for(int j=i; j<=n; j++){
-            cout << i << " " << j << " - ";
-            cout << t.query(i, j) << "\n";
-        }
-    }
-
-    t.update(5, -5);
-    for(int i=1; i<=n; i++){
-        for(int j=i; j<=n; j++){
-            cout << i << " " << j << " - ";
-            cout << t.query(i, j) << "\n";
-        }
-    }
+    SegTree<int> st(10);
 
     return 0;
 }
