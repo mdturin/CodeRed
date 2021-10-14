@@ -91,15 +91,55 @@ TP IL void unsetBit(T &x, int p){x &= (~(1LL<<p));}
 IL bool isPowerOfTwo(ll x){return x && (!(x & (x-1)));}
 IL int numberOfSetBit(ll x){return __builtin_popcountll(x);}
 
+template <const int32_t MOD> struct modint {
+    int32_t value; modint() = default;
+    template<typename T> modint(T value_) : value(value_%MOD) {}
+    inline modint<MOD> operator + (modint<MOD> other) const { int32_t c = this->value + other.value; return modint<MOD>(c >= MOD ? c - MOD : c); }
+    inline modint<MOD> operator - (modint<MOD> other) const { int32_t c = this->value - other.value; return modint<MOD>(c <    0 ? c + MOD : c); }
+    inline modint<MOD> operator * (modint<MOD> other) const { int32_t c = (int64_t)this->value * other.value % MOD; return modint<MOD>(c < 0 ? c + MOD : c); }
+    inline modint<MOD> & operator += (modint<MOD> other) { this->value += other.value; if (this->value >= MOD) this->value -= MOD; return *this; }
+    inline modint<MOD> & operator -= (modint<MOD> other) { this->value -= other.value; if (this->value <    0) this->value += MOD; return *this; }
+    inline modint<MOD> & operator *= (modint<MOD> other) { this->value = (int64_t)this->value * other.value % MOD; if (this->value < 0) this->value += MOD; return *this; }
+    inline modint<MOD> operator - () const { return modint<MOD>(this->value ? MOD - this->value : 0); }
+    modint<MOD> pow(uint64_t k) const { modint<MOD> x = *this, y = 1; for (; k; k >>= 1) { if (k & 1) y *= x; x *= x; } return y; }
+    modint<MOD> inv() const { return pow(MOD - 2); }  // MOD must be a prime
+    inline modint<MOD> operator /  (modint<MOD> other) const { return *this *  other.inv(); }
+    inline modint<MOD> operator /= (modint<MOD> other)       { return *this *= other.inv(); }
+    inline bool operator == (modint<MOD> other) const { return value == other.value; }
+    inline bool operator != (modint<MOD> other) const { return value != other.value; }
+    inline bool operator < (modint<MOD> other)  const { return value < other.value; }
+    inline bool operator > (modint<MOD> other)  const { return value > other.value; }
+};
+
+#define error(args...){ \
+            cerr << "## LINE " << __LINE__ << "\n"; \
+            string _s = #args; \
+            replace(_s.begin(), _s.end(), ',', ' '); \
+            stringstream _ss(_s); \
+            istream_iterator<string> _it(_ss); \
+            err(_it, args);}
+
+void err(istream_iterator<string> it){cerr<<endl<<endl;}
+template <typename T, typename... Args>
+void err(istream_iterator<string> it, T a, Args... args) {
+    cerr << "\t" << *it << "\t= " << a << "\n";
+    err(++it, args...);}
+
 /// First 4 Directions are U, D, L, R
 const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
 const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
 
-const int mx = 2e6+5;
-const int sqmx = sqrt(mx)+2, lgmx = __lg(mx)+2;
+using mint = modint<MODF>;
 
+const int mx = 2e6 + 5;
+const int sqmx = sqrt(mx) + 1;
+cosnt int lgmx = __lg(mx) + 1;
+
+string s;
 char buf[mx];
-int n, a[mx];
+
+vi g[mx]; int vis[mx];
+int n, m, a[mx], b[mx];
 
 inline void solve(int cs){
 //    write("Case ", cs, ": ");
@@ -109,6 +149,7 @@ inline void solve(int cs){
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
+    
     cout << fixed << setprecision(20);
     int tc = 1; srand(time(nullptr));
 
@@ -116,6 +157,7 @@ int main(){
 
     for(int cs=1; cs<=tc; cs++)
         solve(cs);
+
     return 0;
 }
 
