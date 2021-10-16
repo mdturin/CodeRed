@@ -1,7 +1,5 @@
 #include<bits/stdc++.h>
 using namespace std;
-using ll = long long;
-using ii = pair<int,int>;
 
 const int md = 1e9 + 7;
 const int mx = 1e6 + 5;
@@ -33,11 +31,29 @@ template <int32_t MOD> modint<MOD> operator * (int64_t value, modint<MOD> n) { r
 
 using mint = modint<md>;
 
-int main(){
+struct combi{
+    int n; vector<mint> facts, finvs, invs;
+    combi(int _n): n(_n), facts(_n), finvs(_n), invs(_n){
+        facts[0] = finvs[0] = invs[1] = 1;
+        for (int i = 2; i < n; i++) 
+            invs[i] = invs[md%i] * (-md/i);
+        for(int i = 1; i < n; i++){
+            facts[i] = facts[i - 1] * i;
+            finvs[i] = finvs[i - 1] * invs[i];
+        }
+    }
+    inline mint  inv(int n) { return invs[n];}
+    inline mint fact(int n) { return facts[n];}
+    inline mint finv(int n) { return finvs[n];}
+    inline mint ncr(int n, int k) {
+        return n < k or k < 0 ? 0 : facts[n] * finvs[k] * finvs[n-k];}
+}; combi C(N);
 
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+
+    cout << C.ncr(10, 2) << '\n';
 
     return 0;
 }
-

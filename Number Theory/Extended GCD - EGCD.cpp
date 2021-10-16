@@ -25,6 +25,12 @@ ll egcd(ll a, ll b, ll &x, ll &y){
     return g;
 }
 
+ll inverse(ll a, ll m){
+    ll x, y, g = egcd(a, m, x, y);
+    if(g != 1) return -1;
+    return (x%m + m) % m;
+}
+
 int main(int argc, const char** argv) {
 
     ios_base::sync_with_stdio(false);
