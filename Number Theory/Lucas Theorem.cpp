@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+using ll = long long;
+using ii = pair<int,int>;
 
 const int md = 1e9 + 7;
 const int mx = 1e6 + 5;
@@ -50,11 +52,20 @@ struct combi{
         return n < k or k < 0 ? 0 : facts[n] * finvs[k] * finvs[n-k];}
 }; combi C(mx);
 
-int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
+mint lucas(ll n, ll r){
+    if(r > n) return 0;
+    if(n < md) return C.ncr(n, r);
+    return lucas(n/md, r/md) * lucas(n%md, r%md);
+}
 
-    cout << C.ncr(10, 2) << '\n';
+int main(){
 
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    mint ans = lucas(100000000, 2322);
+    cout << ans << "\n";
+    
     return 0;
 }
+
