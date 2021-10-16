@@ -133,12 +133,12 @@ using mint = modint<MODF>;
 
 const int mx = 2e6 + 5;
 const int sqmx = sqrt(mx) + 1;
-cosnt int lgmx = __lg(mx) + 1;
+const int lgmx = __lg(mx) + 1;
 
 string s;
 char buf[mx];
 
-vi g[mx]; int vis[mx];
+//vi g[mx]; int vis[mx];
 int n, m, a[mx], b[mx];
 
 inline void solve(int cs){
@@ -149,8 +149,8 @@ inline void solve(int cs){
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
-    
-    cout << fixed << setprecision(20);
+
+    cout << fixed << setprecision(15);
     int tc = 1; srand(time(nullptr));
 
 //    read(tc);
