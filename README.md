@@ -2,20 +2,24 @@
 Competetive Programming Algorithms & Data Structures
 
 ## Data Structure
-- [Bit 2D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Bit%202D.cpp)
-- [Bit 3D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Bit%203D.cpp)
-- [Bit Range Query Point Update](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Bit%20Range%20Query%20Point%20Update.cpp)
-- [Bit Range Query Range Update](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Bit%20Range%20Query%20Range%20Update.cpp)
-- [MOS Algo - Tree](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algo%20-%20Tree.cpp)
-- [MOS Algo - UPDATE](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algo%20-%20UPDATE.cpp)
-- [MOS Algo](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algo.cpp)
+- Binary Indexed Tree - BIT
+	- [Bit 2D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Binary%20Indexed%20Tree%20-%20BIT/Bit%202D.cpp)
+	- [Bit 3D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Binary%20Indexed%20Tree%20-%20BIT/Bit%203D.cpp)
+	- [Bit Range Query Point Update](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Binary%20Indexed%20Tree%20-%20BIT/Bit%20Range%20Query%20Point%20Update.cpp)
+	- [Bit Range Query Range Update](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Binary%20Indexed%20Tree%20-%20BIT/Bit%20Range%20Query%20Range%20Update.cpp)
+- MOS Algorithm
+	- [MOS - Tree](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algorithm/MOS%20-%20Tree.cpp)
+	- [MOS - UPDATE](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algorithm/MOS%20-%20UPDATE.cpp)
+	- [MOS](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/MOS%20Algorithm/MOS.cpp)
+- Segment Tree - ST
+	- [Segment Tree - Lazy Propagation](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree%20-%20ST/Segment%20Tree%20-%20Lazy%20Propagation.cpp)
+	- [Segment Tree - Persistent](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree%20-%20ST/Segment%20Tree%20-%20Persistent.cpp)
+	- [Segment Tree](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree%20-%20ST/Segment%20Tree.cpp)
+- Sparse Table
+	- [Sparse Table 2D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table/Sparse%20Table%202D.cpp)
+	- [Sparse Table](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table/Sparse%20Table.cpp)
+- [- Problems](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/-%20Problems.txt)
 - [Policy Base Data Structure - PBDS](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Policy%20Base%20Data%20Structure%20-%20PBDS.cpp)
-- [Problems](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Problems.txt)
-- [Segment Tree - Lazy Propagation](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree%20-%20Lazy%20Propagation.cpp)
-- [Segment Tree - Persistent](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree%20-%20Persistent.cpp)
-- [Segment Tree](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Segment%20Tree.cpp)
-- [Sparse Table 2D](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table%202D.cpp)
-- [Sparse Table](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Sparse%20Table.cpp)
 - [Square Root Decomposition - SQRT](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Square%20Root%20Decomposition%20-%20SQRT.cpp)
 - [Union Find Disjoint Sets - UFDS](https://github.com/mdturin/CodeRed/blob/master/Data%20Structure/Union%20Find%20Disjoint%20Sets%20-%20UFDS.cpp)
 
@@ -147,10 +151,13 @@ Competetive Programming Algorithms & Data Structures
 	- [Sieve](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Prime%20Test/Sieve.cpp)
 	- [Single - SQRT](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Prime%20Test/Single%20-%20SQRT.cpp)
 - [Binomial Coefficient - NCR](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Binomial%20Coefficient%20-%20NCR.cpp)
+- [Chinese Reminder Theorem - CRT](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Chinese%20Reminder%20Theorem%20-%20CRT.cpp)
+- [Combinatorics Basics](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Combinatorics%20Basics.cpp)
 - [Extended GCD - EGCD](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Extended%20GCD%20-%20EGCD.cpp)
 - [Factorials](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Factorials.cpp)
 - [GCD & LCM](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/GCD%20&%20LCM.cpp)
 - [Inverse](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Inverse.cpp)
+- [Lucas Theorem](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Lucas%20Theorem.cpp)
 - [Moduler Exponential - BigMod](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Moduler%20Exponential%20-%20BigMod.cpp)
 - [Moduler Multiplication](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Moduler%20Multiplication.cpp)
 - [Moduler Power & Multiply](https://github.com/mdturin/CodeRed/blob/master/Number%20Theory/Moduler%20Power%20&%20Multiply.cpp)
