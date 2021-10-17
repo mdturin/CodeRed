@@ -35,4 +35,5 @@
 *.py
 
 # Gitignore
-*.gitignore
+*.GITIGNORE 
+*.cph
