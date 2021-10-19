@@ -1,3 +1,6 @@
+// author - md turin
+// created - 20.10.21
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -48,6 +51,10 @@ int main(){
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+
+    SegTree<int, 0> st(10, [&](int u, int v){
+        return u + v;
+    });
 
     SegTree<int, 0> st(10, cmp.fsum);
     for(int i=0; i<10; ++i) st.update(i, i+10);

@@ -1,3 +1,6 @@
+// author - md turin
+// created - 20.10.21
+
 #include<bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -69,6 +72,10 @@ int main() {
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+
+//    SegTreeLazy<int, int, 0, 0> st(10, [&](int u, int v){
+//        return u + v;
+//    });
 
     SegTreeLazy<int, int, 0, 0> st(10, cmp.fsum);
 
