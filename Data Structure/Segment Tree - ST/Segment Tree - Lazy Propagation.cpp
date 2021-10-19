@@ -73,9 +73,9 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-//    SegTreeLazy<int, int, 0, 0> st(10, [&](int u, int v){
-//        return u + v;
-//    });
+    // SegTreeLazy<int, int, 0, 0> st(10, [&](int u, int v){
+    //     return u + v;
+    // });
 
     SegTreeLazy<int, int, 0, 0> st(10, cmp.fsum);
 
