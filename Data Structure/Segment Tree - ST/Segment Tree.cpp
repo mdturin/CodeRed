@@ -37,21 +37,20 @@ public:
     T query(int i, int j){return qry(1, 0, N, i, j);}
 };
 
+template<typename T> struct get_cmp{
+    function<T(const T, const T)> fsum = [&](const T u, const T v){return u + v;};
+    function<T(const T, const T)> fmax = [&](const T u, const T v){return max(u, v);};
+    function<T(const T, const T)> fmin = [&](const T u, const T v){return min(u, v);};
+    function<T(const T, const T)> fgcd = [&](const T u, const T v){return __gcd(u, v);};
+};get_cmp<int> cmp;
+
 int main(){
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    auto get_sum = [&](int u, int v){
-        return u + v;
-    };
-
-    const int null_val = 0;
-    SegTree<int, null_val> st(10, get_sum);
-
-    for(int i=0; i<10; ++i)
-        st.update(i, i + 10);
-
+    SegTree<int, 0> st(10, cmp.fsum);
+    for(int i=0; i<10; ++i) st.update(i, i+10);
     for(int i=3; i<10; ++i)
         cout << st.query(i-3, i) << endl;
 
