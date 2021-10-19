@@ -47,9 +47,6 @@ UP using oset = tree<T, null_type, U, rb_tree_tag, tree_order_statistics_node_up
 #define all(x) (x).begin(),(x).end()
 #define Clr(x) memset((x),  0, sizeof((x)))
 #define Set(x) memset((x), -1, sizeof((x)))
-#define fileIO(name)\
-        freopen(name".in", "r", stdin);\
-        freopen(name".out", "w", stdout)
 #define For(i,a,b)  for(int i=a;  i<b; i++)
 #define Forn(i,b,a) for(int i=b; i>=a; i--)
 
@@ -111,32 +108,43 @@ template <const int32_t MOD> struct modint {
     inline bool operator > (modint<MOD> other)  const { return value > other.value; }
 };
 
-#define error(args...){ \
-            cerr << "## LINE " << __LINE__ << "\n"; \
-            string _s = #args; \
-            replace(_s.begin(), _s.end(), ',', ' '); \
-            stringstream _ss(_s); \
-            istream_iterator<string> _it(_ss); \
-            err(_it, args);}
+string to_string(string s){return '"' + s + '"';}
+string to_string(bool b){return (b ? "true" : "false");}
+string to_string(const char* s){return to_string((string) s);}
+template <typename A, typename B> string to_string(pair<A, B> p){
+    return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";}
+template <typename A> string to_string(A v) {
+    bool first = true;
+    string res = "{";
+    for (const auto &x : v) {
+        if (!first) res += ", ";
+        first = false;
+        res += to_string(x);
+    }res += "}"; return res;
+}
+ 
+void debug_out(){cerr << endl;}
+template <typename Head, typename... Tail>
+void debug_out(Head H, Tail... T){
+    cerr << " " << to_string(H); debug_out(T...);}
 
-void err(istream_iterator<string> it){cerr<<endl<<endl;}
-template <typename T, typename... Args>
-void err(istream_iterator<string> it, T a, Args... args) {
-    cerr << "\t" << *it << "\t= " << a << "\n";
-    err(++it, args...);}
+// #define LOCAL
+#ifdef LOCAL
+#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
+#else
+#define debug(...) 42
+#endif
 
 /// First 4 Directions are U, D, L, R
 const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
 const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
 
-using mint = modint<MODF>;
-
 const int mx = 2e6 + 5;
 const int sqmx = sqrt(mx) + 1;
 const int lgmx = __lg(mx) + 1;
 
-string s;
-char buf[mx];
+string s; char buf[mx];
+using mint = modint<MODF>;
 
 //vi g[mx]; int vis[mx];
 int n, m, a[mx], b[mx];
