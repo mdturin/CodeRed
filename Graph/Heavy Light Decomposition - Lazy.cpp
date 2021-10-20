@@ -14,40 +14,62 @@ int n, a[mx];
 int par[mx][lgmx];
 vector<int> g[mx];
 
-template <typename T, const T null_val, class F = function<T(const T, const T)>>
-struct SegTree{
+// Change push function
+template<typename T, typename LT,
+         const T null_val, const LT lazy_val,
+         class F = function<T(const T, const T)>>
+struct SegTreeLazy{
 private:
     #define L (p<<1)
     #define R (p<<1|1)
 
-    int N; F func; vector<T> t;
+    vector<T> t;
+    vector<LT> lz;
+    int N; F func;
 
-    void upd(int p, int l, int r, int i, T x){
-        if(l>r || l>i || r<i) return;
-        if(l == r){t[p] = x; return;}
+    inline void push(int p, int l, int r){
+        if (lz[p] == lazy_val) return;
+        t[p] = t[p] + lz[p] * (r - l + 1);
+        if (l != r) {
+            lz[L] = lz[L] + lz[p];
+            lz[R] = lz[R] + lz[p];
+        }lz[p] = lazy_val;
+    }
+
+    void upd(int p, int l, int r, int i, int j, T v){
+        push(p, l, r);
+        if(l>r || l>j || r<i) return;
+        if(l>=i && r<=j){
+            lz[p]=v; push(p, l, r); return;}
         int m = (l + r) >> 1;
-        upd(L, l, m, i, x);
-        upd(R, m+1, r, i, x);
+        upd(L, l, m, i, j, v);
+        upd(R, m+1, r, i, j, v);
         t[p] = func(t[L], t[R]);
     }
 
     T qry(int p, int l, int r, int i, int j){
+        push(p, l, r);
         if (l>r || l>j || r<i) return null_val;
         if (l>=i && r<=j) return t[p];
         int m = (l + r) >> 1;
         T u = qry(L, l, m, i, j);
         T v = qry(R, m+1, r, i, j);
+        t[p] = func(t[L], t[R]);
         return func(u, v);
     }
 
 public:
-    SegTree(int sz, F f) : N(sz+1), func(f){
-        t.resize(N<<2, null_val);}
-    void update(int i, T x){upd(1, 0, N, i, x);}
+    SegTreeLazy(int sz, F f) : N(sz+1), func(f){
+        t.resize(N<<2, null_val);
+        lz.resize(N<<2, lazy_val);
+    }
     T query(int i, int j){return qry(1, 0, N, i, j);}
+    void update(int i, int j, T x){upd(1, 0, N, i, j, x);}
 };
 
-template <typename T, const T null_val, class F = function<T(const T, const T)>>
+template <typename T, typename LT,
+          const T null_val, const LT lazy_val,
+          class F = function<T(const T, const T)>>
 struct HLD{
 private:
     #define L (p<<1)
@@ -57,7 +79,7 @@ private:
     vector<int> heavy;
     vector<int> hei, head;
     vector<int> pos, rpos;
-    SegTree<T, null_val> st;
+    SegTreeLazy<T, LT, null_val, lazy_val> st;
 
     int dfs(int u, int p, int h){
         int sz = 1, msz = 0, vsz;
@@ -90,12 +112,18 @@ public:
     void build(int root=1){
         dfs(root, -1, 0);
         decom(root, root);
-        for(int i=1; i<N; ++i)
-            st.update(pos[i], a[i]);
+        for(int i=root; i<N; ++i)
+            st.update(pos[i], pos[i], a[i]);
     }
 
-    void update(int u, T val){
-        return st.update(pos[u], val);}
+    void update(int u, int v, T val){
+        while(head[u] != head[v]){
+            if(hei[head[u]] > hei[head[v]]) swap(u, v);
+            st.update(pos[head[v]], pos[v], val);
+            v = par[head[v]][0];
+        }if(pos[u] > pos[v]) swap(u, v);
+        st.update(pos[u], pos[v], val);
+    }
 
     T query(int u, int v){
         T ans = null_val;
@@ -130,15 +158,15 @@ int main(int argc, const char** argv) {
     }
 
     get_cmp<ll> cmp;
-    HLD<ll, 0> hld(n, cmp.fsum);
+    HLD<ll, ll, 0, 0> hld(n, cmp.fsum);
     hld.build(1);
 
     int ty, u, v, val;
     while(q--){
         cin >> ty;
         if(ty == 1){
-            cin >> u >> val;
-            hld.update(u, val);
+            cin >> u >> v >> val;
+            hld.update(u, v, val);
         }else{
             cin >> u >> v;
             cout << hld.query(u, v) << "\n";
