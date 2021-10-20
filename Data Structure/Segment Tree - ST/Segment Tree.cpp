@@ -19,8 +19,9 @@ private:
         if(l>r || l>i || r<i) return;
         if(l == r){t[p] = x; return;}
         int m = (l + r) >> 1;
-        upd(L, l, m, i, x);
-        upd(R, m+1, r, i, x);
+        if(i <= m)
+            upd(L, l, m, i, x);
+        else upd(R, m+1, r, i, x);
         t[p] = func(t[L], t[R]);
     }
 
