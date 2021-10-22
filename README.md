@@ -2,11 +2,13 @@
 Competetive Programming Algorithms & Data Structures
 
 ## 1 - Sorting & Searching
-- [Binary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Binary%20Search.cpp)
-- [Counting Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Counting%20Sort.cpp)
-- [Merge Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Merge%20Sort.cpp)
-- [Quick Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Quick%20Sort.cpp)
-- [Ternary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Ternary%20Search.cpp)
+- Searching
+	- [Binary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Searching/Binary%20Search.cpp)
+	- [Ternary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Searching/Ternary%20Search.cpp)
+- Sorting
+	- [Counting Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Sorting/Counting%20Sort.cpp)
+	- [Merge Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Sorting/Merge%20Sort.cpp)
+	- [Quick Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Sorting/Quick%20Sort.cpp)
 
 ## 2 - Number Theory
 - Divisors
