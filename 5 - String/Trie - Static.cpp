@@ -38,7 +38,7 @@ inline bool query(string &s){
         if(!t[p][u])
             return false;
         p = t[p][u];
-    }cnt[p] > 0;
+    }return (cnt[p] > 0);
 }
 
 int main(){
