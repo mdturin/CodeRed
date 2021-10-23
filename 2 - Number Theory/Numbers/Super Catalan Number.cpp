@@ -1,15 +1,10 @@
-// https://oeis.org/A000108
+// http://oeis.org/A001003
 
-// Formula  - C(n+1) = binomial(2*n, n) / (n+1)
-//                   = (2*n)! / (n! * (n+1)!)
-//          - C(n+1)​ = C0.​Cn ​+ C1.​C(n−1) ​+ ⋯ + Cn.​C0​
-//                   = (k=0 to n) ∑ ​Ck.​C(n−k)​
+// Formula  - S(n) = (S(n-1) * 3(2n-3) - S(n-2) * (n-3)) / n
 
-// Sequence - 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012,
-//          742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190,
-//          6564120420, 24466267020, 91482563640, 343059613650, 1289904147324,
-//          4861946401452, 18367353072152, 69533550916004, 263747951750360,
-//          1002242216651368, 3814986502092304 .....
+// Sequence - 	1, 1, 3, 11, 45, 197, 903, 4279, 20793, 103049, 518859, 2646723, 13648869, 71039373,
+//              372693519, 1968801519, 10463578353, 55909013009, 300159426963, 1618362158587, 8759309660445,
+//              47574827600981, 259215937709463, 1416461675464871 .........
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -50,35 +45,16 @@ template <const int32_t MOD> struct modint{
     TPT IM operator / (T ot) const {return *this / modint<MOD>(ot);}
 };
 
-template <const int32_t _M> struct Combo{
-private:
-    using MI = modint<_M>;
-    vector<MI> f, nf, invs;
-    void __build__(int N){
-        f[0] = nf[0] = invs[1] = 1;
-        for (int i = 2; i < N; i++)
-            invs[i] = invs[_M%i] * (-_M/i);
-        for(int i = 1; i < N; i++){
-            f[i] = f[i - 1] * i;
-            nf[i] = nf[i - 1] * invs[i];
-        }
-    }
-public:
-    Combo() = default;
-    Combo(int N=2):f(N),nf(N),invs(N){__build__(N);}
-    MI ncr(int n, int k){
-        return (n<k || k<0) ? 0 : f[n] * nf[k] * nf[n-k];}
-    inline MI fact(int n) {return f[n];}
-    inline MI finv(int n) {return nf[n];}
-    inline MI  inv(int n) {return invs[n];}
-};
-
-using C = Combo<MOD>;
 using mint = modint<MOD>;
 
-C sol(mx);
-int get_catalan(int x){
-    return (sol.ncr(2*x, x) /= (x+1)).value;
+mint scatalan[mx];
+void pre_calculate(){
+    scatalan[1] = scatalan[2] = 1;
+    for(int i=3; i<mx; ++i){
+        scatalan[i] = scatalan[i-1] * 3 * (2*i - 3);
+        scatalan[i] -= scatalan[i-2] * (i - 3);
+        scatalan[i] /= i;
+    }
 }
 
 int main(int argc, const char** argv) {
@@ -86,8 +62,9 @@ int main(int argc, const char** argv) {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    pre_calculate();
     int n; cin >> n;
-    cout << get_catalan(n) << "\n";
+    cout << scatalan[n].value << "\n";
 
     return 0;
 }

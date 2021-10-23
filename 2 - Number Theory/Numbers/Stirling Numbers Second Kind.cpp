@@ -1,20 +1,10 @@
-// https://oeis.org/A000108
-
-// Formula  - C(n+1) = binomial(2*n, n) / (n+1)
-//                   = (2*n)! / (n! * (n+1)!)
-//          - C(n+1)​ = C0.​Cn ​+ C1.​C(n−1) ​+ ⋯ + Cn.​C0​
-//                   = (k=0 to n) ∑ ​Ck.​C(n−k)​
-
-// Sequence - 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012,
-//          742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190,
-//          6564120420, 24466267020, 91482563640, 343059613650, 1289904147324,
-//          4861946401452, 18367353072152, 69533550916004, 263747951750360,
-//          1002242216651368, 3814986502092304 .....
+// Formula  - S(n,k) = k * S(n−1, k) + S(n−1, k−1)
+//          - S(n,k) = (1/(k!)) ∑(j=0 to k) ((−1)^j) ncr(k, j) ((k−j)^n)
 
 #include <bits/stdc++.h>
 using namespace std;
 
-const int mx = 1e5 + 5;
+const int mx = 1e3 + 5;
 const int MOD = 1e9 + 7;
 
 template <const int32_t MOD> struct modint{
@@ -76,9 +66,26 @@ public:
 using C = Combo<MOD>;
 using mint = modint<MOD>;
 
-C sol(mx);
-int get_catalan(int x){
-    return (sol.ncr(2*x, x) /= (x+1)).value;
+C solver(mx);
+mint dp[mx][mx];
+void pre_calculate(){
+    dp[0][0] = 1;
+    for(int i=1; i<mx; ++i)
+    for(int j=1; j<=i; ++j){
+        if(j == 1) dp[i][j] = 1;
+        else{
+            dp[i][j] = dp[i-1][j-1];
+            dp[i][j] += dp[i-1][j] * j;
+        }
+    }
+}
+
+int get_stirling2(int n, int k){
+    mint ans = 0;
+    for(int i=0; i<=k; ++i){
+        mint x = solver.ncr(k, i) * mint(k-i).pow(n);
+        if(i&1) ans -= x; else ans += x;
+    }return (ans * solver.finv(k)).value;
 }
 
 int main(int argc, const char** argv) {
@@ -86,8 +93,40 @@ int main(int argc, const char** argv) {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    int n; cin >> n;
-    cout << get_catalan(n) << "\n";
+    int n, m;
+    cin >> n >> m;
+    assert(m <= n);
+
+    // using formula 1
+    pre_calculate();
+    cout << dp[n][m].value << "\n";
+
+    // using formula 2
+    cout << get_stirling2(n, m) << "\n";
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
