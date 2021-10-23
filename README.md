@@ -105,40 +105,47 @@ Competetive Programming Algorithms & Data Structures
 - [Topological Sort](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort.cpp)
 
 ## 5 - String
-- Hashing - Variant
-	- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Hashing%20-%20Variant/Longest%20Common%20Substring.cpp)
-- Suffix Array - Variant
-	- [Kth Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Variant/Kth%20Substring.cpp)
-	- [Longest Common Substring - Multiple String](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Variant/Longest%20Common%20Substring%20-%20Multiple%20String.cpp)
-	- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Variant/Longest%20Common%20Substring.cpp)
-- Suffix Automata - Variant
-	- [Build Suffix Array](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Build%20Suffix%20Array.cpp)
-	- [Distinct Number of Substring - Expanding](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Distinct%20Number%20of%20Substring%20-%20Expanding.cpp)
-	- [Distinct Number of Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Distinct%20Number%20of%20Substring.cpp)
-	- [First Postion of a string](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/First%20Postion%20of%20a%20string.cpp)
-	- [Frequency of a string](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Frequency%20of%20a%20string.cpp)
-	- [Kth Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Kth%20Substring.cpp)
-	- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Longest%20Common%20Substring.cpp)
-	- [Minimum Cyclic Shift](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Minimum%20Cyclic%20Shift.cpp)
-	- [Total Lenght of Distinct Number of Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Variant/Total%20Lenght%20of%20Distinct%20Number%20of%20Substring.cpp)
-- [Aho Corasick](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Aho%20Corasick.cpp)
-- [Knuth-Morris-Pratt - KMP](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Knuth-Morris-Pratt%20-%20KMP.cpp)
-- [Manachers Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Manachers%20Algorithm.cpp)
-- [Minimum Smallest String Rotation - Booth Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Minimum%20Smallest%20String%20Rotation%20-%20Booth%20Algorithm.cpp)
-- [Minimum Smallest String Rotation - Greedy](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Minimum%20Smallest%20String%20Rotation%20-%20Greedy.cpp)
-- [Palindromic Tree](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindromic%20Tree.cpp)
-- [String Hashing - Ashik Vai](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing%20-%20Ashik%20Vai.cpp)
-- [String Hashing - Comparator](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing%20-%20Comparator.cpp)
-- [String Hashing - Double](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing%20-%20Double.cpp)
-- [String Hashing - Single](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing%20-%20Single.cpp)
-- [Suffix Array - Counting Sort](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Counting%20Sort.cpp)
-- [Suffix Array - Smallest Cyclic Shift Complex](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Smallest%20Cyclic%20Shift%20Complex.cpp)
-- [Suffix Array - Smallest Cyclic Shift Simple](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array%20-%20Smallest%20Cyclic%20Shift%20Simple.cpp)
-- [Suffix Automata - Class](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata%20-%20Class.cpp)
-- [Suffix Automata](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata.cpp)
-- [Trie - Dynamic](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie%20-%20Dynamic.cpp)
-- [Trie - Static](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie%20-%20Static.cpp)
-- [Z Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Z%20Algorithm.cpp)
+- Minimum String Rotation
+	- [Booth Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Minimum%20String%20Rotation/Booth%20Algorithm.cpp)
+	- [Greedy](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Minimum%20String%20Rotation/Greedy.cpp)
+- Palindrom
+	- [Manachers Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindrom/Manachers%20Algorithm.cpp)
+	- [Palindromic Tree](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindrom/Palindromic%20Tree.cpp)
+- String Hashing
+	- Problems
+		- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/Problems/Longest%20Common%20Substring.cpp)
+	- [String Hashing - Ashik Vai](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Ashik%20Vai.cpp)
+	- [String Hashing - Comparator](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Comparator.cpp)
+	- [String Hashing - Double](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Double.cpp)
+	- [String Hashing - Single](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Single.cpp)
+- String Matching
+	- [Aho Corasick](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Matching/Aho%20Corasick.cpp)
+	- [Knuth-Morris-Pratt - KMP](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Matching/Knuth-Morris-Pratt%20-%20KMP.cpp)
+	- [Z Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Matching/Z%20Algorithm.cpp)
+- Suffix Array
+	- Problems
+		- [Kth Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Problems/Kth%20Substring.cpp)
+		- [Longest Common Substring - Multiple String](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Problems/Longest%20Common%20Substring%20-%20Multiple%20String.cpp)
+		- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Problems/Longest%20Common%20Substring.cpp)
+	- [Counting Sort](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Counting%20Sort.cpp)
+	- [Smallest Cyclic Shift - Complex](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Smallest%20Cyclic%20Shift%20-%20Complex.cpp)
+	- [Smallest Cyclic Shift - Simple](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Array/Smallest%20Cyclic%20Shift%20-%20Simple.cpp)
+- Suffix Automata
+	- Problems
+		- [Build Suffix Array](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Build%20Suffix%20Array.cpp)
+		- [Distinct Number of Substring - Expanding](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Distinct%20Number%20of%20Substring%20-%20Expanding.cpp)
+		- [Distinct Number of Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Distinct%20Number%20of%20Substring.cpp)
+		- [First Postion of a string](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/First%20Postion%20of%20a%20string.cpp)
+		- [Frequency of a string](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Frequency%20of%20a%20string.cpp)
+		- [Kth Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Kth%20Substring.cpp)
+		- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Longest%20Common%20Substring.cpp)
+		- [Minimum Cyclic Shift](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Minimum%20Cyclic%20Shift.cpp)
+		- [Total Lenght of Distinct Number of Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Problems/Total%20Lenght%20of%20Distinct%20Number%20of%20Substring.cpp)
+	- [Suffix Automata - Class](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Suffix%20Automata%20-%20Class.cpp)
+	- [Suffix Automata](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Suffix%20Automata.cpp)
+- Trie
+	- [Dynamic](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie/Dynamic.cpp)
+	- [Static](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie/Static.cpp)
 
 ## 6 - Dynamic Programming
 - AtCoder - Educational DP Contest
