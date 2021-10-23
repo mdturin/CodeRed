@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
-
-const int mx = 1e3 + 5;
-const int md = 1e9 + 7;
+const int MOD = 1e9 + 7;
 
 /**
     Analytic formula    : (nCk) = (n!) / (k! * (n-k)!);
@@ -25,70 +23,73 @@ const int md = 1e9 + 7;
 
 */
 
-template <typename T>
-T power(T v, T p, T m=md) {
-    v %= m; T r = 1;
-    while (p > 0){
-        if (p & 1)
-            r = (1LL * r * v) % m;
-        v = (1LL * v * v) % m; p >>= 1;
-    }return r;
-}
+template <const int32_t MOD> struct modint{
+    #define IM inline modint<MOD>
+    #define TPT template<typename T>
 
-int inv[mx]; // inverse - [1, mx)
-void get_inverse(){
-    inv[0] = inv[1] = 1;
-    for(int i=2; i<mx; i++)
-        inv[i] = (md - (md/i) * inv[md%i]%md)%md;
-}
+    int32_t value; modint() = default;
+    TPT modint(T value_) : value(value_%MOD) {}
+    IM operator + (modint<MOD> other) const { int32_t c = this->value + other.value; return modint<MOD>(c >= MOD ? c - MOD : c); }
+    IM operator - (modint<MOD> other) const { int32_t c = this->value - other.value; return modint<MOD>(c <    0 ? c + MOD : c); }
+    IM operator * (modint<MOD> other) const { int32_t c = (int64_t)this->value * other.value % MOD; return modint<MOD>(c < 0 ? c + MOD : c); }
+    IM &operator += (modint<MOD> other) {this->value += other.value; if (this->value >= MOD) this->value -= MOD; return *this; }
+    IM &operator -= (modint<MOD> other) {this->value -= other.value; if (this->value <    0) this->value += MOD; return *this; }
+    IM &operator *= (modint<MOD> other) {this->value = (int64_t)this->value * other.value % MOD; if (this->value < 0) this->value += MOD; return *this; }
+    IM operator - () const { return modint<MOD>(this->value ? MOD - this->value : 0); }
+    modint<MOD> pow(uint64_t k) const { modint<MOD> x = *this, y = 1; for (; k; k >>= 1) { if (k & 1) y *= x; x *= x; } return y; }
+    modint<MOD> inv() const { return pow(MOD - 2); }  // MOD must be a prime
+    IM operator /  (modint<MOD> other) const { return *this *  other.inv(); }
+    IM operator /= (modint<MOD> other)       { return *this *= other.inv(); }
+    inline bool operator == (modint<MOD> other) const {return value == other.value;}
+    inline bool operator != (modint<MOD> other) const {return value != other.value;}
+    inline bool operator < (modint<MOD> other)  const {return value < other.value;}
+    inline bool operator > (modint<MOD> other)  const {return value > other.value;}
 
-ll get_ncr_naive(int n, int k){
-    ll res = 1LL;
-    if(k > n-k) k = n-k;
-    for(int i=0; i<k; i++){
-        res = res * (n-i) % md;
-        res = res * inv[i + 1] % md;
-    }return res;
-}
+    TPT IM &operator += (T ot){return *this += modint<MOD>(ot);}
+    TPT IM &operator -= (T ot){return *this -= modint<MOD>(ot);}
+    TPT IM &operator *= (T ot){return *this *= modint<MOD>(ot);}
+    TPT IM &operator /= (T ot){return *this *= modint<MOD>(ot).inv();}
 
-ll ncr[mx][mx];
-void calcuate_ncr_table(){
-    for(int i=0; i<mx; i++){
-        ncr[i][0] = ncr[i][i] = 1;
-        for(int j=1; j<i; j++)
-            ncr[i][j] = (ncr[i-1][j] + ncr[i-1][j-1]) % md;
+    TPT IM operator + (T ot) const {return *this + modint<MOD>(ot);}
+    TPT IM operator - (T ot) const {return *this - modint<MOD>(ot);}
+    TPT IM operator * (T ot) const {return *this * modint<MOD>(ot);}
+    TPT IM operator / (T ot) const {return *this / modint<MOD>(ot);}
+};
+
+template <const int32_t _M> struct Combo{
+private:
+    using MI = modint<_M>;
+    vector<MI> f, nf, invs;
+    void __build__(int N){
+        f[0] = nf[0] = invs[1] = 1;
+        for (int i = 2; i < N; i++)
+            invs[i] = invs[_M%i] * (-_M/i);
+        for(int i = 1; i < N; i++){
+            f[i] = f[i - 1] * i;
+            nf[i] = nf[i - 1] * invs[i];
+        }
     }
-}
+public:
+    Combo() = default;
+    Combo(int N=2):f(N),nf(N),invs(N){__build__(N);}
+    MI ncr(int n, int k){
+        return (n<k || k<0) ? 0 : f[n] * nf[k] * nf[n-k];}
+    inline MI fact(int n) {return f[n];}
+    inline MI finv(int n) {return nf[n];}
+    inline MI  inv(int n) {return invs[n];}
+};
 
-ll f[mx], nf[mx];
-inline void get_factorials(){
-	f[0] = nf[0] = 1;
-	for(int i=1; i<mx; ++i){
-		f[i] = f[i-1] * i % md;
-//		nf[i] = power<ll>(f[i], md-2);
-	}
-}
-
-inline void get_factorials_inverse(){
-	// get_factorials first
-	nf[mx-1] = power<ll>(f[mx-1], md-2);
-	for(int i=mx-2; i>=0; --i)
-		nf[i] = (ll)(i+1) * nf[i+1] % md;
-}
-
-inline int get_ncr_fact(int n, int m){
-    int ans = f[n] * nf[n-m] % md;
-    return (ll)ans * nf[m] % md;
-}
+using C = Combo<MOD>;
+using mint = modint<MOD>;
 
 int main(int argc, const char** argv) {
 
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    get_inverse();
-    get_factorials();
-    get_factorials_inverse();
+
+    C sol(1000);
+    cout << a.ncr(100, 20) << "\n"; // 926116413
 
     return 0;
 }
