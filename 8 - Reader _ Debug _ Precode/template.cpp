@@ -85,7 +85,7 @@ IL bool isPowerOfTwo(ll x){return x && (!(x & (x-1)));}
 IL int numberOfSetBit(ll x){return __builtin_popcountll(x);}
 
 /** Mod - Int **/
-template <const int32_t MOD> struct modint {
+template <const int32_t MOD> struct modint{
     #define IM inline modint<MOD>
     #define TPT template<typename T>
 
@@ -107,15 +107,17 @@ template <const int32_t MOD> struct modint {
     inline bool operator < (modint<MOD> other)  const {return value < other.value;}
     inline bool operator > (modint<MOD> other)  const {return value > other.value;}
 
-    TPT IM &operator *= (T ot){return *this *= modint<MOD>(ot);}
-    TPT IM &operator /= (T ot){return *this /= modint<MOD>(ot);}
     TPT IM &operator += (T ot){return *this += modint<MOD>(ot);}
     TPT IM &operator -= (T ot){return *this -= modint<MOD>(ot);}
+    TPT IM &operator *= (T ot){return *this *= modint<MOD>(ot);}
+    TPT IM &operator /= (T ot){return *this *= modint<MOD>(ot).inv();}
+
     TPT IM operator + (T ot) const {return *this + modint<MOD>(ot);}
     TPT IM operator - (T ot) const {return *this - modint<MOD>(ot);}
     TPT IM operator * (T ot) const {return *this * modint<MOD>(ot);}
     TPT IM operator / (T ot) const {return *this / modint<MOD>(ot);}
 };
+
 
 /** Debugging Tools **/
 string to_string(string s){return '"' + s + '"';} string to_string(const char* s){return to_string((string) s);}
