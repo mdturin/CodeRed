@@ -37,6 +37,8 @@ Competetive Programming Algorithms & Data Structures
 	- [Trailling Zeros](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Miscellaneous/Trailling%20Zeros.cpp)
 - Numbers
 	- [Catalan Number](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Numbers/Catalan%20Number.cpp)
+	- [Stirling Numbers Second Kind](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Numbers/Stirling%20Numbers%20Second%20Kind.cpp)
+	- [Super Catalan Number](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Numbers/Super%20Catalan%20Number.cpp)
 - Prime Test
 	- [Miller Rabin](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Prime%20Test/Miller%20Rabin.cpp)
 	- [Segment Sieve](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Prime%20Test/Segment%20Sieve.cpp)
@@ -44,7 +46,6 @@ Competetive Programming Algorithms & Data Structures
 	- [Single - SQRT](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Prime%20Test/Single%20-%20SQRT.cpp)
 - [Binomial Coefficient - NCR](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Binomial%20Coefficient%20-%20NCR.cpp)
 - [Chinese Reminder Theorem - CRT](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Chinese%20Reminder%20Theorem%20-%20CRT.cpp)
-- [Combinatorics Basics](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Combinatorics%20Basics.bin)
 - [Combinatorics Basics](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Combinatorics%20Basics.cpp)
 - [Extended GCD - EGCD](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Extended%20GCD%20-%20EGCD.cpp)
 - [Factorials](https://github.com/mdturin/CodeRed/blob/master/2%20-%20Number%20Theory/Factorials.cpp)
