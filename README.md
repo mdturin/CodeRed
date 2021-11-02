@@ -89,6 +89,9 @@ Competetive Programming Algorithms & Data Structures
 - Minimum Spanning Tree
 	- [Minimum Spanning Tree - Kruskal](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Minimum%20Spanning%20Tree/Minimum%20Spanning%20Tree%20-%20Kruskal.cpp)
 	- [Minimum Spanning Tree - Prim](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Minimum%20Spanning%20Tree/Minimum%20Spanning%20Tree%20-%20Prim.cpp)
+- Topological Sort
+	- [Topological Sort - Cp Algo](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort/Topological%20Sort%20-%20Cp%20Algo.cpp)
+	- [Topological Sort - Using In Degree](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort/Topological%20Sort%20-%20Using%20In%20Degree.cpp)
 - [Articulation Points & Bridges](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Articulation%20Points%20&%20Bridges.cpp)
 - [Bellman Ford](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Bellman%20Ford.cpp)
 - [BFS - Grid](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/BFS%20-%20Grid.cpp)
@@ -103,7 +106,6 @@ Competetive Programming Algorithms & Data Structures
 - [Floyd Warshall](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Floyd%20Warshall.cpp)
 - [Shortest Path Faster Algorithm - SPFA](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Shortest%20Path%20Faster%20Algorithm%20-%20SPFA.cpp)
 - [Strongly Connected  Component - SCC](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Strongly%20Connected%20%20Component%20-%20SCC.cpp)
-- [Topological Sort](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort.cpp)
 
 ## 5 - String
 - Minimum String Rotation
