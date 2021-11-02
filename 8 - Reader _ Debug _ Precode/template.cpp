@@ -72,6 +72,21 @@ TP IL T power(T v, T p, T m=MOD) {
         v = (v*1LL*v)%m; p >>= 1;
     }return r;
 }
+
+TP IL void compress(T *a, size_t n){
+    vector<T> b(a, a+n); sort(all(b));
+    b.erase(unique(all(b)), b.end());
+    for(int i=0; i<n; ++i)
+        a[i] = UB(all(b), a[i]) - b.begin();
+}
+
+TP IL void compress(vector<T> &a){
+    vector<T> b=a; sort(all(b));
+    b.erase(unique(all(b)), b.end());
+    for(int i=0; i<a.size(); ++i)
+        a[i] = UB(all(b), a[i]) - b.begin();
+}
+
 TP IL T gcd(T a, T b){return (b?gcd(b,a%b):a);}
 TP IL T lcm(T a, T b){return (a / gcd(a,b) * b);}
 TP IL T inv(T x, int m=MOD){return power<T>(x, m-2, m);}
@@ -88,7 +103,6 @@ IL int numberOfSetBit(ll x){return __builtin_popcountll(x);}
 template <const int32_t MOD> struct modint{
     #define IM inline modint<MOD>
     #define TPT template<typename T>
-
     int32_t value; modint() = default;
     TPT modint(T value_) : value(value_%MOD) {}
     IM operator + (modint<MOD> other) const { int32_t c = this->value + other.value; return modint<MOD>(c >= MOD ? c - MOD : c); }
@@ -106,18 +120,15 @@ template <const int32_t MOD> struct modint{
     inline bool operator != (modint<MOD> other) const {return value != other.value;}
     inline bool operator < (modint<MOD> other)  const {return value < other.value;}
     inline bool operator > (modint<MOD> other)  const {return value > other.value;}
-
     TPT IM &operator += (T ot){return *this += modint<MOD>(ot);}
     TPT IM &operator -= (T ot){return *this -= modint<MOD>(ot);}
     TPT IM &operator *= (T ot){return *this *= modint<MOD>(ot);}
     TPT IM &operator /= (T ot){return *this *= modint<MOD>(ot).inv();}
-
     TPT IM operator + (T ot) const {return *this + modint<MOD>(ot);}
     TPT IM operator - (T ot) const {return *this - modint<MOD>(ot);}
     TPT IM operator * (T ot) const {return *this * modint<MOD>(ot);}
     TPT IM operator / (T ot) const {return *this / modint<MOD>(ot);}
 };
-
 
 /** Debugging Tools **/
 string to_string(string s){return '"' + s + '"';} string to_string(const char* s){return to_string((string) s);}
@@ -125,16 +136,16 @@ string to_string(bool b){return (b ? "true" : "false");} UP string to_string(pai
 TP string to_string(T v){bool first = true; string res = "{"; for(const auto &x : v){if(!first) res += ", "; first = false; res += to_string(x); }res += "}"; return res;}
 void debug_out(){cerr << endl;} HP void debug_out(H Ht, T... Tt){cerr << " " << to_string(Ht); debug_out(Tt...);}
 
+/// First 4 Directions are U, D, L, R
+const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
+const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
+
 // #define LOCAL
 #ifdef LOCAL
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
 #define debug(...) 42
 #endif
-
-/// First 4 Directions are U, D, L, R
-const int dx[] = {1, -1, 0, 0, -1, 1, -1, 1},  dy[] = {0, 0, -1, 1, 1, 1, -1, -1};  /** king moves */
-const int kx[] = {-2, -1, 1, 2, 2, 1, -1, -2}, ky[] = {1, 2, 2, 1, -1, -2, -2, -1}; /** knight moves */
 
 const int mx = 2e6 + 5;
 const int sqmx = sqrt(mx) + 1;
@@ -148,13 +159,12 @@ int n, m, a[mx], b[mx];
 
 inline void solve(int cs){
 //    write("Case ", cs, ": ");
-
+    
 }
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
-
     cout << fixed << setprecision(15);
     int tc = 1; srand(time(nullptr));
 
