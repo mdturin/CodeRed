@@ -51,6 +51,7 @@ template<int SZ> struct SCC{
     }
 
     vector<vector<int>> get_scc(){return move(scc);}
+    bool is_same(int u, int v){return comp[u]==comp[v];}
 };
 
 int main(){
