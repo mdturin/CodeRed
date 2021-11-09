@@ -37,10 +37,7 @@ template <const int32_t MOD> struct modint{
     TPT IM operator - (T ot) const {return *this - modint<MOD>(ot);}
     TPT IM operator * (T ot) const {return *this * modint<MOD>(ot);}
     TPT IM operator / (T ot) const {return *this / modint<MOD>(ot);}
-};
-
-
-using mint = modint<md>;
+};using mint = modint<md>;
 
 int main(){
 
