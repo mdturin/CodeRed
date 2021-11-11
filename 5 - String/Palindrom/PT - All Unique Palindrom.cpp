@@ -27,7 +27,6 @@ void init(){
     idx = t = 2;
 }
 
-/// extending palindromic tree
 void extend(int p){
     while(s[p-len[t]-1] != s[p]) t=link[t];
     int x = link[t], c = s[p] - 'a';
@@ -40,37 +39,24 @@ void extend(int p){
     }pt[p] = t = tree[t][c]; ++occ[t];
 }
 
-/// distinct number of palindrom
-void distinct_number_of_palindrom(){
-    cin >> s;
-    int n = strlen(s); init();
-    for(int i=0; i<n; i++)
-        extend(i);
-    cout << (idx-2) << "\n";
-}
+deque<char> dq;
+vector<string> str;
+void fun(int i, bool odd){
+    string st(dq.begin(), dq.end());
+    if(dq.size()) str.push_back(st);
 
-/// number of palindrom sub-string ends in every position
-void number_of_palindrom_sub_string_ends_in_every_position(){
-    cin >> s;
-    int n = strlen(s); init();
-    for(int i=0; i<n; i++){
-        extend(i);
-        cout << i << " " << ans[t] << "\n";
+    for(int j=0; j<26; ++j){
+        if(tree[i][j]){
+            dq.push_front((char)(j + 'a'));
+            if(!odd) 
+                dq.push_back((char)(j + 'a'));
+
+            fun(tree[i][j], 0);
+
+            if(dq.size()) dq.pop_back();
+            if(dq.size()) dq.pop_front();
+        }
     }
-}
-
-/// ApIO 2014 - Palindrome
-/// find maximum value of ∣P∣ * occ(P)
-void apio_2014_palindrome(){
-    cin >> s;
-    int n = strlen(s); init();
-    for(int i=0; i<n; i++) extend(i);
-    for(int i=idx; i>2; i--)
-        occ[link[i]] += occ[i];
-    int ans = 0;
-    for(int i=2; i<=idx; i++)
-        ans = max(ans, len[i] * occ[i]);
-    cout << ans << "\n";
 }
 
 int main(){
@@ -78,8 +64,18 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
 
+    cin >> s;
+    int n = strlen(s);
 
+    init();
+    for(int i=0; i<n; ++i) extend(i);
+    
+    dq.clear(); fun(1, 1);
+    dq.clear(); fun(2, 0);
+
+    sort(str.begin(), str.end());
+    for(auto &it : str)
+        cout << it << "\n";
 
     return 0;
 }
-
