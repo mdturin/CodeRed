@@ -12,9 +12,10 @@ const int mod = 1e9+7;
 const int inf = 1e9;
 const int mx  = 1e6+5;
 
-int tree[mx][26], idx;
-char s[mx]; int ans[mx], pt[mx];
-int len[mx], link[mx], t, occ[mx];
+char s[mx]; 
+int tree[mx][26], idx, t;
+int ans[mx], pt[mx], en[mx];
+int len[mx], link[mx], occ[mx];
 
 /// initialize
 void init(){
@@ -37,7 +38,7 @@ void extend(int p){
         len[idx] = len[t] + 2;
         link[idx] = (len[idx] == 1) ? 2 : tree[x][c];
         ans[idx] = 1 + ans[link[idx]];
-    }pt[p] = t = tree[t][c]; ++occ[t];
+    }pt[p] = t = tree[t][c]; en[t] = p; ++occ[t];
 }
 
 /// distinct number of palindrom
