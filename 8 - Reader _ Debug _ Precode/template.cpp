@@ -9,8 +9,10 @@ using namespace std;
 using ll  = long long;
 using vl  = vector<ll>;
 using vi  = vector<int>;
-using ii  = pair<int,int>;
+using pll = pair<ll, ll>;
+using ii  = pair<int, int>;
 using tpl = tuple<int,int,int>;
+using ull = unsigned long long;
 
 #define IL inline
 #define TP template<class T>
