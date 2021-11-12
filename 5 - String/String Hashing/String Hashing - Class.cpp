@@ -38,38 +38,54 @@ template <const int32_t MOD> struct modint{
 };using mint = modint<md>; 
 
 // change type 
-mint invb, pw[mx];
-void pre_hash_cal(long long B, int N=2){
-    pw[0] = 1; // {1, 1};
-    for(int i=1; i<N; ++i)
-        pw[i] = (pw[i-1] * B);
-    invb = pw[1].inv();
+mint B = 271;
+mint IB = B.inv();
+mint pwr[mx], inv[mx];
+
+void pre_hash_cal(int N=mx){
+    pwr[0] = inv[0] = 1; // {1, 1};
+    for(int i=1; i<N; ++i){
+        pwr[i] = (pwr[i-1] * B);
+        inv[i] = (inv[i-1] * IB);
+    }
 } 
 
-template<long long B, class T> struct MyHash{
-    int N; vector<T> HS; 
+template<class T> struct MyHash{
+    int N; 
+    vector<T> HS, RS; 
+    
     inline T build(string &s){
         N = s.size(); 
-        HS.resize(N+1); HS[0] = T();
-        for(int i=1; i<=N; ++i)
-            HS[i] = (HS[i-1] * B + s[i-1]);
-        return HS[N];
+        HS.resize(N+1); 
+        RS.resize(N+1); 
+        HS[0] = RS[0] = T();
+        for(int i=1; i<=N; ++i){
+            HS[i] = (HS[i-1] + pwr[i] * s[i-1]);
+            RS[i] = (RS[i-1] + inv[i] * s[i-1]);
+        }return HS[N];
     }
+
     inline T get_hash(){return HS[N];}
     inline vector<T> get_hash_list(){return HS;}
+    inline vector<T> get_hash_rev_list(){return RS;}
     inline T append(T cur, char c){return cur*B + c;}
-    inline T prepend(T cur, int len, char c){return pw[c] * len + cur;}
-    inline T replace(T cur, int idx, char a, char b){return cur + pw[idx] * (b - a);}
-    inline T pop_back(T cur, char c){return (cur-c) * invb;}
-    inline T pop_front(T cur, int len, char c){return cur - pw[len-1]*c;}
-    inline T concat(T L, T R, int rLen){return L * pw[rLen] + R;}
+    inline T prepend(T cur, int len, char c){return pwr[c] * len + cur;}
+    inline T replace(T cur, int idx, char a, char b){return cur + pwr[idx] * (b - a);}
+    inline T pop_back(T cur, char c){return (cur-c) * IB;}
+    inline T pop_front(T cur, int len, char c){return cur - pwr[len-1]*c;}
+    inline T concat(T L, T R, int rLen){return L * pwr[rLen] + R;}
+    inline T get_hash(int i, int j){return (HS[j] - HS[i-1]) * inv[i];}
+    inline T get_hash_rev(int i, int j){return (RS[j] - RS[i-1]) * pwr[j];}
+    inline bool is_palindrome(int i, int j){return get_hash(i, j) == get_hash_rev(i, j);}
+
+    // for only double hashing
     // inline T repeat(T cur, int len, ll cnt){
-    //     T ans = (pw[len*cnt]-1) * (pw[len]-1).inv() * cur;
-    //     if(pw[len].F == 1) ans.F = cur.F * cnt;
-    //     if(pw[len].S == 1) ans.S = cur.S * cnt;
+    //     T ans = (pwr[len*cnt]-1) * (pwr[len]-1).inv() * cur;
+    //     if(pwr[len].F == 1) ans.F = cur.F * cnt;
+    //     if(pwr[len].S == 1) ans.S = cur.S * cnt;
     //     return ans;
     // }
-};using shash = MyHash<271, mint>;
+};using shash = MyHash<mint>;
 
 int main(){
     ios_base::sync_with_stdio(false);
