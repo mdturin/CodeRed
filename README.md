@@ -79,6 +79,16 @@ Competetive Programming Algorithms & Data Structures
 - [Union Find Disjoint Sets - UFDS](https://github.com/mdturin/CodeRed/blob/master/3%20-%20Data%20Structures/Union%20Find%20Disjoint%20Sets%20-%20UFDS.cpp)
 
 ## 4 - Graph
+- Basics
+	- [BFS - Grid](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/BFS%20-%20Grid.cpp)
+	- [BFS](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/BFS.cpp)
+	- [Bipartite Graph](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/Bipartite%20Graph.cpp)
+	- [Connected Component](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/Connected%20Component.cpp)
+	- [DFS](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/DFS.cpp)
+	- [Flood Fill](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/Flood%20Fill.cpp)
+- Cycle
+	- [Directed](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle/Directed.cpp)
+	- [Undirected](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle/Undirected.cpp)
 - Heavy Light Decomposition
 	- [Heavy Light Decomposition - Anudeep](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Heavy%20Light%20Decomposition/Heavy%20Light%20Decomposition%20-%20Anudeep.cpp)
 	- [Heavy Light Decomposition - Lazy](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Heavy%20Light%20Decomposition/Heavy%20Light%20Decomposition%20-%20Lazy.cpp)
@@ -92,17 +102,11 @@ Competetive Programming Algorithms & Data Structures
 - Topological Sort
 	- [Topological Sort - Cp Algo](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort/Topological%20Sort%20-%20Cp%20Algo.cpp)
 	- [Topological Sort - Using In Degree](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Topological%20Sort/Topological%20Sort%20-%20Using%20In%20Degree.cpp)
+- [2sat](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/2sat.cpp)
 - [Articulation Points & Bridges](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Articulation%20Points%20&%20Bridges.cpp)
 - [Bellman Ford](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Bellman%20Ford.cpp)
-- [BFS - Grid](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/BFS%20-%20Grid.cpp)
-- [BFS](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/BFS.cpp)
-- [Bipartite Graph](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Bipartite%20Graph.cpp)
 - [Centroid of a Tree](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Centroid%20of%20a%20Tree.cpp)
-- [Connected Component](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Connected%20Component.cpp)
-- [Cycle Finding](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle%20Finding.cpp)
-- [DFS](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/DFS.cpp)
 - [Dijkstra](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Dijkstra.cpp)
-- [Flood Fill](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Flood%20Fill.cpp)
 - [Floyd Warshall](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Floyd%20Warshall.cpp)
 - [Shortest Path Faster Algorithm - SPFA](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Shortest%20Path%20Faster%20Algorithm%20-%20SPFA.cpp)
 - [Strongly Connected  Component - SCC](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Strongly%20Connected%20%20Component%20-%20SCC.cpp)
@@ -114,10 +118,12 @@ Competetive Programming Algorithms & Data Structures
 - Palindrom
 	- [Manachers Algorithm](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindrom/Manachers%20Algorithm.cpp)
 	- [Palindromic Tree](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindrom/Palindromic%20Tree.cpp)
+	- [PT - All Unique Palindrom](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Palindrom/PT%20-%20All%20Unique%20Palindrom.cpp)
 - String Hashing
 	- Problems
 		- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/Problems/Longest%20Common%20Substring.cpp)
 	- [String Hashing - Ashik Vai](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Ashik%20Vai.cpp)
+	- [String Hashing - Class](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Class.cpp)
 	- [String Hashing - Comparator](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Comparator.cpp)
 	- [String Hashing - Double](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Double.cpp)
 	- [String Hashing - Single](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Single.cpp)
@@ -212,25 +218,30 @@ Competetive Programming Algorithms & Data Structures
 - [Travel Salesman Problem - TSP](https://github.com/mdturin/CodeRed/blob/master/6%20-%20Dynamic%20Programming/Travel%20Salesman%20Problem%20-%20TSP.cpp)
 
 ## 7 - Miscellaneous
-- [BigInt](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/BigInt.cpp)
-- [BigInt2](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/BigInt2.cpp)
+- Big-Int
+	- [BigInt](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Big-Int/BigInt.cpp)
+	- [BigInt2](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Big-Int/BigInt2.cpp)
+- Matrix Exponential
+	- [Matrix Exponential - Fast](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Matrix%20Exponential/Matrix%20Exponential%20-%20Fast.cpp)
+	- [Matrix Exponential](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Matrix%20Exponential/Matrix%20Exponential.cpp)
+- Minimum Eculidean Distance
+	- [Minimum Euclidean Distance - Merge Sort](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Minimum%20Eculidean%20Distance/Minimum%20Euclidean%20Distance%20-%20Merge%20Sort.cpp)
+	- [Minimum_Euclidean_Distance - Greedy](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Minimum%20Eculidean%20Distance/Minimum_Euclidean_Distance%20-%20Greedy.cpp)
 - [Bits](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Bits.cpp)
 - [Cycle Finding](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Cycle%20Finding.cpp)
 - [Double Comparasion](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Double%20Comparasion.cpp)
 - [Get-Cmp](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Get-Cmp.cpp)
 - [Josephus](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Josephus.cpp)
 - [Largest Histogram Area](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Largest%20Histogram%20Area.cpp)
-- [Matrix Exponential - Fast](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Matrix%20Exponential%20-%20Fast.cpp)
-- [Matrix Exponential](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Matrix%20Exponential.cpp)
 - [Maximum Subarray - Kadane's Algorithm](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Maximum%20Subarray%20-%20Kadane's%20Algorithm.cpp)
 - [Meet In The Middle](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Meet%20In%20The%20Middle.cpp)
 - [Mod-Int](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Mod-Int.cpp)
+- [Mod-Pair](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Mod-Pair.cpp)
+- [Namespace - PAIRS](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Namespace%20-%20PAIRS.cpp)
 - [Small to Large Technique](https://github.com/mdturin/CodeRed/blob/master/7%20-%20Miscellaneous/Small%20to%20Large%20Technique.cpp)
 
 ## 8 - Reader _ Debug _ Precode
 - [dbg](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/dbg.hpp)
 - [Fast Read Write](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Fast%20Read%20Write.cpp)
-- [fast reader](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/fast%20reader.cpp)
-- [Input Benchmark](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Input%20Benchmark.cpp)
-- [precode](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/precode.cpp)
-- [template](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/template.cpp)
+- [Template - Contest](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Template%20-%20Contest.cpp)
+- [Template - Simple](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Template%20-%20Simple.cpp)
