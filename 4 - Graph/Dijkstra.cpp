@@ -19,7 +19,7 @@ int dijkstra_algo(int s, int d){
     pq.push({0, s}); dist[s] = 0;
 
     int u, v, uw, vw; while(pq.size()){
-        tie(u, uw) = pq.top(); pq.pop(); uw = -uw;
+        tie(uw, u) = pq.top(); pq.pop(); uw = -uw;
         if(uw > dist[u]) continue;
         for(auto &p : g[u]){
             tie(v, vw) = p;
