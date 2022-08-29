@@ -79,6 +79,9 @@ Competetive Programming Algorithms & Data Structures
 - [Union Find Disjoint Sets - UFDS](https://github.com/mdturin/CodeRed/blob/master/3%20-%20Data%20Structures/Union%20Find%20Disjoint%20Sets%20-%20UFDS.cpp)
 
 ## 4 - Graph
+- Lowest Common Ancestor
+	- [Lowest Common Ancestor for Range Query](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Lowest%20Common%20Ancestor/Lowest%20Common%20Ancestor%20for%20Range%20Query.cpp)
+	- [Lowest Common Ancestor with Binary Lifting - LCA](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Lowest%20Common%20Ancestor/Lowest%20Common%20Ancestor%20with%20Binary%20Lifting%20-%20LCA.cpp)
 - Basics
 	- [BFS - Grid](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/BFS%20-%20Grid.cpp)
 	- [BFS](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/BFS.cpp)
@@ -88,14 +91,18 @@ Competetive Programming Algorithms & Data Structures
 	- [Flood Fill](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Basics/Flood%20Fill.cpp)
 - Cycle
 	- [Directed](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle/Directed.cpp)
+	- [Simple Directed](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle/Simple%20Directed.cpp)
 	- [Undirected](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Cycle/Undirected.cpp)
 - Heavy Light Decomposition
 	- [Heavy Light Decomposition - Anudeep](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Heavy%20Light%20Decomposition/Heavy%20Light%20Decomposition%20-%20Anudeep.cpp)
 	- [Heavy Light Decomposition - Lazy](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Heavy%20Light%20Decomposition/Heavy%20Light%20Decomposition%20-%20Lazy.cpp)
 	- [Heavy Light Decomposition](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Heavy%20Light%20Decomposition/Heavy%20Light%20Decomposition.cpp)
-- Lowest Common Ancestor
-	- [Lowest Common Ancestor for Range Query](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Lowest%20Common%20Ancestor/Lowest%20Common%20Ancestor%20for%20Range%20Query.cpp)
-	- [Lowest Common Ancestor with Binary Lifting - LCA](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Lowest%20Common%20Ancestor/Lowest%20Common%20Ancestor%20with%20Binary%20Lifting%20-%20LCA.cpp)
+- Max Flow
+	- [Dinic](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Max%20Flow/Dinic.cpp)
+	- [Dinic2](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Max%20Flow/Dinic2.cpp)
+- Maximum Matching
+	- [Faster Kuhn](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Maximum%20Matching/Faster%20Kuhn.cpp)
+	- [Kuhn](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Maximum%20Matching/Kuhn.cpp)
 - Minimum Spanning Tree
 	- [Minimum Spanning Tree - Kruskal](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Minimum%20Spanning%20Tree/Minimum%20Spanning%20Tree%20-%20Kruskal.cpp)
 	- [Minimum Spanning Tree - Prim](https://github.com/mdturin/CodeRed/blob/master/4%20-%20Graph/Minimum%20Spanning%20Tree/Minimum%20Spanning%20Tree%20-%20Prim.cpp)
@@ -154,6 +161,7 @@ Competetive Programming Algorithms & Data Structures
 	- [Suffix Automata](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Suffix%20Automata/Suffix%20Automata.cpp)
 - Trie
 	- [Dynamic](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie/Dynamic.cpp)
+	- [Multiple Trie(static)](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie/Multiple%20Trie(static).cpp)
 	- [Static](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/Trie/Static.cpp)
 
 ## 6 - Dynamic Programming
