@@ -3,7 +3,7 @@ using namespace std;
 
 const int mx = 1e5+5;
 using vi = vector<int>;
-using pii = pair<int,int>;
+using ii = pair<int,int>;
 
 string s; int n;
 int sa[mx],lcp[mx],pn[mx];
@@ -11,7 +11,7 @@ int c[mx], cn[mx], cnt[mx];
 
 // constructing suffix array by sort cyclic shifts
 void build(){
-    register int i, j, k;
+    int i, j, k;
     s += "$"; n = s.size();
     memset(cnt, 0, mx << 2);
 
@@ -36,8 +36,8 @@ void build(){
 
         cn[sa[0]] = 0; cls = 1;
         for(i=1; i<n; cn[sa[i++]]=cls-1){
-            pii cur = {c[sa[i]],   c[(sa[i]   + k)%n]};
-            pii pre = {c[sa[i-1]], c[(sa[i-1] + k)%n]};
+            ii cur = {c[sa[i]],   c[(sa[i]   + k)%n]};
+            ii pre = {c[sa[i-1]], c[(sa[i-1] + k)%n]};
             if(cur != pre) cls++; 
         }for(int i=0; i<n; i++) c[i] = cn[i];
     }
