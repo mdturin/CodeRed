@@ -130,11 +130,10 @@ Competetive Programming Algorithms & Data Structures
 - String Hashing
 	- Problems
 		- [Longest Common Substring](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/Problems/Longest%20Common%20Substring.cpp)
+	- [Ashik Vai Class](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/Ashik%20Vai%20Class.cpp)
 	- [String Hashing - Ashik Vai](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Ashik%20Vai.cpp)
 	- [String Hashing - Class](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Class.cpp)
-	- [String Hashing - Comparator](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Comparator.cpp)
-	- [String Hashing - Double](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Double.cpp)
-	- [String Hashing - Single](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Single.cpp)
+	- [String Hashing - Comparato](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Hashing/String%20Hashing%20-%20Comparator)
 - String Matching
 	- [Aho Corasick](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Matching/Aho%20Corasick.cpp)
 	- [Knuth-Morris-Pratt - KMP](https://github.com/mdturin/CodeRed/blob/master/5%20-%20String/String%20Matching/Knuth-Morris-Pratt%20-%20KMP.cpp)
