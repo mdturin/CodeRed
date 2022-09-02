@@ -17,21 +17,30 @@ const int MOD = 1e6 + 3;
  * @param P 
  */
 
+template<typename T>
+T power(T v, T p, T m) {
+    v %= m; T r = 1; while (p > 0) {
+        if (p & 0x1) r = (r*1LL*v)%m;
+        v = (v*1LL*v)%m; p >>= 1;
+    }return r;
+}
+
 vector<ll> Fact;
 vector<ll> Invfact;
 
 void compute(int P = MOD){
 	Fact.clear();
 	Fact.resize(P);
+
 	Invfact.clear();
 	Invfact.resize(P);
         
-	Fact[0]=Fact[1]=1;
-	Invfact[0]=Invfact[1]=1;
+	Fact[0] = Fact[1] = 1;
+	Invfact[0] = Invfact[1] = 1;
 	
 	for(int i=2;i<P;i++){
-		Fact[i]=(Fact[i-1]*i)%P;
-		Invfact[i]=((P-P/i)*Invfact[P%i])%P;  
+		Fact[i] = (Fact[i-1] * i) % P;
+		Invfact[i] = power<ll>(Fact[i], P-2, P);
 	}
 }
 
@@ -49,8 +58,9 @@ int main(){
     cin.tie(nullptr);
 
     compute();
-    Lucas(10, 3, MOD);
-    
+    ll ans = Lucas(10, 3, MOD);
+	cout << ans << endl;
+	
     return 0;
 }
 
