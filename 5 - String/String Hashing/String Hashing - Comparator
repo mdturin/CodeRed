@@ -16,5 +16,11 @@ struct custom_hash {
     }
 };
 
+struct HASH{
+    size_t operator()(const pair<int, int> &x)const{
+        return hash<long long>()(((long long)x.first)^(((long long)x.second)<<32));
+    }
+};
+
 unordered_map<long long, int, custom_hash> safe_map;
 gp_hash_table<long long, int, custom_hash> safe_hash_table;
