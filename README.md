@@ -4,6 +4,7 @@ Competetive Programming Algorithms & Data Structures
 ## 1 - Sorting & Searching
 - Searching
 	- [Binary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Searching/Binary%20Search.cpp)
+	- [BinarySearchClass](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Searching/BinarySearchClass.cpp)
 	- [Ternary Search](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Searching/Ternary%20Search.cpp)
 - Sorting
 	- [Counting Sort](https://github.com/mdturin/CodeRed/blob/master/1%20-%20Sorting%20&%20Searching/Sorting/Counting%20Sort.cpp)
@@ -253,3 +254,6 @@ Competetive Programming Algorithms & Data Structures
 - [Fast Read Write](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Fast%20Read%20Write.cpp)
 - [Template - Contest](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Template%20-%20Contest.cpp)
 - [Template - Simple](https://github.com/mdturin/CodeRed/blob/master/8%20-%20Reader%20_%20Debug%20_%20Precode/Template%20-%20Simple.cpp)
+
+## 9 - Geometry
+- [ConvexHull](https://github.com/mdturin/CodeRed/blob/master/9%20-%20Geometry/ConvexHull.cpp)
