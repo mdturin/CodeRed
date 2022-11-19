@@ -7,12 +7,12 @@ const int md = 1e9 + 7;
 
 template <typename T>
 T power(T v, T p, T m=md) {
-    v %= m; T r = 1;
-    while (p > 0){
-        if (p & 1)
-            r = (1LL * r * v) % m;
-        v = (1LL * v * v) % m; p >>= 1;
-    }return r;
+  v %= m; T r = 1;
+  while (p > 0){
+    if (p & 1)
+      r = (1LL * r * v) % m;
+    v = (1LL * v * v) % m; p >>= 1;
+  }return r;
 }
 
 ll f[mx], nf[mx];

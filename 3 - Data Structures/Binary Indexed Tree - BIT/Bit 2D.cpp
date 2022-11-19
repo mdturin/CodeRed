@@ -41,7 +41,7 @@ int main(){
     int n, m, x, q;
     scanf("%d %d %d", &n, &m, &q);
 
-    FenwickTree<int> tree(n, m);
+    FenwickTree2D<int> tree(n, m);
     for(int i=0; i<n; i++)
     for(int j=0; j<m; j++){
         scanf("%d", &x);

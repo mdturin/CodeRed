@@ -51,69 +51,69 @@ public:
 template <typename T, const T null_val, class F = function<T(const T, const T)>>
 struct HLD{
 private:
-    #define L (p<<1)
-    #define R (p<<1|1)
+  #define L (p<<1)
+  #define R (p<<1|1)
 
-    int N, cp; F func;
-    vector<int> heavy;
-    vector<int> hei, head;
-    vector<int> pos, rpos;
-    SegTree<T, null_val> st;
+  int N, cp; F func;
+  vector<int> heavy;
+  vector<int> hei, head;
+  vector<int> pos, rpos;
+  SegTree<T, null_val> st;
 
-    int dfs(int u, int p, int h){
-        int sz = 1, msz = 0, vsz;
-        hei[u] = h; par[u][0] = p;
-        for(auto &v : g[u]){
-            if(v == p) continue;
-            sz += (vsz = dfs(v, u, h+1));
-            if(msz<vsz) msz=vsz, heavy[u]=v;
-        }return sz;
-    }
+int dfs(int u, int p, int h){
+  int sz = 1, msz = 0, vsz;
+  hei[u] = h; par[u][0] = p;
+  for(auto &v : g[u]){
+    if(v == p) continue;
+    sz += (vsz = dfs(v, u, h+1));
+    if(msz<vsz) msz=vsz, heavy[u]=v;
+  }return sz;
+}
 
-    void decom(int u, int p){
-        head[u] = p; pos[u] = cp; rpos[cp++] = u;
-        if(~heavy[u]) decom(heavy[u], p);
-        for(auto &v : g[u])
-            if(v != par[u][0] && v != heavy[u])
-                decom(v, v);
-    }
+void decom(int u, int p){
+  head[u] = p; pos[u] = cp; rpos[cp++] = u;
+  if(~heavy[u]) decom(heavy[u], p);
+  for(auto &v : g[u])
+    if(v != par[u][0] && v != heavy[u])
+      decom(v, v);
+}
 
 public:
-    HLD(int sz, F f) :
-        N(sz+1), func(f), cp(0), st(N,f){
-        heavy.resize(N, -1);
-        pos.resize(N); rpos.resize(N);
-        hei.resize(N); head.resize(N);
-        for(int i=0; i<N; ++i)
-            memset(par[i], -1, sizeof par[i]);
-    }
+HLD(int sz, F f) :
+  N(sz+1), func(f), cp(0), st(N,f){
+  heavy.resize(N, -1);
+  pos.resize(N); rpos.resize(N);
+  hei.resize(N); head.resize(N);
+  for(int i=0; i<N; ++i)
+    memset(par[i], -1, sizeof par[i]);
+}
 
-    void build(int root=1){
-        dfs(root, -1, 0);
-        decom(root, root);
-        for(int i=1; i<N; ++i)
-            st.update(pos[i], a[i]);
-    }
+void build(int root=1){
+  dfs(root, -1, 0);
+  decom(root, root);
+  for(int i=1; i<N; ++i)
+    st.update(pos[i], a[i]);
+}
 
-    void update(int u, T val){
-        return st.update(pos[u], val);}
+void update(int u, T val){
+  return st.update(pos[u], val);}
 
-    T query(int u, int v){
-        T ans = null_val;
-        while(head[u] != head[v]){
-            if(hei[head[u]] > hei[head[v]]) swap(u, v);
-            ans = func(ans, st.query(pos[head[v]], pos[v]));
-            v = par[head[v]][0];
-        }if(pos[u] > pos[v]) swap(u, v);
-        return func(ans, st.query(pos[u], pos[v]));
-    }
+T query(int u, int v){
+  T ans = null_val;
+  while(head[u] != head[v]){
+    if(hei[head[u]] > hei[head[v]]) swap(u, v);
+    ans = func(ans, st.query(pos[head[v]], pos[v]));
+    v = par[head[v]][0];
+  }if(pos[u] > pos[v]) swap(u, v);
+  return func(ans, st.query(pos[u], pos[v]));
+}
 };
 
 template<typename T> struct get_cmp{
-    function<T(const T, const T)> fsum = [&](const T u, const T v){return u + v;};
-    function<T(const T, const T)> fmax = [&](const T u, const T v){return max(u, v);};
-    function<T(const T, const T)> fmin = [&](const T u, const T v){return min(u, v);};
-    function<T(const T, const T)> fgcd = [&](const T u, const T v){return __gcd(u, v);};
+  function<T(const T, const T)> fsum = [&](const T u, const T v){return u + v;};
+  function<T(const T, const T)> fmax = [&](const T u, const T v){return max(u, v);};
+  function<T(const T, const T)> fmin = [&](const T u, const T v){return min(u, v);};
+  function<T(const T, const T)> fgcd = [&](const T u, const T v){return __gcd(u, v);};
 };
 
 int main(int argc, const char** argv) {

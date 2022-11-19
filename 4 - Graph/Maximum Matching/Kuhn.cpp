@@ -9,32 +9,32 @@ public:
     vector<bool> used;
     vector<vector<int>> g;
 
-    bool kuhn(int u){
-        if(used[u]) return 0; used[u] = 1;
-        for(int v : g[u]){
-            v -= n;
-            if(pairs[v] == -1 || kuhn(pairs[v]))
-                return pairs[v] = u, 1;
-        }return 0;
-    }
+bool kuhn(int u){
+  if(used[u]) return 0; used[u] = 1;
+  for(int v : g[u]){
+    v -= n;
+    if(pairs[v] == -1 || kuhn(pairs[v]))
+      return pairs[v] = u, 1;
+  }return 0;
+}
 
-    vector<pair<int,int>> find_max_matching(vector<vector<int>> &_g, int _n, int _k){
-        g = _g; n = _n; k = _k;
-        used = vector<bool>(n, 0);
-        pairs = vector<int>(k, -1);
+vector<pair<int,int>> find_max_matching(vector<vector<int>> &_g, int _n, int _k){
+  g = _g; n = _n; k = _k;
+  used = vector<bool>(n, 0);
+  pairs = vector<int>(k, -1);
 
-        for(int i=0; i<n; ++i){
-            fill(used.begin(), used.end(), false);
-            kuhn(i);
-        }
+  for(int i=0; i<n; ++i){
+    fill(used.begin(), used.end(), false);
+    kuhn(i);
+  }
 
-        vector<pair<int,int>> res;
-        for(int i=0; i<k; ++i)
-            if(pairs[i] != -1)
-                res.emplace_back(pairs[i], i);
+  vector<pair<int,int>> res;
+  for(int i=0; i<k; ++i)
+    if(pairs[i] != -1)
+      res.emplace_back(pairs[i], i);
 
-        return res;
-    }
+  return res;
+}
 };
 
 int main(){

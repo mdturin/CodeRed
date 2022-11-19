@@ -20,22 +20,22 @@ void LinearSieve(){
     }
 }
 
-/// required precalculated sqrt(m-n+1) primes
+// required precalculated sqrt(m-n+1) primes
 inline void segSieve(ll n, ll m){
-    assert(n>1 && n <= m);
-    int len = m - n + 1;
+  assert(n>1 && n <= m);
+  int len = m - n + 1;
 
-    char cur_mark[len] = {};
-    for(int p : prime){
-        if((ll)p * p > m) break;
-        for(ll j=(ll)(n/p)*p; j<=m; j+=p){
-            if(j<n || j == p) continue;
-            cur_mark[j-n] = 1;
-        }
+  char cur_mark[len] = {};
+  for(int p : prime){
+    if((ll)p * p > m) break;
+    for(ll j=(ll)(n/p)*p; j<=m; j+=p){
+        if(j<n || j == p) continue;
+        cur_mark[j-n] = 1;
     }
-    for(ll i=0; i<len; i++)
-        if(cur_mark[i] == 0)
-            // do something, (n+i) is prime
+  }
+  for(ll i=0; i<len; i++)
+    if(cur_mark[i] == 0)
+        // do something, (n+i) is prime
 }
 
 int main(int argc, const char** argv) {

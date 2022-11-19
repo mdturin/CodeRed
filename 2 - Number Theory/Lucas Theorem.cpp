@@ -9,7 +9,7 @@ const int MOD = 1e6 + 3;
 /**
  * @brief 
  * 
- * Lucas Theoram can compute
+ * Lucas Theorem can compute
  * larger binomial coefficient
  * (NcR)%M when the modular value
  * M is small. (M <= 1e7)

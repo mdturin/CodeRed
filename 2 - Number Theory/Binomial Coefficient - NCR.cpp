@@ -4,22 +4,22 @@ using ll = long long;
 const int MOD = 1e9 + 7;
 
 /**
-    Analytic formula    : (nCk) = (n!) / (k! * (n-k)!);
-    Recurrence formula  : (nCk) = ((n-1) C k) + ((n-1) C (k-1));
+Analytic formula    : (nCk) = (n!) / (k! * (n-k)!);
+Recurrence formula  : (nCk) = ((n-1) C k) + ((n-1) C (k-1));
 
-    Properties:
-        Symmetry rule : (nCk) = (n C (k-1));
-        Factoring : (nCk) = (n/k) * (n-1) C (k-1);
-        Sum over k : summation of (nCk) where k = 0 to n = power(2, n)
-        Sum over n : summation of (mCk) where m = 0 to n = (n+1) C (k+1)
-        Sum over n and k:
-            (n+k) C (k) where k = 0 to m = (n+m+1) C (m)
-        Weighted Sum :
-            1(nC1) + 2(nC2) + ... + n(nCn) = n * power(2, n-1);
-        Relation with Fibonacci:
-            (nC0) + (n-1)C1 + ... + (n-k)Ck + .. + 0Cn = (n+1)th fibonacchi number
-        (a+b)^n = (nC0) * a^n + (nC1) * a^(n-1) * b + ...
-                + (nCk) * a^(n-k) * b^k + ... + (nCn) b^n
+Properties:
+  Symmetry rule : (nCk) = (n C (k-1));
+  Factoring : (nCk) = (n/k) * (n-1) C (k-1);
+  Sum over k : summation of (nCk) where k = 0 to n = power(2, n)
+  Sum over n : summation of (mCk) where m = 0 to n = (n+1) C (k+1)
+  Sum over n and k:
+    (n+k) C (k) where k = 0 to m = (n+m+1) C (m)
+  Weighted Sum :
+    1(nC1) + 2(nC2) + ... + n(nCn) = n * power(2, n-1);
+  Relation with Fibonacci:
+    (nC0) + (n-1)C1 + ... + (n-k)Ck + .. + 0Cn = (n+1)th fibonacci number
+  (a+b)^n = (nC0) * a^n + (nC1) * a^(n-1) * b + ...
+          + (nCk) * a^(n-k) * b^k + ... + (nCn) b^n
 
 */
 
@@ -89,7 +89,7 @@ int main(int argc, const char** argv) {
 
 
     C sol(1000);
-    cout << a.ncr(100, 20) << "\n"; // 926116413
+    cout << sol.ncr(100, 20).value << "\n"; // 926116413
 
     return 0;
 }

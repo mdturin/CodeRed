@@ -16,23 +16,23 @@ inline ll fun(ll u, ll v){
 }
 
 void build(){
-    for(int ki=0; (1<<ki)<=n; ki++)
-    for(int kj=0; (1<<kj)<=m; kj++)
-    for(int i=0; i+(1<<ki)<=n; i++)
-    for(int j=0; j+(1<<kj)<=m; j++){
-        int jk = j+(1<<(kj-1)), ik = i+(1<<(ki-1));
-        if(ki==0 && kj==0) st[i][j][0][0] = a[i][j];
-        else if(ki == 0)
-            st[i][j][ki][kj] = fun(st[i][j][ki][kj-1], st[i][jk][ki][kj-1]);
-        else if(kj == 0)
-            st[i][j][ki][kj] = fun(st[i][j][ki-1][kj], st[ik][j][ki-1][kj]);
-        else{
-            st[i][j][ki][kj] = fun(
-                fun(st[i][j][ki-1][kj-1], st[ik][j][ki-1][kj-1]),
-                fun(st[i][jk][ki-1][kj-1], st[ik][jk][ki-1][kj-1])
-            );
-        }
+  for(int ki=0; (1<<ki)<=n; ki++)
+  for(int kj=0; (1<<kj)<=m; kj++)
+  for(int i=0; i+(1<<ki)<=n; i++)
+  for(int j=0; j+(1<<kj)<=m; j++){
+    int jk = j+(1<<(kj-1)), ik = i+(1<<(ki-1));
+    if(ki==0 && kj==0) st[i][j][0][0] = a[i][j];
+    else if(ki == 0)
+      st[i][j][ki][kj] = fun(st[i][j][ki][kj-1], st[i][jk][ki][kj-1]);
+    else if(kj == 0)
+      st[i][j][ki][kj] = fun(st[i][j][ki-1][kj], st[ik][j][ki-1][kj]);
+    else{
+      st[i][j][ki][kj] = fun(
+          fun(st[i][j][ki-1][kj-1], st[ik][j][ki-1][kj-1]),
+          fun(st[i][jk][ki-1][kj-1], st[ik][jk][ki-1][kj-1])
+      );
     }
+  }
 }
 
 ll queryY(int x, int k, int l, int r){
@@ -57,8 +57,8 @@ ll query(int l, int r, int xx, int yy){
 }
 
 int minMaxQuery(int x1, int y1, int x2, int y2){
-    int k1 = log2(x2 - x1 + 1);
-    int k2 = log2(y2 - y1 + 1);
+    int k1 = __lg(x2 - x1 + 1);
+    int k2 = __lg(y2 - y1 + 1);
     return min(
         min(st[x1][y1][k1][k2], st[x2+1-(1<<k1)][y1][k1][k2]),
         min(st[x1][y2+1-(1<<(k2))][k1][k2], st[x2+1-(1<<k1)][y2+1-(1<<k2)][k1][k2])

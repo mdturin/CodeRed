@@ -12,6 +12,7 @@ pii binarySearch(vector<int> a, int x){
             ans=mid,hh=mid-1;
         else lw = mid+1;
     }
+    
     if(a[ans] != x)
         return pii(-1,-1);
 
@@ -23,6 +24,7 @@ pii binarySearch(vector<int> a, int x){
             ans=mid,lw=mid+1;
         else hh = mid-1;
     }
+    
     res.second = ans;
     return res;
 }

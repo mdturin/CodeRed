@@ -11,15 +11,15 @@ set<int> st[mx];
 int ans[mx], par[mx];
 
 void dfs(int u, int p){
-    st[u].insert(a[u]); par[u] = u;
-    for(int v : g[u]){
-        if(v == p) continue; dfs(v, u);
-        if(st[par[u]].size() < st[par[v]].size())
-            swap(par[u], par[v]);
-        for(int x : st[par[v]])
-            st[par[u]].insert(x);
-        st[par[v]].clear();
-    }ans[u] = st[par[u]].size();
+  st[u].insert(a[u]); par[u] = u;
+  for(int v : g[u]){
+    if(v == p) continue; dfs(v, u);
+    if(st[par[u]].size() < st[par[v]].size())
+      swap(par[u], par[v]);
+    for(int x : st[par[v]])
+      st[par[u]].insert(x);
+    st[par[v]].clear();
+  }ans[u] = st[par[u]].size();
 }
 
 int main(){
