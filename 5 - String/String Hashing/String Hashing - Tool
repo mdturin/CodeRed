@@ -1,0 +1,32 @@
+template<class T>
+inline void hash_combine(std::size_t& seed, const T& v) {
+    std::hash<T> hasher;
+    seed ^= hasher(v) + 0x9e3779b9 + (seed<<6) + (seed>>2);
+}
+
+template<class T>
+size_t generate_hash(T &value){
+    size_t result = 0;
+    hash_combine(result, value);
+    return result;
+}
+
+template <class T, class U>
+size_t generate_hash(pair<T, U> &value){
+    size_t result = 0;
+    hash_combine(result, value.first);
+    hash_combine(result, value.second);
+    return result;
+}
+
+template <class T>
+size_t generate_hash(vector<T> &value){
+    size_t result = 0;
+    for(auto &v : value)
+        hash_combine(result, v);
+    return result;
+}
+
+size_t myHashFuction(pair<int, int> &value) { return generate_hash(value); }
+
+unordered_map<pair<int,int>, bool, decltype(myHashFuction)> mp(myHashFuction);

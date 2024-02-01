@@ -10,7 +10,7 @@ const int inf = 0x3f3f3f3f;
 
 int n, m;
 vector<int> g[mx];
-int par[mx], dist[mx];
+int par[mx], dist[mx], vis[mx];
 
 void bfs(int s){
     fill(dist, dist+mx, inf); dist[s] = 0;

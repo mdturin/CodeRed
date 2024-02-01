@@ -8,6 +8,7 @@ const int inf = 0x3f3f3f3f;
 #define ff first
 #define se second
 
+int vis[mx];
 vector<int> g[mx];
 int n, m, color[mx];
 

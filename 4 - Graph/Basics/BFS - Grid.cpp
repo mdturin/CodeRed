@@ -24,7 +24,7 @@ bool valid(int x, int y){
 
 void bfs(int sx, int sy){
     for(int i=0; i<mx; ++i)
-        fill(dist[i], dist[i]+mx, sizeof dist[i]);
+        fill(dist[i], dist[i]+mx, inf);
 
     queue<ii> q;
     q.push(ii(sx, sy));
