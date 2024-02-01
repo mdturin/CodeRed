@@ -1,6 +1,10 @@
 // Design a Zoo Management System Using the Factory Method Pattern
-
-// You are tasked with designing a system for managing different types of animals and furniture in a zoo. The system should allow for easy addition of new types of animals and furniture without modifying existing code. Implement this system using the Factory Method design pattern in C#.
+// ---------------------------------------------------------------
+// You are tasked with designing a system for managing different 
+// types of animals and furniture in a zoo. The system should allow 
+// for easy addition of new types of animals and furniture without 
+// modifying existing code. Implement this system using the Factory 
+// Method design pattern in C#.
 
 namespace AnimalDesignFactoryPatternExample;
 
